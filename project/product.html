@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/cart_popup.css">
+    <link rel="stylesheet" href="css/dangnhapmenu.css">
+</head>
+
+<body>
+
+
+    <header>
+        <!-- Logo -->
+        <img src="//bizweb.dktcdn.net/thumb/medium/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+            alt="Shoes Logo">
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Thương hiệu</a>
+                    <ul class="subnav" style="list-style: none;">
+
+                    </ul>
+                </li>
+                <li><a href="product.html">Sản phẩm</a></li>
+                <li><a href="#">Accessories - Phụ trang</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header right (search + icons) -->
+        <div class="header-right">
+            <input type="text" placeholder="Tìm kiếm sản phẩm ..." id="animated-placeholder">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute;left: auto;right: 180px;"
+                onclick="searchProduct()"></i>
+            <div class="header-icons">
+                <a href="#" onclick="opennguuu()"><i class="fa fa-user"></i></a>
+                <a href="#"><i class="fa fa-heart"></i><span class="icon-badge">0</span></a>
+                <a href="#" onclick="openCart()"><i class="fa fa-shopping-cart"></i><span
+                        class="icon-badge icon-badge1">0</span></a>
+            </div>
+        </div>
+    </header>
+    <div class="overlay1" onclick="closeCart()"></div>
+    <div class="overlay2" onclick="closenguuuu()"></div>
+    <!-- Cart Sidebar -->
+    <div class="shop-cart-sidebar">
+        <div class="shop-cart-sidebar-head">
+            <label>Giỏ hàng</label>
+            <button type="button" onclick="closeCart()" data-type="shop-cart-sidebar-close" title="Đóng"
+                fdprocessedid="8wpz7">
+                <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14" width="15" height="15">
+                    <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div class="shop-cart-sidebar-top-freeship">
+                <div class="shop-freeship" data-freeship-price="50000000">
+                    <div class="shop-freeship-bar">
+                        <div class="shop-freeship-bar-main"><span style="width: 2.618%;"></span></div>
+                    </div>
+                    <div class="shop-freeship-note">Mua thêm <span>48.691.000₫</span> để được miễn phí giao hàng trên
+                        toàn
+                        quốc</div>
+                </div>
+                <div class="shop-cart-sidebar-top-freeship-label">
+                    <img class=" ls-is-cached lazyloaded" width="75" height="62" title="Free Ship"
+                        src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        data-src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        alt=" - Free Ship">
+                </div>
+            </div>
+        </div>
+        <div class="shop-cart-sidebar-body">
+            <div class="showmenu"></div>
+            <div class="showanmenu"></div>
+
+        </div>
+        <div class="shop-cart-sidebar-foot">
+            <div class="cangiua">
+                <button type="button" data-type="shop-cart-sidebar-note-action" title="Thêm ghi chú"
+                    fdprocessedid="rn9kbq">Thêm
+                    ghi chú</button>
+                <a href="/cart.html" title="Xem chi tiết giỏ hàng" aria-label="Xem chi tiết giỏ hàng">Xem chi tiết giỏ
+                    hàng</a>
+            </div>
+            <p>Phí ship &amp; thuế được tính ở Trang Thanh Toán</p>
+            <a class="toCheckout" href="/checkout.html" title="Thanh toán" aria-label="Thanh toán">
+                <span>Thanh toán</span>
+                <span></span>
+                <span>1.309.000₫</span>
+            </a>
+            <div class="shop-cart-sidebar-note">
+                <label>Thêm ghi chú</label>
+                <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+                <button type="button" data-type="shop-cart-sidebar-note-save" title="Lưu">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <!-- Login sidebar -->
+    <div class="modal-content">
+        <div class="login-container">
+            <div class="side-menu">
+                <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+                    alt="">
+                <a href="#" class="side-link active" data-hien="1">Đăng nhập</a>
+                <a href="#" class="side-link" data-hien="2">Quên mật khẩu</a>
+                <a href="#" class="side-link" data-hien="3">Đăng ký</a>
+            </div>
+
+            <div class="login-form active" data-hien="1">
+                <h2>ĐĂNG NHẬP</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email1" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu*</label>
+                        <input type="password" id="password1" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="btn-dangnhap">ĐĂNG NHẬP</button>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-form" data-hien="2">
+                <h2>Quên mật khẩu</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">GỬI</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-form" data-hien="3">
+                <h2>ĐĂNG KÝ</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="ho">Họ của bạn*</label>
+                        <input type="text" id="ho" placeholder="Nhập họ của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="ten">Tên của bạn*</label>
+                        <input type="text" id="ten" placeholder="Nhập tên của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại*</label>
+                        <input type="number" id="phone" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu*</label>
+                        <input type="password" id="password" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">ĐĂNG KÝ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <button id="toTopBtn" class="hidden"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <div class="main-collection">
+        <div title="CONVERSE ALL" class="main-collection-breadcrumb lazyloaded"
+            data-bg="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/main_collection_breadcrumb_bg.jpg?1713464283843"
+            style="background-image: url(&quot;//bizweb.dktcdn.net/100/493/370/themes/940719/assets/main_collection_breadcrumb_bg.jpg?1713464283843&quot;);">
+            <div class="container-about">
+                <div class="section-title-all">
+                    <h1>CONVERSE ALL</h1>
+                </div>
+                <div class="breadcrumb-wrap">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/" aria-label="Trang chủ" title="Trang chủ">Trang chủ</a>
+                        </li>
+
+
+                        <li class="breadcrumb-item active"><span>CONVERSE ALL</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-about">
+            <div class="main-collection-wrap vertical" style="position: relative;">
+                <div class="main-collection-left" style="position: sticky;">
+                    <div class="shop-filter-wrap shop-filter-mobile">
+                        <div class="head-for-mobile">
+                            <strong>Bộ lọc</strong>
+                            <button type="button" data-type="close-filter-mobile" title="Đóng"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0"
+                                    viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve"
+                                    class="">
+                                    <g>
+                                        <script></script>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                            d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z"
+                                            fill="#000000" data-original="#000000" class=""></path>
+                                    </g>
+                                </svg></button>
+                        </div>
+                        <div class="shop-filter-choose" style="display: none;">
+                            <label>Bạn chọn: <button type="button" data-type="shop-filter-choose-remove" title="Bỏ hết"
+                                    fdprocessedid="k0bgpj">Bỏ hết</button></label>
+                            <ul class="shop-filter-choose-data">
+
+                            </ul>
+                        </div>
+                        <div class="shop-filter" data-type="vendor">
+                            <div id="search-title"></div>
+
+                            <h4>Thương hiệu sản phẩm</h4>
+                            <div class="shop-filter-list">
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-vendor1" data-group="vendor"
+                                        data-field="vendor" data-text="Converse" value="(Converse)" data-operator="OR"
+                                        data-price="1800000">
+                                    <label for="shop-filter-vendor1">Converse</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-filter" data-type="type">
+                            <h4>Loại sản phẩm</h4>
+                            <div class="shop-filter-list">
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-type1" data-group="type"
+                                        data-field="product_type" data-text="Giày cổ cao" value="(Giày cổ cao)"
+                                        data-operator="OR">
+                                    <label for="shop-filter-type1">Giày cổ cao</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-type2" data-group="type"
+                                        data-field="product_type" data-text="Giày cổ thấp" value="(Giày cổ thấp)"
+                                        data-operator="OR">
+                                    <label for="shop-filter-type2">Giày cổ thấp</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-type3" data-group="type"
+                                        data-field="product_type" data-text="Socks" value="(Socks)" data-operator="OR">
+                                    <label for="shop-filter-type3">Socks</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-filter" data-type="variant1">
+                            <h4>Kích thước</h4>
+                            <div class="shop-filter-list">
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-tag-item11" data-group="tag1"
+                                        data-text="33x40cm" data-field="tags" value="(33x40cm)" data-operator="OR">
+                                    <label for="shop-filter-tag-item11">33x40cm</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-tag-item12" data-group="tag1"
+                                        data-text="40x30cm" data-field="tags" value="(40x30cm)" data-operator="OR">
+                                    <label for="shop-filter-tag-item12">40x30cm</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-tag-item13" data-group="tag1"
+                                        data-text="100x30cm" data-field="tags" value="(100x30cm)" data-operator="OR">
+                                    <label for="shop-filter-tag-item13">100x30cm</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-tag-item14" data-group="tag1"
+                                        data-text="50x30cm" data-field="tags" value="(50x30cm)" data-operator="OR">
+                                    <label for="shop-filter-tag-item14">50x30cm</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-filter" data-type="variant3">
+                            <h4>Màu sắc</h4>
+                            <div class="shop-filter-list color">
+                                <div class="shop-filter-item color xanh">
+                                    <input type="checkbox" id="shop-filter-tag-item31" data-group="tag3"
+                                        data-field="tags" data-text="Xanh" value="(Xanh)" data-operator="OR">
+                                    <label style="background-color: green;" for="shop-filter-tag-item31"
+                                        title="Xanh">Xanh</label>
+                                </div>
+                                <div class="shop-filter-item color do">
+                                    <input type="checkbox" id="shop-filter-tag-item32" data-group="tag3"
+                                        data-field="tags" data-text="Đỏ" value="(Đỏ)" data-operator="OR">
+                                    <label style="background-color: red;" for="shop-filter-tag-item32"
+                                        title="Đỏ">Đỏ</label>
+                                </div>
+                                <div class="shop-filter-item color den">
+                                    <input type="checkbox" id="shop-filter-tag-item33" data-group="tag3"
+                                        data-field="tags" data-text="Đen" value="(Đen)" data-operator="OR">
+                                    <label style="background-color: black;" for="shop-filter-tag-item33"
+                                        title="Đen">Đen</label>
+                                </div>
+                                <div class="shop-filter-item color tim">
+                                    <input type="checkbox" id="shop-filter-tag-item34" data-group="tag3"
+                                        data-field="tags" data-text="Tím" value="(Tím)" data-operator="OR">
+                                    <label style="background-color: purple;" for="shop-filter-tag-item34"
+                                        title="Tím">Tím</label>
+                                </div>
+                                <div class="shop-filter-item color vang">
+                                    <input type="checkbox" id="shop-filter-tag-item35" data-group="tag3"
+                                        data-field="tags" data-text="Vàng" value="(Vàng)" data-operator="OR">
+                                    <label style="background-color: yellow;" for="shop-filter-tag-item35"
+                                        title="Vàng">Vàng</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="shop-filter" data-type="price">
+                            <h4>Giá sản phẩm</h4>
+                            <div class="shop-filter-list">
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-price-item1" data-group="price"
+                                        data-field="price_min" data-text="Dưới 1.000.000₫" value="(<1000000)"
+                                        data-operator="OR">
+                                    <label for="shop-filter-price-item1" title="Dưới 1.000.000₫">Dưới
+                                        1.000.000₫</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-price-item2" data-group="price"
+                                        data-field="price_min" data-text="Từ 1.000.000₫ - 3.000.000₫"
+                                        value="(>=1000000 AND <=3000000)" data-operator="OR">
+                                    <label for="shop-filter-price-item2" title="Từ 1.000.000₫ - 3.000.000₫">Từ
+                                        1.000.000₫ - 3.000.000₫</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-price-item3" data-group="price"
+                                        data-field="price_min" data-text="Từ 3.000.000₫ - 5.000.000₫"
+                                        value="(>=3000000 AND <=5000000)" data-operator="OR">
+                                    <label for="shop-filter-price-item3" title="Từ 3.000.000₫ - 5.000.000₫">Từ
+                                        3.000.000₫ - 5.000.000₫</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-price-item4" data-group="price"
+                                        data-field="price_min" data-text="Từ 5.000.000₫ - 10.000.000₫"
+                                        value="(>=5000000 AND <=10000000)" data-operator="OR">
+                                    <label for="shop-filter-price-item4" title="Từ 5.000.000₫ - 10.000.000₫">Từ
+                                        5.000.000₫ - 10.000.000₫</label>
+                                </div>
+                                <div class="shop-filter-item">
+                                    <input type="checkbox" id="shop-filter-price-item5" data-group="price"
+                                        data-field="price_min" data-text="Trên 10.000.000₫" value="(>10000000)"
+                                        data-operator="OR">
+                                    <label for="shop-filter-price-item5" title="Trên 10.000.000₫">Trên
+                                        10.000.000₫</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-collection-right ">
+                    <div class="main-collection-head">
+                        <div class="shop-sort-style">
+                            <strong>Hiển thị</strong>
+                            <div class="shop-filter-mobile-btn">
+                                <button type="button" data-type="shop-filter-mobile-btn" title="Bộ lọc">
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0"
+                                        viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                        xml:space="preserve" class="">
+                                        <g>
+                                            <path
+                                                d="m486.585 243.429-15.502-8.401c-1.179-.639-1.82-1.981-1.596-3.339 1.048-6.346 1.58-12.843 1.58-19.309 0-6.467-.532-12.963-1.58-19.308-.225-1.359.417-2.701 1.596-3.34l15.502-8.4c4.266-2.311 7.376-6.145 8.757-10.796 1.382-4.65.87-9.561-1.441-13.825l-17.226-31.788c-4.772-8.804-15.817-12.085-24.621-7.314l-15.518 8.409c-1.178.64-2.641.453-3.637-.461-12.001-11.015-25.858-19.283-41.188-24.576-1.341-.463-2.242-1.679-2.242-3.025v-17.615c0-10.015-8.148-18.162-18.162-18.162h-36.154c-10.014 0-18.162 8.147-18.162 18.162v17.615c0 1.346-.901 2.562-2.241 3.025-15.331 5.293-29.189 13.562-41.188 24.576-.997.915-2.459 1.1-3.638.461l-15.518-8.41c-8.805-4.771-19.849-1.488-24.621 7.316l-17.225 31.787c-2.311 4.265-2.823 9.175-1.441 13.825.563 1.896 1.427 3.646 2.525 5.222h-95.46c-4.143 0-7.502 3.358-7.502 7.502 0 4.143 3.359 7.502 7.502 7.502h237.64c.436 0 .791.355.791.791v42.447h-325.714v-42.446c0-.437.355-.791.791-.791h52.484c4.143 0 7.502-3.358 7.502-7.502 0-4.143-3.359-7.502-7.502-7.502h-52.484c-8.709 0-15.794 7.085-15.794 15.794v49.948c0 .053.007.104.008.156.002.085.008.168.013.253.014.267.042.531.084.79.01.062.017.124.028.185.061.325.141.642.242.95.013.041.03.081.044.121.097.279.21.55.338.812.026.055.051.11.079.164.15.291.316.571.502.839.03.043.064.084.095.127.171.236.356.461.553.675.029.032.051.068.081.099l134.961 141.809c1.399 1.47 2.169 3.397 2.169 5.425v76.002c0 4.577 2.475 8.82 6.457 11.072l51.878 29.35c1.967 1.113 4.118 1.669 6.267 1.668 2.204 0 4.406-.584 6.407-1.75 3.953-2.305 6.313-6.413 6.313-10.99v-36.555c0-4.143-3.359-7.502-7.502-7.502s-7.502 3.358-7.502 7.502v32.643l-47.316-26.769v-74.671c0-5.896-2.239-11.496-6.305-15.768l-122.898-129.135h305.726l-15.143 15.912c-.015.016-.03.032-.045.048l-107.713 113.178c-4.065 4.271-6.304 9.871-6.304 15.767v33.79c0 4.143 3.359 7.502 7.502 7.502s7.502-3.358 7.502-7.502v-33.79c0-2.029.77-3.955 2.169-5.424l66.857-70.25c4.322 2.116 8.773 3.983 13.304 5.547 1.341.463 2.242 1.679 2.242 3.025v17.615c0 10.015 8.148 18.162 18.162 18.162h36.154c10.014 0 18.162-8.147 18.162-18.162v-17.615c0-1.346.901-2.562 2.242-3.025 15.332-5.294 29.19-13.562 41.188-24.576.998-.914 2.459-1.098 3.638-.461l15.518 8.41c8.804 4.771 19.849 1.489 24.621-7.316l17.224-31.788c2.311-4.265 2.823-9.175 1.441-13.825-1.381-4.652-4.491-8.485-8.756-10.796zm-5.876 17.473-17.225 31.786c-.83 1.532-2.75 2.103-4.283 1.274l-15.516-8.409c-6.806-3.688-15.218-2.646-20.932 2.598-10.473 9.614-22.565 16.831-35.939 21.449-7.386 2.55-12.348 9.465-12.348 17.206v17.615c0 1.742-1.417 3.159-3.159 3.159h-36.154c-1.742 0-3.159-1.417-3.159-3.159v-17.615c0-7.741-4.962-14.655-12.349-17.207-2.456-.848-4.881-1.809-7.274-2.846l26.897-28.262c4.571.961 9.249 1.446 13.962 1.446 11.949 0 23.695-3.164 33.968-9.148 3.579-2.085 4.791-6.678 2.705-10.258s-6.678-4.788-10.259-2.706c-7.982 4.65-17.115 7.109-26.414 7.109-.348 0-.695-.011-1.043-.018l17.362-18.243c.03-.031.052-.067.081-.099.197-.214.382-.439.553-.675.031-.043.065-.084.095-.127.186-.267.352-.548.502-.839.028-.054.052-.109.079-.164.128-.263.241-.533.338-.812.014-.041.031-.08.044-.121.101-.308.182-.625.242-.95.012-.061.018-.123.028-.185.042-.259.07-.523.084-.79.005-.084.011-.168.013-.253.001-.053.008-.104.008-.156v-49.948c0-8.709-7.085-15.794-15.794-15.794h-40.281c9.773-10.043 23.314-15.931 37.688-15.931 28.978 0 52.554 23.575 52.554 52.553 0 8.256-1.857 16.154-5.52 23.476-1.853 3.705-.353 8.212 3.352 10.065 1.078.539 2.223.795 3.351.795 2.751-.001 5.4-1.52 6.715-4.147 4.715-9.424 7.105-19.58 7.105-30.188 0-37.251-30.306-67.556-67.557-67.556-23.022 0-44.383 11.746-56.777 30.934h-55.375l-14.056-7.618c-1.001-.542-1.383-1.409-1.522-1.876-.139-.469-.292-1.404.251-2.405l17.225-31.786c.83-1.532 2.752-2.102 4.283-1.274l15.516 8.409c6.807 3.689 15.219 2.647 20.932-2.598 10.474-9.614 22.566-16.831 35.94-21.449 7.386-2.549 12.348-9.465 12.348-17.206v-17.617c0-1.742 1.417-3.159 3.159-3.159h36.154c1.742 0 3.159 1.417 3.159 3.159v17.615c0 7.741 4.962 14.655 12.348 17.206 13.373 4.618 25.465 11.835 35.94 21.449 5.712 5.244 14.124 6.287 20.931 2.598l15.517-8.408c1.532-.831 3.453-.26 4.283 1.272l17.225 31.787c.543 1.001.39 1.936.251 2.405-.139.468-.522 1.334-1.523 1.877l-15.503 8.401c-6.799 3.684-10.516 11.31-9.25 18.976.915 5.539 1.379 11.212 1.379 16.862s-.464 11.323-1.38 16.863c-1.266 7.665 2.451 15.29 9.25 18.975l15.503 8.402c1.001.542 1.383 1.409 1.522 1.876.14.469.293 1.404-.25 2.405z"
+                                                fill="#000000" data-original="#000000" class=""></path>
+                                            <path
+                                                d="m23.399 75.926c4.143 0 7.502-3.358 7.502-7.502v-33.162c0-4.143-3.359-7.502-7.502-7.502s-7.502 3.358-7.502 7.502v33.162c.001 4.144 3.359 7.502 7.502 7.502z"
+                                                fill="#000000" data-original="#000000" class=""></path>
+                                            <path
+                                                d="m148.977 154.757c4.143 0 7.502-3.358 7.502-7.502v-33.163c0-4.143-3.359-7.502-7.502-7.502s-7.502 3.358-7.502 7.502v33.163c0 4.144 3.359 7.502 7.502 7.502z"
+                                                fill="#000000" data-original="#000000" class=""></path>
+                                            <path
+                                                d="m117.03 48.165c4.143 0 7.502-3.358 7.502-7.502v-33.161c0-4.143-3.359-7.502-7.502-7.502s-7.502 3.358-7.502 7.502v33.162c0 4.143 3.359 7.501 7.502 7.501z"
+                                                fill="#000000" data-original="#000000" class=""></path>
+                                            <path
+                                                d="m269.664 64.747c4.143 0 7.502-3.358 7.502-7.502v-33.162c0-4.143-3.359-7.502-7.502-7.502s-7.502 3.358-7.502 7.502v33.162c.001 4.144 3.359 7.502 7.502 7.502z"
+                                                fill="#000000" data-original="#000000" class=""></path>
+                                            <path
+                                                d="m82.593 119.291c14.073 0 25.522-11.449 25.522-25.521s-11.449-25.521-25.522-25.521c-14.072 0-25.521 11.449-25.521 25.521s11.449 25.521 25.521 25.521zm0-36.039c5.8 0 10.518 4.718 10.518 10.518s-4.718 10.518-10.518 10.518-10.518-4.718-10.518-10.518 4.719-10.518 10.518-10.518z"
+                                                fill="#000000" data-original="#000000" class=""></path>
+                                            <path
+                                                d="m198.079 99.711c14.072 0 25.521-11.449 25.521-25.521 0-14.073-11.449-25.522-25.521-25.522-14.073 0-25.522 11.449-25.522 25.522.001 14.072 11.45 25.521 25.522 25.521zm0-36.04c5.8 0 10.518 4.719 10.518 10.519s-4.718 10.518-10.518 10.518-10.518-4.718-10.518-10.518 4.718-10.519 10.518-10.519z"
+                                                fill="#000000" data-original="#000000" class=""></path>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="shop-sort-item" data-show="two"></div>
+                            <div class="shop-sort-item" data-show="three"></div>
+                            <div class="shop-sort-item active" data-show="four"></div>
+                        </div>
+                        <div class="shop-sort-by">
+                            <label for="sort-select">Sắp xếp theo</label>
+                            <select id="sort-select">
+                                <option value="">Mặc định</option>
+                                <option value="name:asc">A → Z</option>
+                                <option value="name:desc">Z → A</option>
+                                <option value="price_min:asc">Giá tăng dần</option>
+                                <option value="price_min:desc">Giá giảm dần</option>
+                                <option value="created_on:desc">Hàng mới nhất</option>
+                                <option value="created_on:asc">Hàng cũ nhất</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="main-collection-data four">
+                        <div class="product-grid">
+
+
+
+                        </div>
+                        <div class="shop-pagination filter" id="pagination">
+                            <a href="#" id="prevPage" class="pagination-button">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </a>
+                            <!-- Các số trang sẽ được tạo tự động -->
+                            <a href="#" id="nextPage" class="pagination-button">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footers2"
+        style="background-image: url(//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_background.jpg?1713464283843)">
+        <div class="container-about">
+            <div class="footers2-wrap">
+                <div class="footers2-top">
+                    <div class="footers2-top-item footers2-top-one">
+                        <a href="/" title="F1GENZ Shoes" aria-label="F1GENZ Shoes">
+                            <img title="F1GENZ Shoes"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_one_logo.png?1713464283843"
+                                alt="F1GENZ Shoes">
+                        </a>
+                        <p>F1GENZ SHOES luôn cam kết, đảm bảo đưa sản phẩm trực tiếp từ nhà sản xuất đến tay người dùng
+                            và kiểm soát được chất lượng để đáp ứng được nhu cầu ngày càng cao của khách hàng. Tất cả
+                            các sản phẩm tại F1GENZ SHOES đều có nguồn gốc xuất xứ rõ ràng, chất lượng.</p>
+                    </div>
+                    <div class="footers2-top-item footers2-top-two">
+                        <h4>Liên hệ <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <p>Tư vấn dịch vụ: <a aria-label="Liên hệ" title="Liên hệ" href="tel:18006750">1800 6750</a>
+                                <br>
+                                Hỗ trợ sử dụng: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006750">1900
+                                    6750</a> <br>
+                                Hỗ trợ vận chuyển: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006719">1900
+                                    6719</a> <br>
+                                Email: <a aria-label="Liên hệ" title="Liên hệ"
+                                    href="mailto:support@sapo.vn">support@sapo.vn</a> <br>
+                                Từ 7h00 – 22h00 các ngày từ thứ 2 đến Chủ nhật
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footers2-top-item footers2-top-three">
+                        <h4>Về chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <ul>
+                                <li><a href="/gioi-thieu" aria-label="Giới thiệu" title="Giới thiệu">Giới thiệu</a></li>
+                                <li><a href="/chinh-sach-doi-tra" aria-label="Chính sách đổi trả"
+                                        title="Chính sách đổi trả">Chính sách đổi trả</a></li>
+                                <li><a href="/chinh-sach-bao-mat" aria-label="Chính sách bảo mật"
+                                        title="Chính sách bảo mật">Chính sách bảo mật</a></li>
+                                <li><a href="/dieu-khoan-dich-vu" aria-label="Điều khoản dịch vụ"
+                                        title="Điều khoản dịch vụ">Điều khoản dịch vụ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footers2-top-item footers2-top-four">
+                        <h4>Danh mục nổi bật <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <ul>
+                                <li><a href="/chuck-2" aria-label="Chuck 2" title="Chuck 2">Chuck 2</a></li>
+                                <li><a href="/converse-all" aria-label="Converse All" title="Converse All">Converse
+                                        All</a></li>
+                                <li><a href="/socks" aria-label="Socks" title="Socks">Socks</a></li>
+                                <li><a href="/jack-purcell" aria-label="Jack Purcell" title="Jack Purcell">Jack
+                                        Purcell</a></li>
+                                <li><a href="/converse-seasonal" aria-label="Converse Seasonal"
+                                        title="Converse Seasonal">Converse Seasonal</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footers2-top-item footers2-top-five">
+                        <h4>Liên hệ với chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <p>Luôn cập nhật tất cả các hành động mà chúng tôi đã lưu cho tất cả khách hàng của mình.
+                            </p>
+                            <ul class="shop-social">
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Facebook"
+                                        title="F1GENZ Shoes - Facebook">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Facebook"
+                                            src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png"
+                                            alt="F1GENZ Shoes - Facebook">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Youtube"
+                                        title="F1GENZ Shoes - Youtube">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Youtube"
+                                            src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png"
+                                            alt="F1GENZ Shoes - Youtube">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Pinterest"
+                                        title="F1GENZ Shoes - Pinterest">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Pinterest"
+                                            src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png"
+                                            alt="F1GENZ Shoes - Youtube">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - TikTok"
+                                        title="F1GENZ Shoes - TikTok">
+                                        <img width="30" height="30" title="F1GENZ Shoes - TikTok"
+                                            src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png"
+                                            alt="F1GENZ Shoes - TikTok">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Instagram"
+                                        title="F1GENZ Shoes - Instagram">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Instagram"
+                                            src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png"
+                                            alt="F1GENZ Shoes - Instagram">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footers2-bot">
+                    <p class="text-copyright">© 2025 - Bản quyền thuộc về
+                        <a target="_blank" title="F1GENZ TECHNOLOGY CO., LTD." aria-label="F1GENZ TECHNOLOGY CO., LTD."
+                            href="https://f1genz.com/">PS4184 Dũng đẹp trai</a>
+                        <a target="_blank"
+                            href="https://www.sapo.vn/?utm_campaign=cpn:f1genz-babie-plm:footer&amp;utm_source=f1genz-babie&amp;utm_medium=referral&amp;utm_content=fm:text_link-km:-sz:&amp;utm_term=&amp;campaign=f1genz-babie"
+                            rel="nofollow">Cung cấp bởi Dungld</a>
+                    </p>
+                    <ul class="shop-payment">
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_1.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_2.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_3.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_4.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_5.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<div id="product-container"></div>
+
+</html>
+<script>
+
+    //lọc sản phẩm
+    document.getElementById("sort-select").addEventListener("change", function () {
+        const sortOption = this.value;
+        const productList = document.querySelector(".product-grid");
+        const products = Array.from(document.querySelectorAll(".product-card"));
+
+        // Sắp xếp sản phẩm dựa trên tùy chọn
+        const sortedProducts = products.sort((a, b) => {
+            const priceA = parseInt(a.getAttribute("data-price"));
+            const priceB = parseInt(b.getAttribute("data-price"));
+            const nameA = a.getAttribute("data-name").toLowerCase();
+            const nameB = b.getAttribute("data-name").toLowerCase();
+            const dateA = new Date(a.getAttribute("data-date"));
+            const dateB = new Date(b.getAttribute("data-date"));
+
+            switch (sortOption) {
+                case "price_min:asc":
+                    return priceA - priceB;
+                case "price_min:desc":
+                    return priceB - priceA;
+                case "name:asc":
+                    return nameA.localeCompare(nameB);
+                case "name:desc":
+                    return nameB.localeCompare(nameA);
+                case "created_on:asc":
+                    return dateA - dateB;
+                case "created_on:desc":
+                    return dateB - dateA;
+                default:
+                    return 0;
+            }
+        });
+
+        // Cập nhật lại danh sách sản phẩm trên giao diện
+        productList.innerHTML = "";
+        sortedProducts.forEach((product) => productList.appendChild(product));
+    });
+</script>
+<script type="module">
+    import { lay_all_san_pham, lay1sp, laysptheothuonghieu, lay_thuong_hieu, lay_gio_hang_menu, xoa_gio_hang_menu, dang_nhap } from '/js/app.js';
+    const params = new URLSearchParams(window.location.search);
+    const searchQuery = params.get('q'); // Lấy giá trị tìm kiếm từ URL
+
+
+    let products = [];
+    let filteredProducts = []; // Sản phẩm đã lọc theo tìm kiếm
+    let totalPages = 0;
+    let currentPageNumber = 1;
+    const productsPerPage = 12;
+
+    const nextPageButton = document.getElementById('nextPage');
+    const prevPageButton = document.getElementById('prevPage');
+    const pagination = document.getElementById('pagination');
+    const productGrid = document.querySelector('.product-grid');
+    const searchTitle = document.getElementById('search-title');
+
+    const loadProductsAndInitPagination = async () => {
+        try {
+            // Lấy tất cả sản phẩm
+            const productHTML = await lay_all_san_pham();
+            productGrid.innerHTML = productHTML;
+
+            products = Array.from(document.querySelectorAll('.product-card'));
+
+            // Lọc sản phẩm theo từ khóa tìm kiếm
+            if (searchQuery) {
+                searchTitle.innerText = "Kết quả tìm kiếm cho: " + searchQuery;
+
+                filteredProducts = products.filter(product => {
+                    const productName = product.getAttribute("data-name").toLowerCase();
+                    console.log(productName);
+
+                    return productName.includes(searchQuery.toLowerCase()); // Kiểm tra tên sản phẩm
+                });
+            } else {
+                filteredProducts = products; // Nếu không có tìm kiếm, hiển thị tất cả sản phẩm
+            }
+
+
+            totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            createPagination();
+            showPage(1); // Hiển thị trang đầu tiên
+            document.querySelector('.menu .subnav').innerHTML = await lay_thuong_hieu();
+            function showPage(page) {
+                filteredProducts.forEach(product => product.style.display = 'none'); // Ẩn tất cả sản phẩm
+
+                const start = (page - 1) * productsPerPage;
+                const end = start + productsPerPage;
+
+                for (let i = start; i < end && i < filteredProducts.length; i++) {
+                    filteredProducts[i].style.display = 'block'; // Hiển thị sản phẩm trong phạm vi trang
+                }
+
+                updatePagination(page);
+            }
+
+            function updatePagination(page) {
+                prevPageButton.style.display = page === 1 ? 'none' : 'block';
+                nextPageButton.style.display = page === totalPages ? 'none' : 'block';
+
+                pagination.querySelectorAll('a').forEach(link => {
+                    link.classList.toggle('current', parseInt(link.dataset.page) === page);
+                });
+            }
+
+            function createPagination() {
+                pagination.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageLink = document.createElement('a');
+                    pageLink.href = '#';
+                    pageLink.dataset.page = String(i);
+                    pageLink.textContent = String(i);
+
+                    pageLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPageNumber = i;
+                        showPage(i);
+                    });
+
+                    fragment.appendChild(pageLink);
+                }
+                pagination.appendChild(fragment);
+                updatePagination(currentPageNumber);
+            }
+
+            nextPageButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPageNumber < totalPages) {
+                    currentPageNumber++;
+                    showPage(currentPageNumber);
+                }
+            });
+
+            prevPageButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPageNumber > 1) {
+                    currentPageNumber--;
+                    showPage(currentPageNumber);
+                }
+            });
+            document.querySelector('.showmenu').innerHTML = await lay_gio_hang_menu();
+            // dang nhap menu
+            const sideLinks = document.querySelectorAll('.side-link');
+            const forms = document.querySelectorAll('.login-form');
+
+            sideLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Xóa class active cho tất cả form và link
+                    sideLinks.forEach(item => item.classList.remove('active'));
+                    forms.forEach(form => form.classList.remove('active'));
+
+                    // Kích hoạt form và link được chọn
+                    link.classList.add('active');
+                    const hienIndex = link.dataset.hien;
+                    document.querySelector(`.login-form[data-hien="${hienIndex}"]`).classList.add('active');
+                });
+            });
+            document.querySelectorAll('[data-type="shop-cart-item-remove"]').forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+                    // Xác định ID sản phẩm từ thuộc tính data-id
+                    const productId = this.getAttribute('data-id');
+
+                    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
+                        // Thực hiện xử lý xóa sản phẩm trong giỏ hàng
+                        xoa_gio_hang_menu(productId);
+                    }
+                });
+            });
+            document.querySelectorAll('[data-type="shop-quantity-plus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    input.value = quantity + 1;
+                    updateCartTotal(); // Hàm cập nhật tổng giá
+                });
+            });
+            function updateCartTotal() {
+                const cartItems = document.querySelectorAll('.shop-cart-item');
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    const price = parseFloat(item.querySelector('p').textContent.replace(/[^\d]/g, '')) || 0;
+                    const quantity = parseInt(item.querySelector('input').value) || 1;
+                    total += price * quantity;
+                });
+
+                document.querySelector('.toCheckout span:last-child').textContent = total.toLocaleString('vi-VN') + '₫';
+            }
+
+            document.querySelectorAll('[data-type="shop-quantity-minus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    if (quantity > 1) {
+                        input.value = quantity - 1;
+                        updateCartTotal(); // Hàm cập nhật tổng giá
+                    }
+                });
+            });
+            updateCartTotal();
+            document.getElementById('btn-dangnhap').addEventListener(('click'), (event) => {
+                event.preventDefault();
+                const email = document.getElementById('email1').value.trim();
+                const password = document.getElementById('password1').value.trim();
+                // if (!email || !password) {
+                //     alert('Vui lòng nhập đầy đủ email và mật khẩu.');
+                //     return;
+                // }
+                const oldUser = {
+                    email,
+                    password,
+
+                };
+                dang_nhap(oldUser);
+            });
+            
+                let toTopBtn = document.getElementById("toTopBtn");
+
+                // Hiện nút khi cuộn xuống 300px
+                window.addEventListener("scroll", function () {
+                    if (window.scrollY > 300) {
+                        toTopBtn.classList.remove("hidden");
+                        toTopBtn.style.display = "block";
+                    } else {
+                        toTopBtn.classList.add("hidden");
+                        setTimeout(() => {
+                            if (toTopBtn.classList.contains("hidden")) {
+                                toTopBtn.style.display = "none";
+                            }
+                        }, 300);
+                    }
+                });
+
+                // Cuộn lên đầu khi click
+                toTopBtn.addEventListener("click", function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+           
+        } catch (error) {
+            console.error('Lỗi khi tải sản phẩm:', error);
+            productGrid.innerHTML = '<p class="error">Không thể tải sản phẩm</p>';
+        }
+    };
+
+
+
+    window.onload = loadProductsAndInitPagination;
+
+
+</script>
+
+<style>
+     #toTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fcc419;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        /* Ẩn ban đầu */
+        transition: all .4s ease-in-out;
+        z-index: 110;
+    }
+
+    #toTopBtn:hover {
+        background-color: #2980b9;
+        transition: all .4s ease-in-out;
+    }
+
+    .hidden {
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
+    }
+</style>
+<script src="/js/js.js"></script>

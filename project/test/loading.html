@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Progress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="circular-progress" id="progress">
+      <div class="circle"></div>
+      <div class="number" id="data">0%</div>
+    </div>
+  </div>
+</body>
+
+</html>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.circular-progress {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(#a411ff 0deg, #ccc 0deg);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 82%;
+    height: 82%;
+    background: #e8e8e8;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circular-progress .number {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 99;
+}
+</style>
+<script>
+    function startProgress() {
+
+const progress = document.getElementById('progress');
+const data = document.getElementById('data');
+
+let interval = null;
+let index = 0;
+
+interval = setInterval(() => {
+  if(index >= 100) {
+    clearInterval(interval);
+  } else {
+    index++;
+    data.innerText = `${index}%`;
+    progress.style.background = `conic-gradient(
+        #a411ff ${index * 3.6}deg,
+         #ccc ${index * 3.6}deg
+    )`
+  }
+}, 100);
+}
+
+startProgress();
+</script>

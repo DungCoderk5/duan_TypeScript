@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý thương hiệu</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Quản Trị Viên</h2>
+        <ul>
+            <a href="adminthuancss.html">
+                <li>📊 Bảng Điều Khiển</li>
+            </a>
+            <a href="admin_nguoi_dung.html">
+                <li >👤 Quản Lý Người Dùng</li>
+            </a>
+            <a href="admin_thuong_hieu.html">
+                <li class="active">🏷️ Quản Lý Thương Hiệu</li>
+            </a>
+            <a href="admin_san_pham.html">
+                <li>📦 Quản Lý Sản Phẩm</li>
+            </a>
+            <a href="">
+                <li>🛒 Quản Lý Đơn Hàng</li>
+            </a>
+            <a href="">
+                <li>🎟️ Quản Lý Voucher</li>
+            </a>
+        </ul>
+    </div>
+    <div class="main-content">
+
+        <!-- Tìm kiếm người dùng -->
+        <div class="search-bar">
+            <input type="text" id="searchUser" placeholder="Tìm kiếm thương hiệu...">
+        </div>
+        <a href="./them/admin_themBrand.html"><button>Thêm thương hiệu</button></a>
+        <!-- Bảng danh sách người dùng -->
+         <div class="table-container">
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Quốc gia</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="brandTableBody">
+                <!-- Dữ liệu người dùng sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+    </div>
+        <!-- Phân trang -->
+        <div id="pagination" class="pagination">
+            <!-- Các nút phân trang sẽ được tạo tự động bằng JavaScript -->
+        </div>
+
+    </div>
+</body>
+<script type="module" >
+ import { danh_sach_thuong_hieu, xoa_thuong_hieu, form_sua_thuong_hieu } from '/js/admin_them.js';
+    const params = new URLSearchParams(location.search);
+    let id = params.get('id');
+    document.addEventListener('click', function (event) {
+    // Kiểm tra xem có bấm vào nút "Sửa" không
+    if (event.target.classList.contains('btn-sua')) {
+        const id = event.target.dataset.id;
+        if (id) {
+            window.location.href = `./sua/admin_thuong_hieu.html?id=${id}`;
+        }
+    }
+
+});
+
+    await danh_sach_thuong_hieu();
+    // Lấy currentId từ localStorage và giảm đi sau khi xóa
+    let currentId = parseInt(localStorage.getItem('currentId'));
+
+    document.querySelectorAll('.btn-xoa').forEach(btn => {
+        btn.addEventListener('click', function () {
+            xoa_thuong_hieu(this);  // Gọi hàm xóa thương hiệu
+
+            // Giảm currentId và lưu lại vào localStorage sau khi xóa
+            currentId--;
+            localStorage.setItem('currentId', currentId.toString());  // Lưu giá trị mới của currentId
+        });
+    });
+
+    
+</script>
+</html>

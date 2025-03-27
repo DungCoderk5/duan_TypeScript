@@ -1,0 +1,473 @@
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.breadcrumb {
+
+    display: flex;
+
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+}
+
+.main-collection-breadcrumb {
+    padding: 100px 0;
+    margin-bottom: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: left;
+
+}
+
+.main-collection .main-collection-breadcrumb ol {
+    justify-content: flex-start;
+}
+
+.breadcrumb-wrap ol {
+    padding: 0;
+    background: transparent;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    display: flex;
+}
+
+.breadcrumb-item a {
+    color: #333333 !important;
+
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #6c757d;
+    content: "/";
+}
+
+.main-collection .main-collection-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left {
+    width: 20%;
+    padding-right: 25px;
+    position: sticky;
+    top: 10px;
+}
+
+.head-for-mobile {
+    display: none;
+}
+
+.main-collection .main-collection-wrap .shop-filter-choose {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.main-collection .main-collection-wrap .shop-filter-choose label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.main-collection .main-collection-wrap .shop-filter-choose label button {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0;
+    font-size: .85rem;
+    color: #aaa;
+    font-weight: normal;
+}
+
+.main-collection .main-collection-wrap .shop-filter-choose ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter:not(:last-child) {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter h4 {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list .shop-filter-item {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list .shop-filter-item input {
+    margin: 0;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list .shop-filter-item label {
+    padding-left: 15px;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list .shop-filter-item {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list .shop-filter-item.color {
+    width: calc(100% / 5);
+    float: left;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list .shop-filter-item.color input {
+    display: none;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-left .shop-filter-wrap .shop-filter .shop-filter-list .shop-filter-item.color label {
+    width: 30px;
+    height: 30px;
+    border-radius: 2.5px;
+    font-size: 0;
+    border: 1px solid #DbDbDb;
+    margin-left: 0;
+    position: relative;
+}
+
+.main-collection .main-collection-wrap.vertical .main-collection-right {
+    width: 80%;
+}
+
+.main-collection .main-collection-wrap .main-collection-head {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-style {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-style strong {
+    margin: 0;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1rem;
+    display: none;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-style .shop-filter-mobile-btn {
+    display: none;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-style .shop-filter-mobile-btn button {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0;
+    width: 25px;
+    height: 30px;
+    border: 1px solid #DbDbDb;
+    margin-right: 5px;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-style .shop-sort-item[data-show][data-show="two"] {
+    width: 38px;
+    display: none;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-style .shop-sort-item[data-show][data-show="three"] {
+    width: 50px;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-style .shop-sort-item[data-show][data-show="four"] {
+    width: 62px;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-by label {
+    margin: 0;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.main-collection .main-collection-wrap .main-collection-head .shop-sort-by select {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0;
+    padding: 0 20px 0 10px;
+    border: 1px solid #DbDbDb;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+}
+
+.product-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    position: relative;
+    cursor:pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff5252;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 20px;
+    color: #ff5252;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.wishlist-btn:hover {
+    background: #ff5252;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+h3 {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #333;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align:center;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.new-price {
+    color: #ff5252;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tags span {
+    background-color: #e0f7fa;
+    color: #00796b;
+    padding: 5px 12px;
+    /* border-radius: 20px; */
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tags .new {
+    color: red;
+    background-color: #FFEBEB;
+}
+
+.tags .freeship {
+    background-color: #EBF0FF;
+    color: blue;
+}
+
+.main-collection .main-collection-wrap .main-collection-data .shop-pagination {
+    width: 100%;
+    text-align: center;
+    margin: 12px auto;
+ 
+}
+
+.shop-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Giữa các nút */
+    position:relative;
+}
+#prevPage{
+    position:absolute;
+    left:650px;
+    bottom:10px;
+
+}
+#nextPage{
+    position:absolute;
+    right:400px;
+    bottom:10px;
+}
+.pagination-button {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Khoảng cách giữa icon và chữ */
+}
+
+.pagination-button:hover {
+    background-color: #ddd;
+}
+
+.shop-pagination a.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.shop-pagination .current {
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
+.shop-pagination .current {
+    color: #FFF;
+    background: #333;
+    border: 1px solid #333;
+}
+
+.shop-pagination>a,
+.shop-pagination>span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+
+    border-radius: 10px;
+    border: 1px solid #F9F9F9;
+    background: #f9f9f9;
+    font-size: .9rem;
+}
+
+.shop-pagination *:last-child {
+    margin: 0;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm người thương hiệu</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Quản Trị Viên</h2>
+        <ul>
+            <a href="../adminthuancss.html">
+                <li>📊 Bảng Điều Khiển</li>
+            </a>
+            <a href="../admin_nguoi_dung.html">
+                <li class="active">👤 Quản Lý Người Dùng</li>
+            </a>
+            <a href="../admin_thuong_hieu.html">
+                <li>🏷️ Quản Lý Thương Hiệu</li>
+            </a>
+            <a href="../admin_san_pham.html">
+                <li>📦 Quản Lý Sản Phẩm</li>
+            </a>
+            <a href="">
+                <li>🛒 Quản Lý Đơn Hàng</li>
+            </a>
+            <a href="">
+                <li>🎟️ Quản Lý Voucher</li>
+            </a>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>Thêm thương hiệu mới</h2>
+        <form id="addBrandForm" action="/thuong_hieu" method="POST">
+            <div class="form-group">
+                <label for="name">Tên thương hiệu:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Quốc gia:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+
+            <button type="submit">Thêm thương hiệu</button>
+        </form>
+    </div>
+</body>
+<script type="module">
+    import { them_thuong_hieu } from '/js/admin_them.js';
+    // Lấy giá trị id từ localStorage hoặc khởi tạo giá trị mặc định nếu chưa có
+    let currentId1 = localStorage.getItem('currentId') || "4"; // Lấy từ localStorage, mặc định là "4"
+
+    document.getElementById('addBrandForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    // Lấy ID hiện tại từ localStorage, nếu không có thì mặc định là 3
+    let currentId1 = localStorage.getItem('currentId');
+    if (!currentId1 || isNaN(parseInt(currentId1, 10))) {
+        currentId1 = "3"; // Nếu giá trị bị null hoặc không hợp lệ, đặt lại thành "3"
+    }
+
+    // Chuyển thành số, tăng lên, rồi ép về string
+    let newId = (parseInt(currentId1, 10) + 1).toString();
+
+    const userData = {
+        id: newId, // Cập nhật ID mới
+        ten: name,
+        quocgia: email,
+    };
+
+    // Lưu ID mới vào localStorage
+    localStorage.setItem('currentId', newId);
+
+    // Gọi hàm thêm thương hiệu
+    them_thuong_hieu(userData);
+});
+
+
+</script>
+
+</html>

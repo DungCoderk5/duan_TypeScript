@@ -1,0 +1,73 @@
+<div class="swiper-slider">
+    <div class="icon-heart">
+        <a href="#"><i class="fa fa-heart"></i></a>
+        <a href="" class="hidden show"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="" class="hidden show"><i class="fa-solid fa-magnifying-glass"></i></a>
+    </div>
+    <div class="image-container">
+        <img class="product-image" src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380" alt="">
+    </div>
+    <div class="content-hotsale">
+        <img src="https://file.hstatic.net/200000306687/file/imager_8176_d244203aa9cf4dfbb410e1377abdac72_compact.jpg" alt="">
+        <p>Còn lại 117 sản phẩm</p>
+    </div>
+    <span class="project-sale"></span>
+    <p>Chuck Taylor All Star Classic - 121184</p>
+    <span class="price-hot">4.399.000đ</span>
+    <div class="info-hot">
+        <span>Freeship</span>
+        <span>new</span>
+        <div class="rate-staring">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+    </div>
+</div>
+
+<style>
+   /* Bao bọc hình ảnh trong một div để dễ dàng áp dụng hover */
+.swiper-slider .image-container {
+    position: relative;
+    overflow: hidden; /* Ẩn các phần ảnh khi thay đổi */
+}
+
+.swiper-slider .product-image {
+    width: 50%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Giữ hiệu ứng chuyển tiếp nhẹ */
+}
+
+/* Thay đổi hình ảnh khi hover vào .image-container */
+.swiper-slider .image-container:hover .product-image {
+    opacity: 0; /* Ẩn hình ảnh gốc */
+}
+
+/* Thêm hình ảnh mới khi hover vào .image-container */
+.swiper-slider .image-container:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('//bizweb.dktcdn.net/thumb/large/100/493/370/products/136823c-2-650x650-a1096454688d47c693bad810d9321f85-jpeg.jpg?v=1699864035783');
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 0.5s ease-out forwards; /* Áp dụng animation fade-in */
+}
+
+/* Animation fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+</style>

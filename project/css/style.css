@@ -1,0 +1,1831 @@
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    text-decoration:none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+   
+
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+  //button to top
+  
+
+    .overlay3 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+
+    .overlay3.open {
+        opacity: 1;
+        visibility: visible;
+    }
+  .overlay1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+/* Overlay khi mở */
+.overlay1.active {
+    opacity: 1;
+    visibility: visible;
+}
+/* Header */
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 30px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 97;
+    transition: transform 0.4s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    /* position: fixed; */
+}
+
+iframe{
+    max-width:100%;
+}
+/* Logo */
+header img {
+    height: 20%;
+    width: 10%;
+    margin-left: 10px;
+}
+
+
+/* Menu */
+nav .menu {
+    display: flex;
+    list-style: none;
+}
+
+nav .menu li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav .menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav .menu li a:hover {
+    color: #ff6f00;
+}
+
+/* subnav */
+.subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    opacity: 0;
+    transform: translateY(-20px);
+    border-radius: 8px;
+    z-index: 2;
+    /* margin-top: 20px; */
+}
+
+.subnav.fadein {
+    animation: fadeInDown 0.5s ease-out forwards;
+
+}
+
+/* Tạo animation fadeInDown */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.subnav.hover {
+    animation: fadeOutUp 0.5s ease-out forwards;
+
+}
+
+.hien {
+    display: block;
+}
+
+.subnav li {
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiển thị subnav khi hover và trigger animation */
+.menu>li:hover .subnav {
+    display: block;
+}
+
+
+
+/* Thay đổi nền của các mục subnav khi hover */
+.subnav li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Search */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+}
+.header-right>i{
+    position: absolute;left: auto;right: 200px;
+} 
+
+.header-right input::placeholder {
+    color: #aaa;
+}
+
+/* Right icons (giỏ hàng, yêu thích) */
+.header-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.header-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+}
+
+.header-icons a:hover {
+    color: #ff6f00;
+}
+
+.header-icons a .icon-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: #ff6f00;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Social icons */
+.social-icons {
+    position: fixed;
+    right: 10px;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons a {
+    margin-bottom: 10px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #ff6f00;
+}
+
+#animated-placeholder {
+    position: relative;
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#animated-placeholder::placeholder {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    /* Hiệu ứng gradient */
+    -webkit-background-clip: text;
+    /* Cắt gradient theo chữ */
+    -webkit-text-fill-color: transparent;
+    /* Làm chữ trong suốt */
+    font-weight: bold;
+}
+
+@keyframes slide-placeholder {
+    0% {
+        text-indent: 0px;
+        opacity: 0;
+    }
+
+    25% {
+        text-indent: 20px;
+        opacity: 1;
+    }
+
+    75% {
+        text-indent: 20px;
+        opacity: 1;
+    }
+
+    100% {
+        text-indent: 0px;
+        opacity: 0;
+    }
+}
+
+/* Styling for the slider container */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    /* Hide content outside the container */
+    position: relative;
+}
+
+/* Slider track for the images */
+.slider {
+    display: flex;
+    /* Align images in a row */
+    transition: transform 1s ease;
+    /* Smooth transition */
+    width: 100%;
+    /* Total width = number of images * 100% */
+}
+
+/* Images styling */
+.slider img {
+    width: 100%;
+    flex-shrink: 0;
+    /* Prevent shrinking of images */
+}
+
+/* Styling for the dots */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    /* Adjust position below the slider */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    /* Space between dots */
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    /* Make the dots circular */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgba(255, 255, 255, 1);
+    /* Highlight active dot */
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Slightly brighter on hover */
+}
+
+.banner-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 50px 83px 0 83px;
+    gap: 50px;
+    margin-bottom: 20px;
+
+}
+
+.banner-item .item-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.banner-item .item-container span {
+    background: #e3e3e3;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    border: 3px solid transparent;
+    position: relative;
+    background-clip: padding-box;
+    width: 100px;
+    height: 100px;
+
+}
+
+.banner-item .item-container span img {
+    width: 80%;
+    position: relative;
+    height: auto;
+
+}
+
+.banner-item .item-container h3 {
+    margin-top: 10px;
+}
+
+.banner-item .item-container p {
+    font-size: 13px;
+    color: #7a7979;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+/* coutdown */
+.countdown-container {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    z-index: 1;
+    margin-top: -80px;
+
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: white;
+}
+
+.countdown {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.countdown-box {
+    background: #fff;
+    color: #333;
+    padding: 4px 10px;
+    border-radius: 8px;
+    width: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-box span {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+.countdown-box p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.product-sale {
+    background-color: #ff6f00;
+    border-radius: 12px;
+    width: 90%;
+    height: 800px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.img-hot {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info-hot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.info-hot span {
+    font-size: 12px;
+    color: red;
+    padding: 5px;
+    background-color: #FFEBEB;
+}
+
+.info-hot span:first-child {
+    background-color: #EBF0FF;
+    color: blue;
+}
+
+
+.swiper-pagination {
+    margin-top: 20px !important;
+}
+
+.product-sale .img-hot img {
+
+    margin-top: 20px;
+    width: 80%;
+}
+
+
+
+.product-sale-item img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.swiper-wrapper {
+    margin-top: 50px !important;
+}
+
+.swiper-slide,
+.swiper-slider,
+.swiper-slider1 {
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+
+    height: 500px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide:hover,
+.swiper-slider:hover,
+.swiper-slider1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-slide img,
+.swiper-slider img,
+.swiper-slider1 img  {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.swiper-slider {
+    margin: 0 10px;
+    /* Khoảng cách trái phải */
+    box-sizing: border-box;
+}
+
+.icon-heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* background: rgba(255, 255, 255, 0.8); */
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-heart a {
+    color: #ff0000;
+    font-size: 18px;
+}
+
+.content-hotsale {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.content-hotsale img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.content-hotsale p {
+    font-size: 14px;
+    color: #555;
+}
+
+.price-sale p {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+}
+
+.project-sale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff6a00;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.price-hot {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #333;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+.info-hot {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.info-hot span {
+    font-size: 12px;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.rate-staring {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rate-staring i {
+    color: #ffcc00;
+    font-size: 14px;
+}
+
+
+.product-sale-item .product-hotsale .icon-heart {
+    position: absolute;
+    left: auto;
+    right: 0;
+    margin: 15px;
+}
+
+.product-sale-item .product-hotsale .price-sale {
+    position: absolute;
+    margin: 15px;
+    background-color: red;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+
+
+}
+
+
+.product-sale-item .product-hotsale .content-hotsale {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 5px;
+}
+
+.product-sale-item .product-hotsale .content-hotsale p {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-sale-item .product-hotsale .content-hotsale img {
+    width: 20%;
+    float: right;
+
+}
+
+/* coupon */
+.home-coupon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 50px auto;
+
+    width: 96%;
+
+
+}
+
+.home-coupon .home-coupon-item {
+    width: calc(96% / 4 - 20px);
+    position: relative;
+}
+
+.home-coupon .home-coupon-item::after {
+    content: "";
+    background: url('./img/pngegg.png');
+    position: absolute;
+    left: -30px;
+    top: 6px !important;
+    width: 65px;
+    height: 63px;
+    background-size: cover;
+}
+
+.home-coupon .home-coupon-item img {
+    max-width: 94%;
+    height: auto;
+    vertical-align: middle;
+    width: 100%;
+    margin: 0 auto;
+    border-style: none;
+}
+
+.home-coupon .home-coupon-item .home-coupon-content {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    width: 70%;
+}
+
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-head h3 {
+    font-size: 12px;
+    color: #F30;
+    font-weight: bold;
+    margin-bottom: 3px;
+    margin-left: 30px;
+    min-height: 15px;
+    padding-top: 0px;
+}
+
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-head p {
+
+    font-size: 12px;
+    line-height: 1.2;
+    color: #727272;
+    padding-bottom: 7px;
+    margin-top: 7px;
+    margin-bottom: 0;
+}
+
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-foot button .home-coupon-content-info {
+    display: none;
+}
+
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-foot button:first-child {
+    font-size: 12px;
+    text-decoration: underline;
+    color: #2E72D2;
+    cursor: pointer;
+
+}
+
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-foot button:last-child {
+    background: #fcc419;
+    border: 1px solid #fcc419;
+    border-radius: 4px;
+    padding: 0 5px;
+    margin: 0 10px;
+}
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-foot button:last-child:hover {
+    background: #fff;
+    border: 1px solid #fcc419;
+    color:#fcc419;
+    transition: all .5s ease-out;
+}
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-foot button:last-child.hieung:hover {
+    background-color: #fcc419;
+    color:#000;
+    cursor: default;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.home-coupon .home-coupon-item .home-coupon-content .home-coupon-content-foot button {
+    background: none;
+    outline: 0;
+    box-shadow: none;
+    border: none;
+    font-size: 12px;
+    padding: 0;
+}
+
+/* home-about */
+.container-about {
+    max-width: 1370px;
+    margin: 0 78px;
+}
+
+.home-about {
+    margin: 90px 0;
+}
+
+.home-about .home-about-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.home-about .home-about-top>span {
+    display: block;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); */
+    position: relative;
+}
+
+.home-about .home-about-top>span {
+    position: relative;
+}
+
+.home-about .home-about-top>span:after {
+    content: "";
+    display: inline-block;
+    width: 150%;
+    height: 80%;
+    position: absolute;
+    right: 30%;
+    top: -75%;
+    /* Vị trí bắt đầu */
+    background: rgba(255, 255, 255, 0.25);
+    transform: skewY(-50deg);
+    transition: all 0.8s ease 0s;
+}
+
+.home-about .home-about-bottom span {
+    display: block;
+    width: calc(50% + 100px);
+    margin-left: auto;
+    margin-top: -75px;
+    position: relative !important;
+    z-index: 1;
+    overflow: hidden;
+    border-radius:10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+}
+
+.home-about .home-about-bottom span::after,
+.home-banner .home-banner-wrap .home-banner-wrap-right span::after {
+    content: "";
+    display: inline-block;
+    width: 150%;
+    height: 80%;
+    position: absolute;
+    right: 30%;
+    top: -75%;
+    background: rgba(255, 255, 255, 0.25);
+    transform: skewY(-50deg);
+    transition: all 0.8s ease 0s;
+}
+
+.home-about .home-about-top>span.slide-down::after,
+.home-about .home-about-bottom>span.slide-down::after,
+.home-banner .home-banner-wrap .home-banner-wrap-right>span.slide-down::after {
+    animation: slideDown 0.8s ease-in-out forwards;
+}
+
+.home-about .home-about-top>span.slide-up::after,
+.home-about .home-about-bottom>span.slide-up::after,
+.home-banner .home-banner-wrap .home-banner-wrap-right>span.slide-up::after {
+    animation: slideTop 0.5s ease-in-out forwards;
+}
+
+/* Định nghĩa chuyển động */
+@keyframes slideDown {
+    0% {
+        top: -75%;
+
+        left: -75%;
+
+    }
+
+    50% {
+        top: 50%;
+
+        left: 50%;
+
+    }
+
+    100% {
+        top: 100%;
+
+        left: 100%;
+
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        top: 200%;
+
+        left: 200%;
+
+    }
+
+    50% {
+        top: 50%;
+
+        left: 50%;
+
+    }
+
+    100% {
+        top: -75%;
+
+        left: -75%;
+
+    }
+}
+
+
+
+.home-about .home-about-top span img,
+.home-about .home-about-bottom span img {
+    max-width: 100%;
+    height: auto;
+}
+
+.home-about .home-about-top .section-title-all {
+    width: 50%;
+    align-content: center;
+    padding-left: 50px;
+    padding-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.home-about .home-about-top .section-title-all p {
+    color: #AAA;
+}
+
+.home-about .home-about-top .section-title-all h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    border: 2px dashed #fcc419;
+}
+
+.home-about .home-about-top .section-title-all h2::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    display: block;
+    height: 16px;
+    width: 140px;
+    background: #fcc419;
+    z-index: -1;
+    transform: skew(-15deg);
+}
+
+.section-title-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.section-title-all h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title-all h2:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    display: block;
+    height: 16px;
+    width: 140px;
+    background: #fcc419;
+    z-index: -1;
+    transform: skew(-15deg);
+}
+
+.section-title-all a {
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    transition: all .5s;
+    color: black;
+    text-decoration: none;
+}
+
+.section-title-all a:hover {
+    color: #fcc419;
+    /* font-weight: none; */
+    font-size: 17px;
+
+}
+
+/* button slider */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: absolute;
+
+    background-color: #f5f5f5;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.slick-prev,
+.slick-next {
+    font-size: 24px;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Màu nền trong suốt */
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 10;
+    /* Đảm bảo nút hiển thị trên ảnh */
+    transition: all 0.3s ease;
+    content: '';
+}
+
+.slick-prev::before,
+.slick-next::before {
+    color: #841c1c;
+    /* content: '←';         */
+}
+
+.slick-prev {
+    left: 10px;
+    top: 250px;
+    /* top: -12px; */
+}
+
+.slick-next {
+    right: 10px;
+    top: 250px;
+
+}
+
+.home-product-slider,
+.home-product {
+    padding-top: 12px;
+    background: #f4f4f4;
+
+}
+
+.home-product {
+    margin-top: 50px;
+}
+
+/* Tùy chỉnh Slick Dots */
+.slick-dots {
+    text-align: center;
+    /* margin-top: 20px; */
+    position: relative !important;
+    /* Khoảng cách từ slider đến dots */
+    /* background: #f4f4f4; */
+
+}
+
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 2.5px;
+    /* background: #f4f4f4; */
+
+}
+
+.slick-dots li button {
+    font-size: 0;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 20px;
+    height: 5px;
+    transform: scale(0.75);
+    border-radius: 0;
+}
+
+
+.slick-dots li button::before {
+    background-color: #2E72D2;
+    height: 10px;
+    content: '';
+}
+
+.home-product-slider-wrap-body {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.slider-container {
+    display: flex;
+    /* flex-wrap: wrap; Để dòng mới bắt đầu khi hết chiều rộng */
+    gap: 10px; /* Khoảng cách giữa các sản phẩm */
+    justify-content: center; /* Căn giữa sản phẩm trong khung */
+    overflow:hidden;
+    width:100%;
+    position:relative;
+    height:524px;
+    transition: transform 0.3s ease-in-out;
+}
+.swiper-slider1 {
+    flex: 0 0 calc(25% - 10px); /* Chiếm 25% chiều rộng, trừ khoảng cách */
+    box-sizing: border-box;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 25%;
+    animation: slideAnimation 12s infinite;
+    transition: transform 0.3s ease;
+}
+/* .arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+} */
+@keyframes slideAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-150%);
+    }
+    75% {
+      transform: translateX(-155%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+/* .swiper-slider:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+
+
+.swiper-slider img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.icon-heart {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+.swiper-slider .icon-heart a:nth-child(1),
+.swiper-slider1 .icon-heart a:nth-child(1){
+    opacity:1;
+    display:block;
+}
+.swiper-slider .icon-heart a:nth-child(2).show ,
+.swiper-slider .icon-heart a:nth-child(3).show ,
+.swiper-slider1 .icon-heart a:nth-child(2).show ,
+.swiper-slider1 .icon-heart a:nth-child(3).show {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+}
+.hien{
+    display:flex !important;
+}
+
+.swiper-slider,
+.swiper-slider1 {
+    position: relative;
+}
+
+.swiper-slider .product-img,
+.swiper-slider1 .product-img {
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.swiper-slider:hover .product-img,
+.swiper-slider1:hover .product-img {
+    opacity: 0.5;
+}
+
+/* .swiper-slider:hover::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    right: 0;
+
+    width: 257px;
+    height: 257px;
+    background-image: url('//bizweb.dktcdn.net/thumb/large/100/493/370/products/136823c-2-650x650-a1096454688d47c693bad810d9321f85-jpeg.jpg?v=1699864035783');
+    background-size: cover;
+    background-position: center;
+    animation: fadeInDown 0.5s ease-out forwards;
+
+} */
+
+
+.swiper-slider:hover .icon-heart a:nth-child(2),.swiper-slider:hover .icon-heart a:nth-child(3),.swiper-slider:hover .icon-heart a:nth-child(1),
+.swiper-slider1:hover .icon-heart a:nth-child(2),.swiper-slider1:hover .icon-heart a:nth-child(3),.swiper-slider1:hover .icon-heart a:nth-child(1) 
+    {
+    opacity: 1;
+    z-index: 2;
+
+
+}
+.swiper-slider:hover .price-sale,
+.swiper-slider1:hover .price-sale{
+    display:none;
+    transition: all 0.5s ease-in-out !important;
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    box-shadow: 0px 0px 30px 0px rgba(40, 40, 40, 0.12);
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item a:first-child {
+    margin-bottom: 20px;
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item a {
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item a span {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 5px 10px;
+    left: 25px;
+    color: #FFF;
+    font-size: 1.25rem;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .75s .5s;
+    transform: translateX(-100px);
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item a:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    clip-path: circle(0 at 50% 50%);
+    background: rgba(232, 159, 72, 0.5);
+    width: 100%;
+    height: 100%;
+    transition: clip-path 1s;
+    filter: brightness(0.75);
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item img {
+    transition: all .75s .5s;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item {
+    width: calc(100% / 3.2);
+    margin: 10px;
+    display: block;
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item a:hover span {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item a:hover:after {
+    clip-path: circle(150% at 50% 50%);
+    filter: brightness(1);
+}
+
+.home-gallery .home-gallery-wrap .home-gallery-wrap-body .home-gallery-wrap-body-item a:hover img {
+    transform: scale(1.1);
+}
+
+.slider-content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.slider-content,
+.slider-content1,
+.slider-content2 {
+    display: none;
+}
+
+.slider-content.active,
+.slider-content1.active,
+.slider-content2.active {
+    display: block;
+}
+
+
+.slider-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.slider-content p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.shop-now {
+    background-color: #f9d835;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now:hover {
+    background-color: #f1c40f;
+}
+
+.home-product .home-product-wrap .home-product-wrap-body {
+    padding: 20px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.home-banner {
+    margin: 50px 0;
+}
+
+.home-banner .home-banner-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-left {
+    width: 50%;
+    text-align: center;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-left h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    color: #000;
+    text-align: center;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-left h2:before {
+    bottom: -1px;
+    left: 30.25%;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-left h2:after {
+    bottom: 0;
+    left: 30%;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-left h2:after,
+.home-banner .home-banner-wrap .home-banner-wrap-left h2:before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    border-bottom: 1px dashed #000;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-left p {
+    font-size: 2rem;
+    font-weight: 600;
+    max-width: 60%;
+    margin: 0 auto 20px;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-left a {
+    display: inline-block;
+    background: #fcc419;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all .5s;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-right {
+    width: 50%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-right span img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.home-banner .home-banner-wrap .home-banner-wrap-right span {
+    display: block;
+    /* width: 50%; */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* blog */
+
+/* Card chính */
+.card {
+    position: relative;
+    overflow: hidden;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    /* Viền bo tròn */
+    background-color: #fff;
+    margin: 0 10px;
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    /* height: 250px; */
+}
+
+.card-image img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    /* Viền bo tròn ảnh */
+    height: 300px;
+}
+
+.card-image .overlay {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(232, 159, 72, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+}
+
+.card:hover .overlay {
+    top: 0;
+}
+
+.card-image .overlay i {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Nội dung đè lên hình ảnh */
+.card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 4;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.card-content p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+.home-insta .home-insta-top i {
+    font-size: 3rem;
+    color: #b3b3b3;
+}
+
+.home-insta .home-insta-top span {
+    margin: 0 0 5px;
+    display: block;
+    color: var(--color_main);
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+.home-insta .home-insta-top h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    transform: translateY(35px);
+    color: black;
+    text-align: center;
+}
+
+.home-insta .home-insta-top {
+    padding: 100px 0 50px;
+    background-image: url('data:image/png;base64,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');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 140vw 100%;
+    text-align: center;
+}
+
+/* Điều chỉnh lại tên lớp cho đúng */
+.home-insta .home-insta-mid-wrap .img-instar .insta-img {
+    position: relative;
+    width: 100%;
+    margin: 0 10px;
+    overflow: hidden;
+    /* Đảm bảo phần tử con không tràn ra ngoài */
+}
+
+/* Hình ảnh chiếm toàn bộ không gian */
+.home-insta .home-insta-mid-wrap .img-instar .insta-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+    border-radius: 20px;
+    /* Thêm hiệu ứng mượt mà cho hình ảnh */
+}
+
+/* Lớp phủ */
+.home-insta .home-insta-mid-wrap .img-instar .insta-img .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 20px;
+
+    /* Mượt mà hơn cho lớp phủ */
+}
+
+/* Khi hover vào ảnh, lớp phủ hiện lên */
+.home-insta .home-insta-mid-wrap .img-instar .insta-img:hover .hover-overlay {
+    opacity: 1;
+    cursor: pointer;
+    
+}
+
+/* Biểu tượng mắt */
+.home-insta .home-insta-mid-wrap .img-instar .insta-img .hover-overlay i {
+    font-size: 1rem;
+    color: white;
+    transition: transform 0.4s ease;
+    /* Mượt mà hơn khi phóng to */
+}
+
+/* Biểu tượng mắt phóng to khi hover */
+.home-insta .home-insta-mid-wrap .img-instar .insta-img:hover .hover-overlay i {
+    transform: scale(1.2);
+}
+
+/* Hiệu ứng khi hover vào hình ảnh */
+.home-insta .home-insta-mid-wrap .img-instar .insta-img:hover img {
+    transform: scale(1.1);
+    /* Phóng to hình ảnh */
+    filter: blur(2px);
+    border-radius: 20px;
+
+    /* Làm mờ ảnh */
+    transition: transform 0.4s ease, filter 0.4s ease;
+    /* Mượt mà hơn */
+}
+
+/* footer */
+footer.footers2 {
+    margin-top: 30px;
+    background-size: cover;
+    background-position: 100% 100%;
+    color: #333;
+    /* Màu văn bản */
+}
+
+footer.footers2 .footers2-wrap {
+    padding-top: 5rem;
+}
+
+footer.footers2 .footers2-wrap .footers2-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 1px solid #ededed;
+    padding-bottom: 5rem;
+}
+
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-one,
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-two,
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-three,
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-four,
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-five {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 1;
+    /* Mỗi phần tử chiếm không gian bằng nhau */
+}
+
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-one a {
+    display: block;
+    margin-bottom: 15px;
+    max-width: 50%;
+}
+
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-one a img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer.footers2 .footers2-wrap .footers2-top a {
+    color: #333;
+    text-decoration: none;
+}
+
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-one p {
+    max-width: 85%;
+    opacity: 0.8;
+    line-height: 1.7rem;
+    margin: 0;
+}
+
+footer.footers2 .footers2-wrap .footers2-top h4 {
+    font-weight: bold;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer.footers2 .footers2-wrap .footers2-top h4 i {
+    opacity: .8;
+    font-size: .9rem;
+    display: none;
+    transition: all 0.2s;
+}
+
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-two p {
+    opacity: 0.8;
+    line-height: 1.7rem;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.shop-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.shop-social li a img {
+    max-height: 30px;
+}
+
+footer.footers2 .footers2-wrap .footers2-bot {
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer.footers2 .footers2-wrap .footers2-bot p {
+    margin: 0;
+}
+
+footer.footers2 .footers2-wrap .footers2-bot p a {
+    color: #f9d835;
+    /* Màu vàng cho liên kết */
+}
+
+.shop-payment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.shop-payment li.shop-payment-item a {
+    display: block;
+}
+
+.shop-payment li.shop-payment-item a img {
+    max-height: 24px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Điều chỉnh hình ảnh trong footers2-top-item */
+footer.footers2 .footers2-wrap .footers2-top .footers2-top-item img {
+    height: auto;
+    /* margin-right: 10px; */
+}
+/* product */
+del{
+    text-decoration: line-through !important;
+}

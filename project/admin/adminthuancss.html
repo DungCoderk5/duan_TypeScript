@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Điều Khiển Quản Trị</title>
+   <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Quản Trị Viên</h2>
+        <ul>
+            <a href="adminthuancss.html"><li class="active">📊 Bảng Điều Khiển</li></a>
+            <a href="admin_nguoi_dung.html"><li>👤 Quản Lý Người Dùng</li></a>
+            <a href="admin_thuong_hieu.html"><li>🏷️ Quản Lý Thương Hiệu</li></a>
+            <a href="admin_san_pham.html"><li>📦 Quản Lý Sản Phẩm</li></a>
+            <a href=""><li>🛒 Quản Lý Đơn Hàng</li></a>
+            <a href=""><li>🎟️ Quản Lý Voucher</li></a>
+            <a href="/index.html"><li>🎟️ Quay về trang web</li></a>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="charts-container">
+            <div class="chart-container">
+                <h3>📈 Biểu Đồ Doanh Thu</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>📊 Biểu Đồ Đơn Hàng</h3>
+                <canvas id="ordersChart"></canvas>
+            </div>
+        </div>
+        <div class="tables-container">
+            <div class="table-container">
+                <h3>👥 Danh Sách Người Dùng</h3>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+
+                    </tr>
+                    <tbody id="showuser">
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+        <div class="table-container">
+            <h3>📦 Danh Sách Sản Phẩm</h3>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Ảnh</th>
+                    <th>Số lượng còn lại</th>
+                    <th>Độ hot</th>
+
+                </tr>
+                <tbody id="showsp"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx1 = document.getElementById('salesChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
+                datasets: [{
+                    label: 'Doanh Thu',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                }]
+            }
+        });
+
+        var ctx2 = document.getElementById('ordersChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
+                datasets: [{
+                    label: 'Số Đơn Hàng',
+                    data: [10, 15, 8, 12, 5, 7],
+                    backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                }]
+            }
+        });
+    </script>
+    <script type="module">
+        import { lay_nguoi_dung, lay_san_pham_admin } from '/js/admin_them.js';
+         await lay_nguoi_dung();
+         await lay_san_pham_admin();
+    </script>
+</body>
+
+</html>

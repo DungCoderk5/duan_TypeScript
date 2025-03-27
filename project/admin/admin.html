@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Điều Khiển Quản Trị</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Thanh bên -->
+        <div id="sidebar" class="bg-[#fcc419] text-white w-64 p-5 space-y-6 fixed h-full -translate-x-full md:translate-x-0">
+
+            <h1 class="text-2xl font-bold  p-2">Admin</h1>
+            <nav class="mt-5 space-y-3">
+                <a href="#" class="block p-2 hover:bg-yellow-500 rounded-lg">Trang Chủ</a>
+                <a href="#" class="block p-2 hover:bg-yellow-500 rounded-lg">Người Dùng</a>
+                <a href="#" class="block p-2 hover:bg-yellow-500 rounded-lg">Sản Phẩm</a>
+                <a href="#" class="block p-2 hover:bg-yellow-500 rounded-lg">Đơn Hàng</a>
+                <a href="#" class="block p-2 hover:bg-yellow-500 rounded-lg">Báo Cáo</a>
+                <a href="#" class="block p-2 hover:bg-yellow-500 rounded-lg">Cài Đặt</a>
+            </nav>
+        </div>
+        
+        <!-- Nội dung chính -->
+        <div class="flex-1 flex flex-col ml-64">
+            <!-- Thanh điều hướng -->
+            <header class="bg-white shadow-md p-4 flex justify-between items-center">
+                <button class="md:hidden" id="menuToggle" onclick="toggleSidebar()">☰</button>
+                <h2 class="text-lg font-semibold">Bảng Điều Khiển</h2>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." class="border p-2 rounded-lg">
+                <button class="bg-red-500 text-white px-4 py-2 rounded">Đăng Xuất</button>
+            </header>
+            
+            <!-- Khu vực nội dung -->
+            <main class="flex-1 p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Biểu đồ doanh thu -->
+                    <div class="bg-white shadow-md rounded-lg p-6">
+                        <h3 class="text-xl font-bold">Thống Kê Doanh Thu</h3>
+                        <canvas id="revenueChart" class="mt-4"></canvas>
+                    </div>
+                    <!-- Biểu đồ đơn hàng -->
+                    <div class="bg-white shadow-md rounded-lg p-6">
+                        <h3 class="text-xl font-bold">Thống Kê Đơn Hàng</h3>
+                        <canvas id="orderChart" class="mt-4"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Danh sách Người Dùng & Sản Phẩm -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <!-- Danh sách Người Dùng -->
+                    <div class="bg-white shadow-md rounded-lg p-6">
+                        <h3 class="text-xl font-bold">Danh Sách Người Dùng</h3>
+                        <table class="w-full mt-4 border">
+                            <thead>
+                                <tr class="bg-gray-200">
+                                    <th class="p-2">Tên</th>
+                                    <th class="p-2">Email</th>
+                                    <th class="p-2">Số Điện Thoại</th>
+                                    <th class="p-2">Địa chỉ</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t">
+                                    <td class="p-2">Nguyễn Văn A</td>
+                                    <td class="p-2">a@example.com</td>
+                                    <td class="p-2">0123456789</td>
+                                    <td class="p-2">76 đường số 6dhshajdsdsdsdsa</td>
+
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-2">Trần Thị B</td>
+                                    <td class="p-2">b@example.com</td>
+                                    <td class="p-2">0987654321</td>
+                                    <td class="p-2">76 đường số 6dhshajdsdsdsdsa</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Danh sách Sản Phẩm -->
+                    <div class="bg-white shadow-md rounded-lg p-6 danhsach_sanpham">
+                        <h3 class="text-xl font-bold">Danh Sách Sản Phẩm</h3>
+                        <table class="w-full mt-4 border">
+                            <thead>
+                                <tr class="bg-gray-200">
+                                    <th class="p-2">Tên</th>
+                                    <th class="p-2">Giá hiện tại</th>
+                                    <th class="p-2">Hình</th>
+                                    <th class="p-2">Số lượng tồn kho</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t">
+                                    <td class="p-2">Giày</td>
+                                    <td class="p-2">12.000.000VND</td>
+                                    <td class="p-2"><img src="https://bizweb.dktcdn.net/100/493/370/products/136823c-5-650x650-15ff91e141be424b95a2892abf3fe169-jpeg.jpg?v=1699864035783"class="w-16 h-16 object-cover" alt=""></td>
+                                    <td class="p-2">12</td>
+
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-2">Dép</td>
+                                    <td class="p-2">12.000.000VND</td>
+                                    <td class="p-2"><img src="https://bizweb.dktcdn.net/100/493/370/products/127440-drake-650x650-ac03230c5cb64fe481d19063beee86a8-jpeg.jpg?v=1699864026270"class="w-16 h-16 object-cover" alt=""></td>
+                                    <td class="p-2">4</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+      function toggleSidebar() {
+    let sidebar = document.getElementById('sidebar');
+    let menuToggle = document.getElementById('menuToggle');
+    
+    // Kiểm tra trạng thái sidebar
+    if (sidebar.classList.contains('-translate-x-full')) {
+        sidebar.classList.remove('-translate-x-full');
+        sidebar.classList.add('translate-x-0');
+    } else {
+        sidebar.classList.add('-translate-x-full');
+        sidebar.classList.remove('translate-x-0');
+    }
+}
+
+
+        // Biểu đồ doanh thu
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5'],
+                datasets: [{
+                    label: 'Doanh Thu ($)',
+                    data: [1000, 1500, 1200, 1800, 2000],
+                    backgroundColor: '#f87171'
+                }]
+            }
+        });
+
+        // Biểu đồ đơn hàng
+        new Chart(document.getElementById('orderChart'), {
+            type: 'line',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5'],
+                datasets: [{
+                    label: 'Đơn Hàng',
+                    data: [50, 75, 60, 90, 100],
+                    borderColor: '#3b82f6',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+</body>
+<style>
+    .danhsach_sanpham{
+        text-align: center;
+    }
+</style>
+</html>

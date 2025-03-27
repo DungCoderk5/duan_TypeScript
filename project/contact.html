@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cart_popup.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <!-- Logo -->
+        <img src="//bizweb.dktcdn.net/thumb/medium/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+            alt="Shoes Logo">
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="#">Thương hiệu</a>
+                    <ul class="subnav" style="list-style: none;">
+
+                    </ul>
+                </li>
+                <li><a href="product.html">Sản phẩm</a></li>
+                <li><a href="#">Accessories - Phụ trang</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header right (search + icons) -->
+        <div class="header-right">
+            <input type="text" placeholder="Tìm kiếm sản phẩm ..." id="animated-placeholder">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute;left: auto;right: 180px;"
+                onclick="searchProduct()"></i>
+            <div class="header-icons">
+                <a href="#"><i class="fa fa-user"></i></a>
+                <a href="#"><i class="fa fa-heart"></i><span class="icon-badge">0</span></a>
+                <a href="#" onclick="openCart()"><i class="fa fa-shopping-cart"></i><span
+                        class="icon-badge icon-badge1">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="overlay1" onclick="closeCart()"></div>
+    <!-- Cart Sidebar -->
+    <div class="shop-cart-sidebar">
+        <div class="shop-cart-sidebar-head">
+            <label>Giỏ hàng</label>
+            <button type="button" onclick="closeCart()" data-type="shop-cart-sidebar-close" title="Đóng"
+                fdprocessedid="8wpz7">
+                <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14" width="15" height="15">
+                    <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div class="shop-cart-sidebar-top-freeship">
+                <div class="shop-freeship" data-freeship-price="50000000">
+                    <div class="shop-freeship-bar">
+                        <div class="shop-freeship-bar-main"><span style="width: 2.618%;"></span></div>
+                    </div>
+                    <div class="shop-freeship-note">Mua thêm <span>48.691.000₫</span> để được miễn phí giao hàng trên
+                        toàn
+                        quốc</div>
+                </div>
+                <div class="shop-cart-sidebar-top-freeship-label">
+                    <img class=" ls-is-cached lazyloaded" width="75" height="62" title="Free Ship"
+                        src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        data-src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        alt=" - Free Ship">
+                </div>
+            </div>
+        </div>
+        <div class="shop-cart-sidebar-body">
+            <div class="showmenu"></div>
+            <div class="showanmenu"></div>
+
+        </div>
+        <div class="shop-cart-sidebar-foot">
+            <button type="button" data-type="shop-cart-sidebar-note-action" title="Thêm ghi chú"
+                fdprocessedid="rn9kbq">Thêm
+                ghi chú</button>
+            <a href="/cart.html" title="Xem chi tiết giỏ hàng" aria-label="Xem chi tiết giỏ hàng">Xem chi tiết giỏ
+                hàng</a>
+            <p>Phí ship &amp; thuế được tính ở Trang Thanh Toán</p>
+            <a class="toCheckout" href="/checkout.html" title="Thanh toán" aria-label="Thanh toán">
+                <span>Thanh toán</span>
+                <span></span>
+                <span>1.309.000₫</span>
+            </a>
+            <div class="shop-cart-sidebar-note">
+                <label>Thêm ghi chú</label>
+                <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+                <button type="button" data-type="shop-cart-sidebar-note-save" title="Lưu">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-about">
+        <div class="page-about-new-main">
+            <div class="page-about-new-main-item">
+                <div class="page-about-new-main-item-left">
+                    <img loading="eager" decoding="sync" fetchpriotrity="high" title="Về Chúng Tôi"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/page-about-new-image-1.jpg?1713464283843"
+                        alt="Về Chúng Tôi">
+                </div>
+                <div class="page-about-new-main-item-right">
+                    <div class="section-title-all">
+                        <span>Về Chúng Tôi</span>
+                        <p>F1GENZ BABIE chính là nơi hội tụ những thương hiệu uy tín, những sản phẩm dành cho mẹ và bé
+                            chính hãng, chất lượng hàng đầu tại Việt Nam. Không những thế, F1GENZ BABIE mang đến cho
+                            Ba/mẹ những trải nghiệm mua sắm tuyệt vời, đáng tin cậy và cam kết cung cấp các dịch vụ chăm
+                            sóc khách hàng, tư vấn bán hàng, tư vấn sử dụng sản phẩm và các dịch vụ giao nhận hàng tốt
+                            nhất.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-about-new-main-item">
+                <div class="page-about-new-main-item-left">
+                    <img decoding="async" title="Liên hệ"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/page-about-new-image-2.jpg?1713464283843"
+                        alt="Liên hệ">
+                </div>
+                <div class="page-about-new-main-item-right">
+                    <div class="section-title-all">
+                        <span>Liên hệ</span>
+                        <p>Con càng lớn lên, thời gian con ở bên cha mẹ ngày càng ít dần, những người bạn bên cạnh chơi
+                            đùa cùng con ngày nào dần bị thay thế bằng những trò chơi, video trên các sản phẩm công
+                            nghệ.
+
+                            Khi con bước sang độ tuổi thôi nôi, là lúc con bị cuốn hút nhiều hơn từ những Video, trò
+                            chơi trên ipad. Thời gian tiếp xúc với con đã ít rồi lại còn ít hơn nữa và dần dần con chỉ
+                            có thể tìm được những người bạn, niềm vui từ những trò công nghệ này. Tình cảm, kỹ năng, sự
+                            năng động của đứa bé 1 tuổi cũng dần giảm xuống thay vì phát triển như những đứa trẻ bình
+                            thường khác.
+
+                            Rất may mắn cho gia đình, khi chúng tôi sớm nhìn nhận ra được vấn đề với con. Nhờ những tư
+                            vấn, lời khuyên từ bạn bè, người thân tôi cũng đã nhận ra được mình phải làm gì để mang lại
+                            niềm vui và tuổi thơ cho con trẻ.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-about-new-contact">
+                <form method="post" action="/postcontact" id="contact" accept-charset="UTF-8"><input name="FormType"
+                        type="hidden" value="contact"><input name="utf8" type="hidden" value="true"><input type="hidden"
+                        id="Token-1b4bda7621ad41ba8922d73a5405b654" name="Token"
+                        value="03AFcWeA5qml_zE9uG23jLXjbXMDFstddOG869fBlhqsk8E6LAkLYGJqyZ-hBvvQMnW-9bueUtPCquxZ8VS6WuR2BHOOhY7b4UKEe1Po2nbthye85TOE104AuFr4xNlUjVtu7nQnKrTV3s-UejAZghOsfM7QU1L__IWGePTAngzGMxhH2KSihndyVefrBV_YZGz57GJHwbD9bccsEY0h_Wbqs_64V78Tf5uguKezhf2kwkMOvqFxJi9DOgQ_uURS17kCw7nNCTTYfLqVGH6ESWa8TS6Lvk0WinUzyhC5heqR_9jSK_ITulMw6ry9ZnficCeAmVl9wYS0rVRzXWaYWAa7RdcYRkWYmMBX_wJQwUQX_E9p9xe1HRP-bscmSdDXfW746WjKzqi3XFORJ1TEVDSxkjfskZpqMg6jrTITXvAVsMRdiPCfZ-WaHqkwLvs28qm_fZ5fhFVI8FvstPM4zYZ2tDhR0mMFfkww9jyFazyvQWLQNIfx9u-MRKM_7QsI0mnt0PmlVwc8UL0-G7GaeOWkFOvGeQgj58PmJh2-THAATQ5PHFopJdPeJy_uX7Oteb8Hs-p_boIXW5ZASpaizCpLuCe_kZi_R3YZNkia1-OrHkUpTrRiABlr3JrZruC_6o_N2JA3Xzj8w-SHCjahZVr4iji79rKniOO_ruNC3N3pJwxOpiv9Eq64Je5uOWYkXX-mx6m1_lBVVxbLKpXXZ4ZKX0T737iGl4eQ8LfJ103T07N69q611VCnhqKHnBz7fMJW3VIWKuygOf2myfQYI_lzlhbf48n6yUDZSCA6lde2mez4KY-eKZ9Yt904nGCRPe2N0pSLWkds1FVYbDDuiP7OfOVK3ZHOy_htUOyC5uvs9LteGwYUbq9PiZHw-Nm21Gwk5tHbxwuvZ7hS9pdhjzWVwci7Fn92ldkbooNmQ1AEiNRGm2DgLKmll7G_IZYW6lG8YPlqd90HSh">
+                    <script
+                        src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script>
+                    <script>grecaptcha.ready(function () { grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", { action: "contact" }).then(function (token) { document.getElementById("Token-1b4bda7621ad41ba8922d73a5405b654").value = token }); });</script>
+                    <div class="section-title-all">
+                        <span>Kết nối ngay với chúng tôi</span>
+                        <h1 hidden="">Liên hệ</h1>
+                    </div>
+                    <input required="" type="text" id="contactFormName" class="form-control input-lg"
+                        name="contact[name]" placeholder="Tên của bạn" autocapitalize="words" value=""
+                        fdprocessedid="mu4o4">
+                    <input required="" type="number" id="contactFormPhone" class="form-control input-lg"
+                        name="contact[phone]" placeholder="Số điện thoại của bạn" autocapitalize="words" value=""
+                        fdprocessedid="7v8yxv">
+                    <input required="" type="email" name="contact[email]" placeholder="Email của bạn"
+                        id="contactFormEmail" class="form-control input-lg" autocapitalize="off" value=""
+                        fdprocessedid="kr5yab">
+                    <textarea required="" rows="6" name="contact[body]" class="form-control"
+                        placeholder="Viết bình luận" id="contactFormMessage"></textarea>
+                    <button type="submit" class="btn btn-outline insButton" title="Gửi thông tin"
+                        fdprocessedid="vmrkeq">Gửi thông tin</button>
+                    <ul class="shop-social">
+                        <li>
+                            <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Facebook"
+                                title="F1GENZ Shoes - Facebook">
+                                <img width="30" height="30" title="F1GENZ Shoes - Facebook"
+                                    src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png"
+                                    alt="F1GENZ Shoes - Facebook">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Youtube"
+                                title="F1GENZ Shoes - Youtube">
+                                <img width="30" height="30" title="F1GENZ Shoes - Youtube"
+                                    src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png"
+                                    alt="F1GENZ Shoes - Youtube">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Pinterest"
+                                title="F1GENZ Shoes - Pinterest">
+                                <img width="30" height="30" title="F1GENZ Shoes - Pinterest"
+                                    src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png"
+                                    alt="F1GENZ Shoes - Youtube">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - TikTok"
+                                title="F1GENZ Shoes - TikTok">
+                                <img width="30" height="30" title="F1GENZ Shoes - TikTok"
+                                    src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png"
+                                    alt="F1GENZ Shoes - TikTok">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Instagram"
+                                title="F1GENZ Shoes - Instagram">
+                                <img width="30" height="30" title="F1GENZ Shoes - Instagram"
+                                    src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png"
+                                    alt="F1GENZ Shoes - Instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </form>
+                <div class="page-about-new-contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6177130569445!2d106.6541090152164!3d10.763917262366853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eec413c9d8d%3A0xfd53ac27a1acd021!2zMTgyIMSQLiBMw6ogxJDhuqFpIEjDoG5oLCBQaMaw4budbmcgMTUsIFF14bqtbiAxMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1666321027665!5m2!1svi!2s"
+                        width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footers2"
+    style="background-image: url(//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_background.jpg?1713464283843)">
+    <div class="container-about">
+        <div class="footers2-wrap">
+            <div class="footers2-top">
+                <div class="footers2-top-item footers2-top-one">
+                    <a href="/" title="F1GENZ Shoes" aria-label="F1GENZ Shoes">
+                        <img title="F1GENZ Shoes"
+                            src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_one_logo.png?1713464283843"
+                            alt="F1GENZ Shoes">
+                    </a>
+                    <p>F1GENZ SHOES luôn cam kết, đảm bảo đưa sản phẩm trực tiếp từ nhà sản xuất đến tay người dùng
+                        và kiểm soát được chất lượng để đáp ứng được nhu cầu ngày càng cao của khách hàng. Tất cả
+                        các sản phẩm tại F1GENZ SHOES đều có nguồn gốc xuất xứ rõ ràng, chất lượng.</p>
+                </div>
+                <div class="footers2-top-item footers2-top-two">
+                    <h4>Liên hệ <i class="fa fa-chevron-down"></i></h4>
+                    <div class="footers2-top-item-content">
+                        <p>Tư vấn dịch vụ: <a aria-label="Liên hệ" title="Liên hệ" href="tel:18006750">1800 6750</a>
+                            <br>
+                            Hỗ trợ sử dụng: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006750">1900
+                                6750</a> <br>
+                            Hỗ trợ vận chuyển: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006719">1900
+                                6719</a> <br>
+                            Email: <a aria-label="Liên hệ" title="Liên hệ"
+                                href="mailto:support@sapo.vn">support@sapo.vn</a> <br>
+                            Từ 7h00 – 22h00 các ngày từ thứ 2 đến Chủ nhật
+                        </p>
+                    </div>
+                </div>
+                <div class="footers2-top-item footers2-top-three">
+                    <h4>Về chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                    <div class="footers2-top-item-content">
+                        <ul>
+                            <li><a href="/gioi-thieu" aria-label="Giới thiệu" title="Giới thiệu">Giới thiệu</a></li>
+                            <li><a href="/chinh-sach-doi-tra" aria-label="Chính sách đổi trả"
+                                    title="Chính sách đổi trả">Chính sách đổi trả</a></li>
+                            <li><a href="/chinh-sach-bao-mat" aria-label="Chính sách bảo mật"
+                                    title="Chính sách bảo mật">Chính sách bảo mật</a></li>
+                            <li><a href="/dieu-khoan-dich-vu" aria-label="Điều khoản dịch vụ"
+                                    title="Điều khoản dịch vụ">Điều khoản dịch vụ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footers2-top-item footers2-top-four">
+                    <h4>Danh mục nổi bật <i class="fa fa-chevron-down"></i></h4>
+                    <div class="footers2-top-item-content">
+                        <ul>
+                            <li><a href="/chuck-2" aria-label="Chuck 2" title="Chuck 2">Chuck 2</a></li>
+                            <li><a href="/converse-all" aria-label="Converse All" title="Converse All">Converse
+                                    All</a></li>
+                            <li><a href="/socks" aria-label="Socks" title="Socks">Socks</a></li>
+                            <li><a href="/jack-purcell" aria-label="Jack Purcell" title="Jack Purcell">Jack
+                                    Purcell</a></li>
+                            <li><a href="/converse-seasonal" aria-label="Converse Seasonal"
+                                    title="Converse Seasonal">Converse Seasonal</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footers2-top-item footers2-top-five">
+                    <h4>Liên hệ với chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                    <div class="footers2-top-item-content">
+                        <p>Luôn cập nhật tất cả các hành động mà chúng tôi đã lưu cho tất cả khách hàng của mình.
+                        </p>
+                        <ul class="shop-social">
+                            <li>
+                                <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Facebook"
+                                    title="F1GENZ Shoes - Facebook">
+                                    <img width="30" height="30" title="F1GENZ Shoes - Facebook"
+                                        src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png"
+                                        alt="F1GENZ Shoes - Facebook">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Youtube"
+                                    title="F1GENZ Shoes - Youtube">
+                                    <img width="30" height="30" title="F1GENZ Shoes - Youtube"
+                                        src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png"
+                                        alt="F1GENZ Shoes - Youtube">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Pinterest"
+                                    title="F1GENZ Shoes - Pinterest">
+                                    <img width="30" height="30" title="F1GENZ Shoes - Pinterest"
+                                        src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png"
+                                        alt="F1GENZ Shoes - Youtube">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - TikTok"
+                                    title="F1GENZ Shoes - TikTok">
+                                    <img width="30" height="30" title="F1GENZ Shoes - TikTok"
+                                        src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png"
+                                        alt="F1GENZ Shoes - TikTok">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Instagram"
+                                    title="F1GENZ Shoes - Instagram">
+                                    <img width="30" height="30" title="F1GENZ Shoes - Instagram"
+                                        src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png"
+                                        alt="F1GENZ Shoes - Instagram">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footers2-bot">
+                <p class="text-copyright">© 2025 - Bản quyền thuộc về
+                    <a target="_blank" title="F1GENZ TECHNOLOGY CO., LTD." aria-label="F1GENZ TECHNOLOGY CO., LTD."
+                        href="https://f1genz.com/">PS4184 Dũng đẹp trai</a>
+                    <a target="_blank"
+                        href="https://www.sapo.vn/?utm_campaign=cpn:f1genz-babie-plm:footer&amp;utm_source=f1genz-babie&amp;utm_medium=referral&amp;utm_content=fm:text_link-km:-sz:&amp;utm_term=&amp;campaign=f1genz-babie"
+                        rel="nofollow">Cung cấp bởi Dungld</a>
+                </p>
+                <ul class="shop-payment">
+                    <li class="shop-payment-item">
+                        <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                            <img width="76" height="48"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_1.png?1713464283843"
+                                alt="/ - Payment">
+                        </a>
+                    </li>
+                    <li class="shop-payment-item">
+                        <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                            <img width="76" height="48"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_2.png?1713464283843"
+                                alt="/ - Payment">
+                        </a>
+                    </li>
+                    <li class="shop-payment-item">
+                        <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                            <img width="76" height="48"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_3.png?1713464283843"
+                                alt="/ - Payment">
+                        </a>
+                    </li>
+                    <li class="shop-payment-item">
+                        <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                            <img width="76" height="48"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_4.png?1713464283843"
+                                alt="/ - Payment">
+                        </a>
+                    </li>
+                    <li class="shop-payment-item">
+                        <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                            <img width="76" height="48"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_5.png?1713464283843"
+                                alt="/ - Payment">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="social-icons">
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</body>
+<style>
+    .container-about .page-about-new-main {
+        padding: 30px 0;
+    }
+
+    .container-about .page-about-new-main .page-about-new-main-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0px;
+    }
+
+    .container-about .page-about-new-main .page-about-new-main-item .page-about-new-main-item-left {
+        width: 40%;
+        padding: 0px 50px;
+    }
+
+    .container-about .page-about-new-main .page-about-new-main-item:nth-child(2n+1) .page-about-new-main-item-left {
+        order: 2;
+    }
+
+    .container-about.page-about-new-main .page-about-new-main-item .page-about-new-main-item-left img {
+        border-radius: 10px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .container-about .page-about-new-main .page-about-new-main-item .page-about-new-main-item-right {
+        width: 60%;
+    }
+
+    .section-title-all>span {
+        color: #fcc419;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        font-size: 1.25rem;
+        position: relative;
+        padding-left: 27.5px;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .section-title-all>span:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        z-index: 9;
+        height: 17.5px;
+        width: 20px;
+        background: url(//bizweb.dktcdn.net/100/493/370/themes/940719/assets/image_title_all.png?1713464283843);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+
+    .container-about .page-about-new-main .page-about-new-contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 50px;
+    }
+    .container-about .page-about-new-main .page-about-new-contact form {
+    width: 50%;
+    display: flex
+;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-about .page-about-new-main .page-about-new-contact form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.container-about .page-about-new-main .page-about-new-contact form textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0;
+    width: 70%;
+    height: 65px;
+    padding: 5px 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+}
+.container-about .page-about-new-main .page-about-new-contact form button {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0;
+    background: #2e3192;
+    padding: 0;
+    border: 1px solid #2e3192;
+    width: calc(30% - 10px);
+    color: #fff;
+    height: 65px;
+    line-height: 65px;
+    text-transform: uppercase;
+    transition: all .4s linear;
+    border-radius: 10px;
+}
+.container-about .page-about-new-main .page-about-new-contact .page-about-new-contact-map {
+    width: 50%;
+    padding-left: 20px;
+}
+.page-about-new-contact-map iframe {
+    height: 270px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.shop-social {
+    display: flex
+;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+}
+</style>
+<script src="js/js.js"></script>
+<script type="module">
+    import { lay_thuong_hieu, lay_san_pham, lay_sp_sale, them_gio_hang_home, lay_gio_hang_menu, lay1sp,xoa_gio_hang_menu } from '/js/app.js';
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get('id') || '0');
+
+    const loadProductsAndInitPagination = async () => {
+        try {
+
+            document.querySelector('.menu .subnav').innerHTML = await lay_thuong_hieu();
+            document.querySelector('.showmenu').innerHTML = await lay_gio_hang_menu();
+            document.querySelectorAll('.them123').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const productId = button.dataset.id;
+                    them_gio_hang_home(productId);
+                });
+            });
+
+
+            document.querySelectorAll('[data-type="shop-quantity-plus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    input.value = quantity + 1;
+                    updateCartTotal(); // Hàm cập nhật tổng giá
+                });
+            });
+            function updateCartTotal() {
+                const cartItems = document.querySelectorAll('.shop-cart-item');
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    const price = parseFloat(item.querySelector('p').textContent.replace(/[^\d]/g, '')) || 0;
+                    const quantity = parseInt(item.querySelector('input').value) || 1;
+                    total += price * quantity;
+                });
+
+                document.querySelector('.toCheckout span:last-child').textContent = total.toLocaleString('vi-VN') + '₫';
+            }
+
+            document.querySelectorAll('[data-type="shop-quantity-minus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    if (quantity > 1) {
+                        input.value = quantity - 1;
+                        updateCartTotal(); // Hàm cập nhật tổng giá
+                    }
+                });
+            });
+            updateCartTotal();
+            document.querySelectorAll('[data-type="shop-cart-item-remove"]').forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+                    // Xác định ID sản phẩm từ thuộc tính data-id
+                    const productId = this.getAttribute('data-id');
+
+                    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
+                        // Thực hiện xử lý xóa sản phẩm trong giỏ hàng
+                        xoa_gio_hang_menu(productId);
+                    }
+                });
+            });
+ 
+        } catch (error) {
+            console.error('Lỗi khi tải sản phẩm:', error);
+            // productGrid.innerHTML = '<p class="error">Không thể tải sản phẩm</p>';
+        }
+    };
+    window.onload = loadProductsAndInitPagination;
+
+
+
+</script>
+
+</html>
