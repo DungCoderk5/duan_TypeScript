@@ -1,0 +1,138 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<div class="card-container">
+  <div class="card">
+    <div class="card-image">
+      <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/01-thumb-6a26040630f8411eafc114dfa2c1bfc2.jpg?v=1697785028303" alt="Shoe Image">
+      <div class="overlay">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="card-content">
+        <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+        <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+        <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image">
+      <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/01-thumb-6a26040630f8411eafc114dfa2c1bfc2.jpg?v=1697785028303" alt="Shoe Image">
+      <div class="overlay">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="card-content">
+        <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+        <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+        <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-image">
+      <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/01-thumb-6a26040630f8411eafc114dfa2c1bfc2.jpg?v=1697785028303" alt="Shoe Image">
+      <div class="overlay">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="card-content">
+        <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+        <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+        <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-image">
+      <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/01-thumb-6a26040630f8411eafc114dfa2c1bfc2.jpg?v=1697785028303" alt="Shoe Image">
+      <div class="overlay">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="card-content">
+        <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+        <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+        <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Thêm các card khác tương tự -->
+</div>
+
+<style>
+  /* Container lưới */
+  .card-container {
+   width: (100%/4);/* Chia thành 4 cột */
+    gap: 15px; /* Khoảng cách giữa các thẻ */
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Card chính */
+  .card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Viền bo tròn */
+    background-color: #fff;
+  }
+
+  .card-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .card-image img {
+    width: 100%;
+    display: block;
+    border-radius: 10px; /* Viền bo tròn ảnh */
+  }
+
+  .card-image .overlay {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(232,159,72,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+  }
+
+  .card:hover .overlay {
+    top: 0;
+  }
+
+  .card-image .overlay i {
+    font-size: 30px;
+    color: #fff;
+  }
+
+  /* Nội dung đè lên hình ảnh */
+  .card-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 2;
+  }
+
+  .card-content h3 {
+    font-size: 16px;
+    margin: 5px 0;
+    font-weight: bold;
+  }
+
+  .card-content p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+</style>

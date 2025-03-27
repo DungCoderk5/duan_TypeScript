@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/product-detail.css">
+    <link rel="stylesheet" href="/css/cart_popup.css">
+    <link rel="stylesheet" href="/css/dangnhapmenu.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="/css/product.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <!-- Logo -->
+        <img src="//bizweb.dktcdn.net/thumb/medium/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+            alt="Shoes Logo">
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Thương hiệu</a>
+                    <ul class="subnav" style="list-style: none;">
+
+                    </ul>
+                </li>
+                <li><a href="product.html">Sản phẩm</a></li>
+                <li><a href="#">Accessories - Phụ trang</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header right (search + icons) -->
+        <div class="header-right">
+            <input type="text" placeholder="Tìm kiếm sản phẩm ..." id="animated-placeholder">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute;left: auto;right: 180px;"
+                onclick="searchProduct()"></i>
+            <div class="header-icons">
+                <a href="#" onclick="opennguuu()"><i class="fa fa-user"></i></a>
+                <a href="#"><i class="fa fa-heart"></i><span class="icon-badge">0</span></a>
+                <a href="#" onclick="openCart()"><i class="fa fa-shopping-cart"></i><span
+                        class="icon-badge icon-badge1">0</span></a>
+            </div>
+        </div>
+    </header>
+    <div class="overlay1" onclick="closeCart()"></div>
+    <div class="overlay2" onclick="closenguuuu()"></div>
+
+    <!-- Cart Sidebar -->
+    <div class="shop-cart-sidebar">
+        <div class="shop-cart-sidebar-head">
+            <label>Giỏ hàng</label>
+            <button type="button" onclick="closeCart()" data-type="shop-cart-sidebar-close" title="Đóng"
+                fdprocessedid="8wpz7">
+                <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14" width="15" height="15">
+                    <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div class="shop-cart-sidebar-top-freeship">
+                <div class="shop-freeship" data-freeship-price="50000000">
+                    <div class="shop-freeship-bar">
+                        <div class="shop-freeship-bar-main"><span style="width: 2.618%;"></span></div>
+                    </div>
+                    <div class="shop-freeship-note">Mua thêm <span>48.691.000₫</span> để được miễn phí giao hàng trên
+                        toàn
+                        quốc</div>
+                </div>
+                <div class="shop-cart-sidebar-top-freeship-label">
+                    <img class=" ls-is-cached lazyloaded" width="75" height="62" title="Free Ship"
+                        src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        data-src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        alt=" - Free Ship">
+                </div>
+            </div>
+        </div>
+        <div class="shop-cart-sidebar-body">
+            <div class="showmenu"></div>
+            <div class="showanmenu"></div>
+        </div>
+        <div class="shop-cart-sidebar-foot">
+            <button type="button" data-type="shop-cart-sidebar-note-action" title="Thêm ghi chú"
+                fdprocessedid="rn9kbq">Thêm
+                ghi chú</button>
+            <a href="/cart" title="Xem chi tiết giỏ hàng" aria-label="Xem chi tiết giỏ hàng">Xem chi tiết giỏ hàng</a>
+            <p>Phí ship &amp; thuế được tính ở Trang Thanh Toán</p>
+            <a class="toCheckout" href="/checkout.html" title="Thanh toán" aria-label="Thanh toán">
+                <span>Thanh toán</span>
+                <span></span>
+                <span>1.309.000₫</span>
+            </a>
+            <div class="shop-cart-sidebar-note">
+                <label>Thêm ghi chú</label>
+                <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+                <button type="button" data-type="shop-cart-sidebar-note-save" title="Lưu">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <!-- Login sidebar -->
+    <div class="modal-content">
+        <div class="login-container">
+            <div class="side-menu">
+                <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+                    alt="">
+                <a href="#" class="side-link active" data-hien="1">Đăng nhập</a>
+                <a href="#" class="side-link" data-hien="2">Quên mật khẩu</a>
+                <a href="#" class="side-link" data-hien="3">Đăng ký</a>
+            </div>
+
+            <div class="login-form active" data-hien="1">
+                <h2>ĐĂNG NHẬP</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email1" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu*</label>
+                        <input type="password" id="password1" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="btn-dangnhap">ĐĂNG NHẬP</button>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-form" data-hien="2">
+                <h2>Quên mật khẩu</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">GỬI</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-form" data-hien="3">
+                <h2>ĐĂNG KÝ</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="ho">Họ của bạn*</label>
+                        <input type="text" id="ho" placeholder="Nhập họ của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="ten">Tên của bạn*</label>
+                        <input type="text" id="ten" placeholder="Nhập tên của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại*</label>
+                        <input type="number" id="phone" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu*</label>
+                        <input type="password" id="password" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">ĐĂNG KÝ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-product">
+        <div class="main-product-breadcrumb" title="Converse Chuck Taylor All Star Specialty Suede">
+            <div class="container-about">
+                <div class="section-title-all">
+                    <h1>Chi tiết sản phẩm</h1>
+                </div>
+                <div class="breadcrumb-wrap">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/" aria-label="Trang chủ" title="Trang chủ">Trang chủ</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="/product.html" aria-label="CONVERSE ALL"
+                                title="CONVERSE ALL">CONVERSE ALL</a></li>
+                        <li class="breadcrumb-item active"><span> Chi tiết sản phẩm</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="container-about">
+            <div id="product-detail"></div>
+
+            <div class="sapo-buyxgety-module-detail-v2"></div>
+            <div class="main-product-description">
+                <div class="main-product-description-left ">
+                    <ul class="main-product-description-left-head">
+                        <li data-type="des" class="active"><span>Mô tả sản phẩm</span></li>
+                        <li data-type="page1"><span>Chính sách bảo mật</span></li>
+                        <li data-type="page2"><span>Chính sách đổi trả</span></li>
+                        <li data-type="page3"><span>Điều khoản dịch vụ</span></li>
+                    </ul>
+                    <div class="main-product-description-left-item" data-type="des">
+                        <div class="main-product-description-item-data">
+                            <p></p>
+                            <div class="table-responsive">
+                                <table cellpadding="0" cellspacing="0" border="1"
+                                    class="table table-striped table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>NHÃN HIỆU</td>
+                                            <td>Convers&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TÊN</td>
+                                            <td>Converse Chuck Taylor All Star SP OX&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DÒNG SẢN PHẨM</td>
+                                            <td>Chuck Taylor All Star</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NƠI SẢN XUẤT</td>
+                                            <td>Việt Nam</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHẾ ĐỘ BẢO HÀNH</td>
+                                            <td>Converse Chuck Taylor All Star SP OX&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PHỤ KIỆN THEO KÈM</td>
+                                            <td>Túi Converse, Phiếu bảo hành chính hãng, Hộp giày</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><br>
+                        </div>
+                        <a href="javascript:void(0);" class="main-product-description-item-readmore"
+                            aria-label="Xem đầy đủ Mô tả sản phẩm" title="Xem đầy đủ Mô tả sản phẩm"
+                            style="display: none;">Xem thêm</a>
+                    </div>
+                    <div class="main-product-description-left-item an" data-type="page1">
+                        <div class="main-product-description-item-data">
+                            <p>Chính sách bảo mật này nhằm giúp Quý khách hiểu về cách website thu thập và sử dụng thông
+                                tin cá nhân của mình thông qua việc sử dụng trang web, bao gồm mọi thông tin có thể cung
+                                cấp thông qua trang web khi Quý khách đăng ký tài khoản, đăng ký nhận thông tin liên lạc
+                                từ chúng tôi, hoặc khi Quý khách mua sản phẩm, dịch vụ, yêu cầu thêm thông tin dịch vụ
+                                từ chúng tôi.</p>
+                            <p>Chúng tôi sử dụng thông tin cá nhân của Quý khách để liên lạc khi cần thiết liên quan đến
+                                việc Quý khách sử dụng website của chúng tôi, để trả lời các câu hỏi hoặc gửi tài liệu
+                                và thông tin Quý khách yêu cầu.</p>
+                            <p><span class="wysiwyg-font-size-medium">Trang web của chúng tôi coi trọng việc bảo mật
+                                    thông tin và sử dụng các biện pháp tốt nhất để bảo vệ thông tin cũng như việc thanh
+                                    toán của khách hàng.&nbsp;</span></p>
+                            <p><span class="wysiwyg-font-size-medium">Mọi thông tin giao dịch sẽ được bảo mật ngoại trừ
+                                    trong trường hợp cơ quan pháp luật yêu cầu.</span></p>
+                        </div>
+                        <a href="javascript:void(0);" class="main-product-description-item-readmore"
+                            aria-label="Xem đầy đủ Chính sách bảo mật" title="Xem đầy đủ Chính sách bảo mật"
+                            style="display: none;">Xem thêm</a>
+                    </div>
+                    <div class="main-product-description-left-item an" data-type="page2">
+                        <div class="main-product-description-item-data">
+                            <p><strong>1. Điều kiện đổi trả</strong></p>
+                            <p>Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại
+                                hàng&nbsp;ngay tại thời điểm giao/nhận hàng&nbsp;trong những trường hợp sau:</p>
+                            <ul>
+                                <li>Hàng không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại
+                                    thời điểm đặt hàng.</li>
+                                <li>Không đủ số lượng, không đủ bộ như trong đơn hàng.</li>
+                                <li>Tình trạng bên ngoài bị ảnh hưởng như rách bao bì, bong tróc, bể vỡ…</li>
+                            </ul>
+                            <p>&nbsp;Khách hàng có trách nhiệm trình giấy tờ liên quan chứng minh sự thiếu sót trên để
+                                hoàn thành việc&nbsp;hoàn trả/đổi trả hàng hóa.&nbsp;</p>
+                            <p><br></p>
+                            <p><strong>2. Quy định về thời gian thông báo và gửi sản phẩm đổi trả</strong></p>
+                            <ul>
+                                <li><strong>Thời gian thông báo đổi trả</strong>:&nbsp;trong vòng 48h kể từ khi nhận sản
+                                    phẩm đối với trường hợp sản phẩm thiếu phụ kiện, quà tặng hoặc bể vỡ.</li>
+                                <li><strong>Thời gian gửi chuyển trả sản phẩm</strong>: trong vòng 14 ngày kể từ khi
+                                    nhận sản phẩm.</li>
+                                <li><strong>Địa điểm đổi trả sản phẩm</strong>: Khách hàng có thể mang hàng trực tiếp
+                                    đến văn phòng/ cửa hàng của chúng tôi hoặc chuyển qua đường bưu điện.</li>
+                            </ul>
+                            <p>Trong trường hợp Quý Khách hàng có ý kiến đóng góp/khiếu nại liên quan đến chất lượng sản
+                                phẩm, Quý Khách hàng vui lòng liên hệ đường dây chăm sóc khách hàng&nbsp;của chúng tôi.
+                            </p>
+                        </div>
+                        <a href="javascript:void(0);" class="main-product-description-item-readmore"
+                            aria-label="Xem đầy đủ Chính sách đổi trả" title="Xem đầy đủ Chính sách đổi trả"
+                            style="display: none;">Xem thêm</a>
+                    </div>
+                    <div class="main-product-description-left-item an" data-type="page3">
+                        <div class="main-product-description-item-data">
+                            <p><span class="wysiwyg-font-size-medium"><strong>1. Giới thiệu</strong></span></p>
+                            <p><span class="wysiwyg-font-size-medium">Chào mừng quý khách hàng đến với website chúng
+                                    tôi.</span></p>
+                            <p><span class="wysiwyg-font-size-medium">Khi quý khách hàng truy cập vào trang website của
+                                    chúng tôi có nghĩa là quý khách đồng ý với các điều khoản này. Trang web có quyền
+                                    thay đổi, chỉnh sửa, thêm hoặc lược bỏ bất kỳ phần nào trong Điều khoản mua bán hàng
+                                    hóa này, vào bất cứ lúc nào. Các thay đổi có hiệu lực ngay khi được đăng trên trang
+                                    web mà không cần thông báo trước. Và khi quý khách tiếp tục sử dụng trang web, sau
+                                    khi các thay đổi về Điều khoản này được đăng tải, có nghĩa là quý khách chấp nhận
+                                    với những thay đổi đó.</span></p>
+                            <p><span class="wysiwyg-font-size-medium">Quý khách hàng vui lòng kiểm tra thường xuyên để
+                                    cập nhật những thay đổi của chúng tôi.</span></p>
+                            <p><span class="wysiwyg-font-size-medium"><strong>2. Hướng dẫn sử dụng
+                                        website</strong></span></p>
+                            <p><span class="wysiwyg-font-size-medium">Khi vào web của chúng tôi, khách hàng phải đảm bảo
+                                    đủ 18 tuổi, hoặc truy cập dưới sự giám sát của cha mẹ hay người giám hộ hợp pháp.
+                                    Khách hàng đảm bảo có đầy đủ hành vi dân sự để thực hiện các giao dịch mua bán hàng
+                                    hóa theo quy định hiện hành của pháp luật Việt Nam.</span></p>
+                            <p><span class="wysiwyg-font-size-medium">Trong suốt quá trình đăng ký, quý khách đồng ý
+                                    nhận email quảng cáo từ website. Nếu không muốn tiếp tục nhận mail, quý khách có thể
+                                    từ chối bằng cách nhấp vào đường link ở dưới cùng trong mọi email quảng
+                                    cáo.</span><span class="wysiwyg-font-size-medium"><strong></strong></span><span
+                                    class="wysiwyg-font-size-medium"></span><span
+                                    class="wysiwyg-font-size-medium"><strong></strong></span><span
+                                    class="wysiwyg-font-size-medium"></span><span
+                                    class="wysiwyg-font-size-medium"><strong></strong></span><span
+                                    class="wysiwyg-font-size-medium"></span></p>
+                            <p><span class="wysiwyg-font-size-medium"></span><span
+                                    class="wysiwyg-font-size-medium"></span><br></p>
+                            <p><span class="wysiwyg-font-size-medium"><strong>3. Thanh toán an toàn và tiện
+                                        lợi</strong></span></p>
+                            <p><span class="wysiwyg-font-size-medium">Người mua có thể tham khảo các phương thức thanh
+                                    toán sau đây và lựa chọn áp dụng phương thức phù hợp:</span></p>
+                            <p><span class="wysiwyg-font-size-medium"><strong><u>Cách 1</u></strong>: Thanh toán trực
+                                    tiếp (người mua nhận hàng tại địa chỉ người bán)<br></span><span
+                                    class="wysiwyg-font-size-medium"><strong><u>Cách
+                                            2</u></strong><strong>:</strong>&nbsp;Thanh toán sau (COD – giao hàng và thu
+                                    tiền tận nơi)<br></span><span class="wysiwyg-font-size-medium"><strong><u>Cách
+                                            3</u></strong><strong>:</strong>&nbsp;Thanh toán online qua thẻ tín dụng,
+                                    chuyển khoản</span></p>
+                        </div>
+                        <a href="javascript:void(0);" class="main-product-description-item-readmore"
+                            aria-label="Xem đầy đủ Chính sách đổi trả" title="Xem đầy đủ Chính sách đổi trả"
+                            style="display: none;">Xem thêm</a>
+                    </div>
+                </div>
+                <div class="main-product-description-right">
+                    <label><span>Thông số kỹ thuật</span></label>
+                    <div class="main-product-description-item-data">
+                        <p><em><strong>Chuck Taylor Classic là dòng giày truyền thống của Converse được giữ đúng với
+                                    nguyên bản ban đầu. Từ lúc xuất hiện cho đến nay dòng Classic vẫn nhận được sự quan
+                                    tâm của nhiều khách hàng trên thế giới. Vậy đâu là lý do giúp dòng giày này trở nên
+                                    phổ biến và được yêu thích nhiều như vậy trong nhiều thập kỷ qua?</strong></em></p>
+                        <p>Chuck Taylor Classic có thiết kế giống như dòng Converse All Star được cho ra mắt vào 1917
+                            dành riêng cho các vận động viên bóng rổ chuyên nghiệp.</p>
+                        <p>Tuy nhiên thời điểm này giày Converse All Star chỉ thế hiện đúng chức năng của mình mà chưa
+                            đạt được độ tinh tế về thời trang. Vì vậy, sau khi Chuck Taylor tham gia vào đội ngũ
+                            Converse đã mang đến cho sản phẩm một sự thay đổi mới, đảm được tính thời trang cho sản
+                            phẩm. Sự thay đổi này đã khiến Converse có những bước chuyển mình và dần khẳng định được vị
+                            thế trong lĩnh vực giày thể thao.</p>
+                        <p>Mẫu giày Converse CTAS SP OX với màu trắng sáng giúp làm bật tone và tôn thêm vẻ đẹp cho bộ
+                            outfit cực chất của bạn. Thiết kế đơn giản dễ dàng phối hợp với nhiều kiểu quần áo cho bạn
+                            tự do thay đổi trang phục. Thân giày được làm từ chất vải dệt dày dặn và bền bỉ, để bạn có
+                            cảm giác tự tin và an tâm trong mọi hoạt động.</p>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="sapo-product-reviews" class="sapo-product-reviews" data-id="33445638">
+                <div>
+                    <div id="sapo-product-reviews-noitem">
+                        <div>
+                            <div class="content">
+                                <p>Hiện tại sản phẩm chưa có đánh giá nào, bạn hãy trở thành người đầu tiên đánh giá cho
+                                    sản phẩm này</p>
+                                <div class="product-reviews-summary-actions">
+                                    <button type="button" class="btn-new-review">Gửi đánh giá của bạn</button>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-product-relate">
+                <div class="section-title-all">
+                    <h2>Sản phẩm liên quan</h2>
+                </div>
+                <div class="product-relate slider6 product-grid">
+
+
+                </div>
+            </div>
+        </div>
+        <footer class="footers2"
+            style="background-image: url(//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_background.jpg?1713464283843)">
+            <div class="container-about">
+                <div class="footers2-wrap">
+                    <div class="footers2-top">
+                        <div class="footers2-top-item footers2-top-one">
+                            <a href="/" title="F1GENZ Shoes" aria-label="F1GENZ Shoes">
+                                <img title="F1GENZ Shoes"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_one_logo.png?1713464283843"
+                                    alt="F1GENZ Shoes">
+                            </a>
+                            <p>F1GENZ SHOES luôn cam kết, đảm bảo đưa sản phẩm trực tiếp từ nhà sản xuất đến tay người
+                                dùng
+                                và kiểm soát được chất lượng để đáp ứng được nhu cầu ngày càng cao của khách hàng. Tất
+                                cả
+                                các sản phẩm tại F1GENZ SHOES đều có nguồn gốc xuất xứ rõ ràng, chất lượng.</p>
+                        </div>
+                        <div class="footers2-top-item footers2-top-two">
+                            <h4>Liên hệ <i class="fa fa-chevron-down"></i></h4>
+                            <div class="footers2-top-item-content">
+                                <p>Tư vấn dịch vụ: <a aria-label="Liên hệ" title="Liên hệ" href="tel:18006750">1800
+                                        6750</a>
+                                    <br>
+                                    Hỗ trợ sử dụng: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006750">1900
+                                        6750</a> <br>
+                                    Hỗ trợ vận chuyển: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006719">1900
+                                        6719</a> <br>
+                                    Email: <a aria-label="Liên hệ" title="Liên hệ"
+                                        href="mailto:support@sapo.vn">support@sapo.vn</a> <br>
+                                    Từ 7h00 – 22h00 các ngày từ thứ 2 đến Chủ nhật
+                                </p>
+                            </div>
+                        </div>
+                        <div class="footers2-top-item footers2-top-three">
+                            <h4>Về chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                            <div class="footers2-top-item-content">
+                                <ul>
+                                    <li><a href="/gioi-thieu" aria-label="Giới thiệu" title="Giới thiệu">Giới thiệu</a>
+                                    </li>
+                                    <li><a href="/chinh-sach-doi-tra" aria-label="Chính sách đổi trả"
+                                            title="Chính sách đổi trả">Chính sách đổi trả</a></li>
+                                    <li><a href="/chinh-sach-bao-mat" aria-label="Chính sách bảo mật"
+                                            title="Chính sách bảo mật">Chính sách bảo mật</a></li>
+                                    <li><a href="/dieu-khoan-dich-vu" aria-label="Điều khoản dịch vụ"
+                                            title="Điều khoản dịch vụ">Điều khoản dịch vụ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footers2-top-item footers2-top-four">
+                            <h4>Danh mục nổi bật <i class="fa fa-chevron-down"></i></h4>
+                            <div class="footers2-top-item-content">
+                                <ul>
+                                    <li><a href="/chuck-2" aria-label="Chuck 2" title="Chuck 2">Chuck 2</a></li>
+                                    <li><a href="/converse-all" aria-label="Converse All" title="Converse All">Converse
+                                            All</a></li>
+                                    <li><a href="/socks" aria-label="Socks" title="Socks">Socks</a></li>
+                                    <li><a href="/jack-purcell" aria-label="Jack Purcell" title="Jack Purcell">Jack
+                                            Purcell</a></li>
+                                    <li><a href="/converse-seasonal" aria-label="Converse Seasonal"
+                                            title="Converse Seasonal">Converse Seasonal</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footers2-top-item footers2-top-five">
+                            <h4>Liên hệ với chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                            <div class="footers2-top-item-content">
+                                <p>Luôn cập nhật tất cả các hành động mà chúng tôi đã lưu cho tất cả khách hàng của
+                                    mình.
+                                </p>
+                                <ul class="shop-social">
+                                    <li>
+                                        <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Facebook"
+                                            title="F1GENZ Shoes - Facebook">
+                                            <img width="30" height="30" title="F1GENZ Shoes - Facebook"
+                                                src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png"
+                                                alt="F1GENZ Shoes - Facebook">
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Youtube"
+                                            title="F1GENZ Shoes - Youtube">
+                                            <img width="30" height="30" title="F1GENZ Shoes - Youtube"
+                                                src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png"
+                                                alt="F1GENZ Shoes - Youtube">
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Pinterest"
+                                            title="F1GENZ Shoes - Pinterest">
+                                            <img width="30" height="30" title="F1GENZ Shoes - Pinterest"
+                                                src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png"
+                                                alt="F1GENZ Shoes - Youtube">
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - TikTok"
+                                            title="F1GENZ Shoes - TikTok">
+                                            <img width="30" height="30" title="F1GENZ Shoes - TikTok"
+                                                src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png"
+                                                alt="F1GENZ Shoes - TikTok">
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Instagram"
+                                            title="F1GENZ Shoes - Instagram">
+                                            <img width="30" height="30" title="F1GENZ Shoes - Instagram"
+                                                src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png"
+                                                alt="F1GENZ Shoes - Instagram">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footers2-bot">
+                        <p class="text-copyright">© 2025 - Bản quyền thuộc về
+                            <a target="_blank" title="F1GENZ TECHNOLOGY CO., LTD."
+                                aria-label="F1GENZ TECHNOLOGY CO., LTD." href="https://f1genz.com/">F1GENZ TECHNOLOGY
+                                CO., LTD.</a>
+                            <a target="_blank"
+                                href="https://www.sapo.vn/?utm_campaign=cpn:f1genz-babie-plm:footer&amp;utm_source=f1genz-babie&amp;utm_medium=referral&amp;utm_content=fm:text_link-km:-sz:&amp;utm_term=&amp;campaign=f1genz-babie"
+                                rel="nofollow">Cung cấp bởi Sapo</a>
+                        </p>
+                        <ul class="shop-payment">
+                            <li class="shop-payment-item">
+                                <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                    <img width="76" height="48"
+                                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_1.png?1713464283843"
+                                        alt="/ - Payment">
+                                </a>
+                            </li>
+                            <li class="shop-payment-item">
+                                <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                    <img width="76" height="48"
+                                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_2.png?1713464283843"
+                                        alt="/ - Payment">
+                                </a>
+                            </li>
+                            <li class="shop-payment-item">
+                                <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                    <img width="76" height="48"
+                                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_3.png?1713464283843"
+                                        alt="/ - Payment">
+                                </a>
+                            </li>
+                            <li class="shop-payment-item">
+                                <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                    <img width="76" height="48"
+                                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_4.png?1713464283843"
+                                        alt="/ - Payment">
+                                </a>
+                            </li>
+                            <li class="shop-payment-item">
+                                <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                    <img width="76" height="48"
+                                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_5.png?1713464283843"
+                                        alt="/ - Payment">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+</body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.slider6').slick({
+            slidesToShow: 4,  // Hiển thị 3 slide
+            slidesToScroll: 1,  // Mỗi lần cuộn chuyển 1 slide
+            autoplay: true,
+            autoplaySpeed: 3000,  // Tốc độ tự động chuyển (3 giây)
+
+            infinite: true,  // Chế độ vô hạn (loop)
+            pauseOnHover: true,
+
+        });
+    });
+</script>
+<script>
+
+
+    // Open modal
+    function openModal() {
+        const modal = document.getElementById("imageModal");
+        const mainImage = document.getElementById("mainImage");
+        const modalImage = document.getElementById("modalImage");
+
+        modalImage.src = mainImage.src; // Set modal image source to the clicked image
+        modal.style.display = "flex"; // Show the modal
+    }
+
+    // Close modal
+    function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.style.display = "none"; // Hide the modal
+    }
+
+    // Change main image
+    function changeImage(imagePath) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imagePath;
+        mainImage.classList.add('fade-in');
+
+        // Remove the fade-in effect after animation completes
+        setTimeout(() => {
+            mainImage.classList.remove('fade-in');
+        }, 300);
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        // Lấy tất cả các thẻ <li> và các phần tử tương ứng
+        const tabs = document.querySelectorAll(".main-product-description-left-head li");
+        const contents = document.querySelectorAll(".main-product-description-left-item");
+
+        // Lặp qua từng thẻ <li>
+        tabs.forEach(tab => {
+            tab.addEventListener("click", function () {
+                // Lấy giá trị data-type của thẻ <li> được click
+                const type = tab.getAttribute("data-type");
+
+                // Bỏ class 'active' của tất cả các thẻ <li> và thêm cho thẻ đang click
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                // Ẩn tất cả các phần tử <div> liên quan
+                contents.forEach(content => {
+                    content.classList.add("an"); // Thêm class 'an' để ẩn
+                });
+
+                // Hiển thị phần tử tương ứng với data-type
+                const target = document.querySelector(`.main-product-description-left-item[data-type="${type}"]`);
+                if (target) {
+                    target.classList.remove("an"); // Xóa class 'an' để hiển thị
+                }
+            });
+        });
+    });
+
+</script>
+<script src="/js/js.js"></script>
+<script>
+    document.querySelectorAll('[data-type="shop-quantity-plus"]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const input = e.target.closest('.shop-quantity').querySelector('input');
+            let quantity = parseInt(input.value) || 1;
+            input.value = quantity + 1;
+            updateCartTotal(); // Hàm cập nhật tổng giá
+        });
+    });
+    function updateCartTotal() {
+        const cartItems = document.querySelectorAll('.shop-cart-item');
+        let total = 0;
+
+        cartItems.forEach(item => {
+            const price = parseFloat(item.querySelector('p').textContent.replace(/[^\d]/g, '')) || 0;
+            const quantity = parseInt(item.querySelector('input').value) || 1;
+            total += price * quantity;
+        });
+
+        document.querySelector('.toCheckout span:last-child').textContent = total.toLocaleString('vi-VN') + '₫';
+    }
+
+    document.querySelectorAll('[data-type="shop-quantity-minus"]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const input = e.target.closest('.shop-quantity').querySelector('input');
+            let quantity = parseInt(input.value) || 1;
+            if (quantity > 1) {
+                input.value = quantity - 1;
+                updateCartTotal(); // Hàm cập nhật tổng giá
+            }
+        });
+    });
+
+</script>
+<script type="module">
+    import { lay1sp, them_gio_hang, xoa_gio_hang, dang_nhap, lay_gio_hang_menu, lay_san_pham_lien_quan } from '/js/app.js'
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get('id') || '0');
+    lay1sp(productId);
+    const loadProductsAndInitPagination = async () => {
+        try {
+            document.querySelectorAll('[data-type="shop-quantity-plus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    input.value = quantity + 1;
+                    updateCartTotal(); // Hàm cập nhật tổng giá
+                });
+            });
+            document.querySelector('.showmenu').innerHTML = await lay_gio_hang_menu();
+
+            function updateCartTotal() {
+                const cartItems = document.querySelectorAll('.shop-cart-item');
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    const price = parseFloat(item.querySelector('p').textContent.replace(/[^\d]/g, '')) || 0;
+                    const quantity = parseInt(item.querySelector('input').value) || 1;
+                    total += price * quantity;
+                });
+
+                document.querySelector('.toCheckout span:last-child').textContent = total.toLocaleString('vi-VN') + 'VNĐ';
+            }
+
+            document.querySelectorAll('[data-type="shop-quantity-minus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    if (quantity > 1) {
+                        input.value = quantity - 1;
+                        updateCartTotal(); // Hàm cập nhật tổng giá
+                    }
+                });
+            });
+            document.querySelectorAll('[data-type="main-product-add"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const selectedSize = document.querySelector('input[name="product-choose-size"]:checked');
+
+                    // Kiểm tra xem có size nào được chọn không
+                    if (!selectedSize) {
+                        alert('Vui lòng chọn size trước khi thêm vào giỏ hàng.');
+                        return;
+                    }
+
+                    // In giá trị size ra console để kiểm tra
+                    console.log("Selected size:", selectedSize.value);
+
+                    const productData = {
+                        productId: productId,
+                        ten: document.querySelector('.main-product-title').textContent.trim(),
+                        hinh: document.querySelector('.main-product-thumbnails>img').src,
+                        gia: parseFloat(document.querySelector('.main-product-price-compare').textContent.replace(/[^\d]/g, '')),
+                        gia_km: parseFloat(document.querySelector('.main-product-price-this')?.textContent?.replace(/[^\d]/g, '')) || 0,
+                        soluong: parseInt(document.querySelector('.shop-quantity input[name="quantity"]').value) || 1,
+                        size: parseInt(document.querySelector('input[name="product-choose-size"]:checked').value) // Giá trị size
+                    };
+
+                    // In ra dữ liệu productData để kiểm tra
+                    console.log("Product Data:", productData);
+
+                    them_gio_hang(productData); // Gọi hàm thêm giỏ hàng
+                });
+            });
+
+            // Hàm giả lập xóa sản phẩm
+
+            document.getElementById('btn-dangnhap').addEventListener(('click'), (event) => {
+                event.preventDefault();
+                const email = document.getElementById('email1').value.trim();
+                const password = document.getElementById('password1').value.trim();
+                // if (!email || !password) {
+                //     alert('Vui lòng nhập đầy đủ email và mật khẩu.');
+                //     return;
+                // }
+                const oldUser = {
+                    email,
+                    password,
+
+                };
+                dang_nhap(oldUser);
+            });
+            const productId = parseInt(params.get('id') || '0');
+
+            document.querySelector('.product-relate').innerHTML = await lay_san_pham_lien_quan(productId);
+
+        } catch (error) {
+            console.error('Lỗi khi tải sản phẩm:', error);
+            // productGrid.innerHTML = '<p class="error">Không thể tải sản phẩm</p>';
+        }
+    };
+
+    window.onload = loadProductsAndInitPagination;
+
+</script>
+
+
+</html>

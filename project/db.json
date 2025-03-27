@@ -1,0 +1,618 @@
+{
+  "thuong_hieu": [
+    {
+      "id": "1",
+      "ten": "Nike1",
+      "quocgia": "Mỹ12"
+    },
+    {
+      "id": "2",
+      "ten": "Adidas",
+      "quocgia": "Đức1"
+    },
+    {
+      "id": "3",
+      "ten": "dAS",
+      "quocgia": "SA"
+    },
+    {
+      "id": "4",
+      "ten": "LƯU ĐỨC DŨNG",
+      "quocgia": "Việt nam1222"
+    }
+  ],
+  "san_pham": [
+    {
+      "id": "1",
+      "ten": "Chuck Taylor All Star Classic",
+      "gia": 1200000,
+      "gia_km": 1100000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/121176-drake-650x650-65cdda7193cb40b9977bfd6379e567c5-jpeg.jpg?v=1699864033743",
+      "soluongtonkho": 50,
+      "hot": true,
+      "an_hien": true,
+      "thuonghieu_id": 1,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/121176-drake2-650x650-b62837853a4d4d739ba4f556c2cd82bb-jpeg.jpg?v=1699864033743",
+        "https://bizweb.dktcdn.net/100/493/370/products/121176-drake4-650x650-fdf7ea31c9444facbe9574aac96d2594-jpeg.jpg?v=1699864033743",
+        "https://bizweb.dktcdn.net/100/493/370/products/121176-drake5-650x650-0c86d0e9e2014659a3f9c87acbf6dbb5-jpeg.jpg?v=1699864033743"
+      ],
+      "mota": "Giày sneaker phong cách cổ điển, phù hợp cho mọi hoạt động.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "2",
+      "ten": "Chuck Taylor All Star Classic - 127440",
+      "gia": 1500000,
+      "gia_km": 1350000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/127440-drake-650x650-ac03230c5cb64fe481d19063beee86a8-jpeg.jpg?v=1699864026270",
+      "soluongtonkho": 40,
+      "hot": true,
+      "an_hien": true,
+      "thuonghieu_id": 2,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/127440-drake1-1-650x650-b62ac2b96214438c9b4030bbbb361359-jpeg.jpg?v=1699864026270",
+        "https://bizweb.dktcdn.net/100/493/370/products/127440-drake2-1-650x650-fb92f6e486904261a4e6b372195be5d5-jpeg.jpg?v=1699864026270",
+        "https://bizweb.dktcdn.net/100/493/370/products/127440-drake3-1-650x650-f7c3d13070a44458b47e2280c6d70a72-jpeg.jpg?v=1699864026270"
+      ],
+      "mota": "Giày thể thao thiết kế hiện đại, độ bền cao.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "3",
+      "ten": "Converse Chuck Taylor All Star Mono Leather Low Top",
+      "gia": 2000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/136823c-5-650x650-15ff91e141be424b95a2892abf3fe169-jpeg.jpg?v=1699864035783",
+      "soluongtonkho": 30,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/136823c-2-650x650-a1096454688d47c693bad810d9321f85-jpeg.jpg?v=1699864035783",
+        "https://bizweb.dktcdn.net/100/493/370/products/136823c-1-650x650-f30ba8e6f4ca46e593e49c10cf33e7dd-jpeg.jpg?v=1699864035783",
+        "https://bizweb.dktcdn.net/100/493/370/products/136823c-3-650x650-ca3915e0f3f844de85221ac1eeecd853-jpeg.jpg?v=1699864035783"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 2
+    },
+    {
+      "id": "4",
+      "ten": "Chuck Taylor All Star Classic - 121184",
+      "gia": 2000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/121184-drake1-650x650-21b3c20f79d8491a993fc5a0744756b2-jpeg.jpg?v=1699864031380",
+        "https://bizweb.dktcdn.net/100/493/370/products/121184-drake2-650x650-e8371211b05e47dfa5d17f7db84c2f01-jpeg.jpg?v=1699864031380",
+        "https://bizweb.dktcdn.net/100/493/370/products/121184-drake3-650x650-d31f396223b14739862640b120cb26db-jpeg.jpg?v=1699864031380"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "5",
+      "ten": "Chuck Taylor All Star Classic R",
+      "gia": 2000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/126196-002-650x650-115fc0e823304481a9e282f4c63c4e42-jpeg.jpg?v=1699864029033",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/126196-drake1-1-650x650-92cc0a3ce2b94489b7d9c2b7879e8964-jpeg.jpg?v=1699864029033",
+        "https://bizweb.dktcdn.net/100/493/370/products/126196-drake2-1-650x650-db9dd9d3dc3d4ae4aa590fff4f81ea5b-jpeg.jpg?v=1699864029033",
+        "https://bizweb.dktcdn.net/100/493/370/products/126196-drake3-1-650x650-bfd60a5f8e55446182efb0ef519d28bf-jpeg.jpg?v=1699864029033"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "6",
+      "ten": "Chuck Taylor All Star Classic B",
+      "gia": 2000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/m5039-650x650-2622d34a5dc34334a35aa75cda0e4b04-jpeg.jpg?v=1699864023877",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/m5039-drake1-650x650-cb07a70df0a7475f9b55a08019cf3be9-jpeg.jpg?v=1699864023877",
+        "https://bizweb.dktcdn.net/100/493/370/products/m5039-drake2-650x650-dca31adf97e44f80a63616596fe6b5d7-jpeg.jpg?v=1699864023877",
+        "https://bizweb.dktcdn.net/100/493/370/products/m5039-drake3-650x650-0155066cde3b43af8973426296f1677a-jpeg.jpg?v=1699864023877"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "7",
+      "ten": "Chuck Taylor All Star Classic - M3310",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "https://bizweb.dktcdn.net/100/493/370/products/m3310-drake2-650x650-5fa0da1010a5460db5954e1824439e88-jpeg.jpg?v=1699864021483",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/m3310-drake1-650x650-66ac5af047724835b8bc5546f376050b-jpeg.jpg?v=1699864021483",
+        "https://bizweb.dktcdn.net/100/493/370/products/m3310-drake2-650x650-5fa0da1010a5460db5954e1824439e88-jpeg.jpg?v=1699864021483",
+        "https://bizweb.dktcdn.net/100/493/370/products/m3310-drake3-650x650-c7f0d1317c694eccabee832634346f75-jpeg.jpg?v=1699864021483"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "8",
+      "ten": "Converse Chuck Taylor All Star Archive Paint Splatter",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/170802c-650x650-b54bad4b49f8453a87b8858aa91829b3-jpeg.jpg?v=1699864019490",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/170802c-5-650x650-f1ad72b73f61442c9bc64ae498e389f5-jpeg.jpg?v=1699864019490",
+        "https://bizweb.dktcdn.net/100/493/370/products/170802c-6-650x650-213a19bdd00e4ea585a7d04f3d5f72b4-jpeg.jpg?v=1699864019490",
+        "https://bizweb.dktcdn.net/100/493/370/products/170802c-4-650x650-57668f692b544a5c9eaba4ed4fa1df85-jpeg.jpg?v=1699864019490"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "9",
+      "ten": "Converse Chuck Taylor All Star Mule Recycled Canvas",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/172592c-p3-650x650-e0641cc3dcc54d5395977274ed6e9337-jpeg.jpg?v=1699864016413",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/172592c-3-650x650-b95c846ccccf416b99cac05fba3649df-jpeg.jpg?v=1699864016413",
+        "https://bizweb.dktcdn.net/100/493/370/products/172592c-2-650x650-6c205338518240e896aaac023fd4e57d-jpeg.jpg?v=1699864016413",
+        "https://bizweb.dktcdn.net/100/493/370/products/172592c-4-650x650-d05d1a794ee24d7881ca492234dc2df5-jpeg.jpg?v=1699864016413"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "10",
+      "ten": "Converse Chuck Taylor All Star My Story",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/170282c-drake-1-650x650-a978a4bc5a5f443e8c8ec503dde0acee-jpeg.jpg?v=1699864014363",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/170282c-1-650x650-9d3a0deafab84c1b9d5edee8445999da-jpeg.jpg?v=1699864014363",
+        "https://bizweb.dktcdn.net/100/493/370/products/170282c-2-650x650-905e92c470dc471786ab08d69f5f92e9-jpeg.jpg?v=1699864014363",
+        "https://bizweb.dktcdn.net/100/493/370/products/170282c-3-650x650-8c1aefe1ab604f1280e95053345ef28c-jpeg.jpg?v=1699864014363"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "11",
+      "ten": "Converse Chuck Taylor All Star Valentine's Day",
+      "gia": 1900000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/171117c-650x650-11015527707e43f6b5d292826b98487f-jpeg.jpg?v=1699864011380",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/171117c-1-650x650-65164eb20f9a45bea9a788e2717ada13-jpeg.jpg?v=1699864011380",
+        "https://bizweb.dktcdn.net/100/493/370/products/171117c-2-650x650-bc83175e0eb54d9bbbc8bbbd3e60995c-jpeg.jpg?v=1699864011380",
+        "https://bizweb.dktcdn.net/100/493/370/products/171117c-3-650x650-90334ab15eaf47d0aa568c02a4ac060e-jpeg.jpg?v=1699864011380"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "12",
+      "ten": "Converse Chuck Taylor All Star Mi Gente",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/168697v-650x650-0bb5cc87c1984555a4054611e4afca91-jpeg.jpg?v=1699864007830",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/168697v-1-1-650x650-ccb831b3460b49f9ba1c48e23459164f-jpeg.jpg?v=1699864007830",
+        "https://bizweb.dktcdn.net/100/493/370/products/168697v-2-1-650x650-851191ef7b5b49cdb84e2b5d6f08388f-jpeg.jpg?v=1699864007830",
+        "https://bizweb.dktcdn.net/100/493/370/products/168697v-3-1-650x650-555397a7ab764c95bcd6c6f1474d67de-jpeg.jpg?v=1699864007830"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "13",
+      "ten": "Converse Chuck Taylor All Star Rivals",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/168628c-650x650-04c91a1334604c93ad69ce4d418a86db-jpeg.jpg?v=1699864004233",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/168628c-1-650x650-2516673cfbd44e129d11639466494a07-jpeg.jpg?v=1699864004233",
+        "https://bizweb.dktcdn.net/100/493/370/products/168628c-2-650x650-0d4378bbf88f46cdaab2c1c1b09005a3-jpeg.jpg?v=1699864004233",
+        "https://bizweb.dktcdn.net/100/493/370/products/168628c-3-650x650-1385dba3d388496dbef4c4398beb30ec-jpeg.jpg?v=1699864004233"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "14",
+      "ten": "Converse Chuck Taylor All Star Specialty Suede",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/166000c-00-650x650-c07bf2f19b024d22a21c71150a417af6-jpeg.jpg?v=1699864002260",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/166000c-02-650x650-c2e9d2be239441d19397753e47289890-jpeg.jpg?v=1699864002260",
+        "https://bizweb.dktcdn.net/100/493/370/products/166000c-drake1-650x650-cee9c9afa68c466ebc2ffe5b50f5de22-jpeg.jpg?v=1699864002260",
+        "https://bizweb.dktcdn.net/100/493/370/products/166000c-drake3-650x650-ea4ddb6b3c6f46848947dcf597ac8bf7-jpeg.jpg?v=1699864002260"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "15",
+      "ten": "Converse Chuck Taylor All Star Specialty Suede",
+      "gia": 3000000,
+      "gia_km": 1800000,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/165912c-1-1-650x650-0d9483ab755e43da8df2efaefba7b924-jpeg.jpg?v=1699863998963",
+      "soluongtonkho": 60,
+      "hot": false,
+      "an_hien": true,
+      "thuonghieu_id": 3,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/165912c-drake7-650x650-4054a455c6274fbd9eaec57fcff030f5-jpeg.jpg?v=1699863998963",
+        "https://bizweb.dktcdn.net/100/493/370/products/165912c-drake1-650x650-5694184dccf6490f840106635d8d26ef-jpeg.jpg?v=1699863998963",
+        "https://bizweb.dktcdn.net/100/493/370/products/165912c-drake2-650x650-466dcc32958b458c9c11a67457eb3d0b-jpeg.jpg?v=1699863998963"
+      ],
+      "mota": "Giày boot da thật, phong cách lịch lãm.",
+      "trangthai": "Còn hàng",
+      "tinh_chat": 3
+    },
+    {
+      "id": "16",
+      "ten": "LƯU ĐỨC DŨNG",
+      "gia": 122,
+      "gia_km": 22,
+      "hinh": "//bizweb.dktcdn.net/thumb/large/100/493/370/products/566135c-650x650-1-1-650x650-d67b0cdd07ab4223bd5eb9c72303da22-jpeg.jpg?v=1699863928110",
+      "soluongtonkho": 11,
+      "hot": true,
+      "an_hien": true,
+      "thuonghieu_id": 2,
+      "thumbnails": [
+        "https://bizweb.dktcdn.net/100/493/370/products/1-650x650-6d2c372db67e40e18b0251d114ecf451-jpeg.jpg?v=1699863928110",
+        "https://bizweb.dktcdn.net/100/493/370/products/2-650x650-355d400e10974e669189baeb0619ce64-jpeg.jpg?v=1699863928110",
+        "https://bizweb.dktcdn.net/100/493/370/products/3-650x650-ab235bb9782948a48454381d49fcc9a3-jpeg.jpg?v=1699863928110"
+      ],
+      "mota": "gà1",
+      "trangthai": "Còn hàng",
+      "tinhchat": 1
+    }
+  ],
+  "thuoc_tinh": [
+    {
+      "id": "1",
+      "san_pham_id": 1,
+      "size": 40,
+      "soluong": 15,
+      "theloai": "Sneaker"
+    },
+    {
+      "id": "2",
+      "san_pham_id": 1,
+      "size": 42,
+      "soluong": 20,
+      "theloai": "Sneaker"
+    },
+    {
+      "id": "3",
+      "san_pham_id": 2,
+      "size": 41,
+      "soluong": 10,
+      "theloai": "Thể Thao"
+    },
+    {
+      "id": "4",
+      "san_pham_id": 3,
+      "size": 43,
+      "soluong": 5,
+      "theloai": "Boot"
+    }
+  ],
+  "gio_hang": [],
+  "nguoi_dung": [
+    {
+      "id": "1",
+      "name": "Lưu Đức Dũng",
+      "email": "3@gmail.com",
+      "password": "Dungduc@0712",
+      "phone": "0775895973",
+      "role": "admin",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Nguyễn Tấn Hoàng",
+      "email": "tranhoangnguyenps41484@gmail.com",
+      "password": "1234424256",
+      "phone": "0775895973",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Lê Chí Bảo",
+      "email": "baochile@gmail.com",
+      "password": "hahaha",
+      "phone": "07758959731313",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Nguyễn kế cu",
+      "email": "kecunguuen@gmail.com",
+      "password": "1234424256",
+      "phone": "0775895973",
+      "role": "admin",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Đoàn Bùi Danh Thái",
+      "email": "doanbuidanhthai@gmail.com",
+      "password": "1234424256",
+      "phone": "1292333",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Nguyễn Tấn Trúc",
+      "email": "Trúc@gmail.com",
+      "password": "1234424256",
+      "phone": "077589445973",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Lương Văn Vinh",
+      "email": "vinhLuon@gmail.com",
+      "password": "1234424256",
+      "phone": "0775895973",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Lương Vũ Vinh",
+      "email": "vinhLuon@gmail.com",
+      "password": "1234424256",
+      "phone": "0775895973",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Lương Văn dinh",
+      "email": "vinhLuon@gmail.com",
+      "password": "1234424256",
+      "phone": "0775895973",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Lương Văn ninh",
+      "email": "vinhLuon@gmail.com",
+      "password": "1234424256",
+      "phone": "0775895973",
+      "role": "customer",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "Hà Nội"
+        },
+        {
+          "id": 2,
+          "address": "Hồ Chí Minh"
+        }
+      ]
+    },
+    {
+      "id": "59ec",
+      "name": "LƯU ĐỨC DŨNG",
+      "email": "dungldps41484@gmail.com",
+      "phone": "0775895973",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "76 Đường 6 KP4 Bình Trưng Tây, TP. Thủ Đức, Hồ Chí Minh"
+        }
+      ],
+      "role": "admin"
+    },
+    {
+      "id": "fdc1",
+      "name": "LƯU ĐỨC DŨNG",
+      "email": "dungldps41484@gmail.com",
+      "phone": "0775895973",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "76 Đường 6 KP4 Bình Trưng Tây, TP. Thủ Đức, Hồ Chí Minh"
+        }
+      ],
+      "role": "admin"
+    },
+    {
+      "id": "a3a0",
+      "name": "LƯU ĐỨC DŨNG",
+      "email": "dungldps41484@gmail.com",
+      "phone": "0775895973",
+      "diachi": [
+        {
+          "id": 1,
+          "address": "76 Đường 6 KP4 Bình Trưng Tây, TP. Thủ Đức, Hồ Chí Minh"
+        }
+      ],
+      "role": "admin"
+    }
+  ],
+  "don_hang": [
+    {
+      "id": "e9bd",
+      "nguoi_dung_id": "1",
+      "gio_hang_id": "e9bd",
+      "ngay_dat": "2024-07-24",
+      "ngay_giao": "2024-07-25",
+      "trang_thai": "Đã giao",
+      "gia_tong": 2000000,
+      "ghi_chu": "Đóng gói cẩn thận"
+    }
+  ],
+  "don_hang_chi_tiet": [
+    {
+      "id": "1",
+      "don_hang_id": "e9bd",
+      "san_pham_id": "15",
+      "so_luong": 2,
+      "FOREIGN_KEYS": [
+        "don_hang_id REFERENCES don_hang(don_hang_id)",
+        "san_pham_id REFERENCES san_pham(san_pham_id)"
+      ]
+    }
+  ],
+  "voucher": [
+    {
+      "id": "1",
+      "ma_voucher": "Voucher1",
+      "mo_ta": "Voucher1",
+      "ngay_bat_dau": "2024-07-24",
+      "ngay_ket_thuc": "2024-07-25",
+      "so_luong": 100,
+      "gia_tri": 100000,
+      "trang_thai": "Hoạt động"
+    }
+  ]
+}

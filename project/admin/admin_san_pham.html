@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Quản Trị Viên</h2>
+        <ul>
+            <a href="adminthuancss.html">
+                <li>📊 Bảng Điều Khiển</li>
+            </a>
+            <a href="admin_nguoi_dung.html">
+                <li class="active">👤 Quản Lý Người Dùng</li>
+            </a>
+            <a href="admin_thuong_hieu.html">
+                <li>🏷️ Quản Lý Thương Hiệu</li>
+            </a>
+            <a href="admin_san_pham.html">
+                <li>📦 Quản Lý Sản Phẩm</li>
+            </a>
+            <a href="">
+                <li>🛒 Quản Lý Đơn Hàng</li>
+            </a>
+            <a href="">
+                <li>🎟️ Quản Lý Voucher</li>
+            </a>
+        </ul>
+    </div>
+    <div class="main-content">
+
+        <!-- Tìm kiếm người dùng -->
+        <div class="search-bar">
+            <input type="text" id="searchUser" placeholder="Tìm kiếm sản phẩm...">
+        </div>
+        <!-- Bảng danh sách người dùng -->
+        <a href="./them/admin_themProduct.html"><button>Thêm sản phẩm</button></a>
+
+        <div class="table-container" data-hien="1">
+            <h3>Danh Sách Sản Phẩm</h3>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Ảnh</th>
+                    <th>Số lượng còn lại</th>
+                    <th>Thao tác</th>
+
+                </tr>
+                <tbody id="showsp"></tbody>
+            </table>
+        </div>
+
+        <!-- Phân trang -->
+        <div id="pagination" class="pagination">
+            <!-- Các nút phân trang sẽ được tạo tự động bằng JavaScript -->
+        </div>
+
+    </div>
+</body>
+<script type="module">
+    import { danh_sach_san_pham, xoa_san_pham } from '/js/admin_them.js';
+    const params = new URLSearchParams(location.search);
+    let id = params.get('id');
+    document.addEventListener('click', function (event) {
+    // Kiểm tra xem có bấm vào nút "Sửa" không
+    if (event.target.classList.contains('btn-sua')) {
+        const id = event.target.dataset.id;
+        if (id) {
+            window.location.href = `./sua/admin_san_pham.html?id=${id}`;
+        }
+    }
+
+});
+    await danh_sach_san_pham();
+    let currentId2 = parseInt(localStorage.getItem('currentId2'));
+
+    document.querySelectorAll('.btn-xoa').forEach(btn => {
+        btn.addEventListener('click', function () {
+            xoa_san_pham(this);  // Gọi hàm xóa thương hiệu
+
+            // Giảm currentId và lưu lại vào localStorage sau khi xóa
+            currentId--;
+            localStorage.setItem('currentId2', currentId2.toString());  // Lưu giá trị mới của currentId
+        });
+    });
+</script>
+<script>
+
+</script>
+
+</html>

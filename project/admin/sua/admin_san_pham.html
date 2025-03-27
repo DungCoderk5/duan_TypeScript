@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý thương hiệu</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Quản Trị Viên</h2>
+        <ul>
+            <a href="../adminthuancss.html">
+                <li>📊 Bảng Điều Khiển</li>
+            </a>
+            <a href="../admin_nguoi_dung.html">
+                <li>👤 Quản Lý Người Dùng</li>
+            </a>
+            <a href="admin_thuong_hieu.html">
+                <li class="active">🏷️ Quản Lý Thương Hiệu</li>
+            </a>
+            <a href="../admin_san_pham.html">
+                <li>📦 Quản Lý Sản Phẩm</li>
+            </a>
+            <a href="">
+                <li>🛒 Quản Lý Đơn Hàng</li>
+            </a>
+            <a href="">
+                <li>🎟️ Quản Lý Voucher</li>
+            </a>
+        </ul>
+    </div>
+    <div class="main-content">
+
+        <div id="editProductContainer"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script type="module">
+    import { form_sua_san_pham,lay_thuong_hieu } from '/js/admin_them.js';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+    
+        const params = new URLSearchParams(location.search);
+        let id = params.get('id');
+
+        if (id) {
+            let formHTML = await form_sua_san_pham(id); // Chờ kết quả thực sự
+            // document.getElementById('show').innerHTML = formHTML; // Gán nội dung đã xử lý
+        }
+
+    });
+  
+
+
+</script>

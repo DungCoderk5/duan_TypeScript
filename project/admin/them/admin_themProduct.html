@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm người thương hiệu</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Quản Trị Viên</h2>
+        <ul>
+            <a href="../adminthuancss.html">
+                <li>📊 Bảng Điều Khiển</li>
+            </a>
+            <a href="../admin_nguoi_dung.html">
+                <li class="active">👤 Quản Lý Người Dùng</li>
+            </a>
+            <a href="../admin_thuong_hieu.html">
+                <li>🏷️ Quản Lý Thương Hiệu</li>
+            </a>
+            <a href="../admin_san_pham.html">
+                <li>📦 Quản Lý Sản Phẩm</li>
+            </a>
+            <a href="">
+                <li>🛒 Quản Lý Đơn Hàng</li>
+            </a>
+            <a href="">
+                <li>🎟️ Quản Lý Voucher</li>
+            </a>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>Thêm sản phẩm mới</h2>
+        <form id="addProductForm" action="/san_pham" method="POST"  enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Tên sản phẩm:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="old-price">Giá trước khuyến mãi:</label>
+                <input type="text" id="old-price" name="old-price" required>
+            </div>
+            <div class="form-group">
+                <label for="new-price">Giá sau khuyến mãi:</label>
+                <input type="text" id="new-price" name="new-price" required>
+            </div>
+             <div class="form-group">
+                <label for="image">Hình ảnh:</label>
+                <input type="text" id="image" name="image" required>
+            </div>
+            <div class="form-group">
+                <label for="stock">Số lượng tồn kho:</label>
+                <input type="number" id="stock" name="stock" required>
+            </div>
+            <div class="form-group">
+                <label for="hot">Độ hot:</label>
+                <select id="hot" name="hot">
+                    <option value="true">Đang hot</option>
+                    <option value="false">Không hot</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="an_hien">Ẩn_hiện:</label>
+                <select id="an_hien" name="an_hien">
+                    <option value="true">Hiện</option>
+                    <option value="false">Ẩn</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="thuonghieu">Thương hiệu:</label>
+                <select id="thuonghieu" name="thuonghieu">
+                  
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="thumbnails">Thumbnails:</label>
+                <input type="text" class="form-control" id="thumbnails" placeholder="https://link1.com, https://link2.com, https://link3.com">
+                
+            </div>
+            <div class="form-group">
+                <label for="mota">Mô tả:</label>
+                <textarea class="form-control" id="mota" style="width: 100%;height: 200px;" placeholder="Nhập mô tả sản phẩm"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="status">Trạng thái:</label>
+                <select id="status" name="status">
+                    <option value="Còn hàng">Còn hàng</option>
+                    <option value="hết hàng">Hết hàng</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tinhchat">Tính chất:</label>
+                <select id="tinhchat" name="tinhchat">
+                    <option value="1">Mới</option>
+                    <option value="2">Giảm giá</option>
+                    <option value="3">Bán chạy</option>
+                </select>
+            </div>
+            <button type="submit">Thêm sản phẩm</button>
+        </form>
+        <button id="btnquaylai">Quay lại</button>
+    </div>
+</body>
+<script type="module">
+    import { them_san_pham,lay_thuong_hieu } from '/js/admin_them.js';
+    // Lấy giá trị id từ localStorage hoặc khởi tạo giá trị mặc định nếu chưa có
+    document.addEventListener("DOMContentLoaded", async () => {
+
+
+        document.getElementById('addProductForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const ten = document.getElementById('name').value;
+        const gia = document.getElementById('old-price').value;
+        const gia_km = document.getElementById('new-price').value;
+        const hinh = document.getElementById('image').value;
+        const soluongtonkho = document.getElementById('stock').value;
+        const hot = JSON.parse(document.getElementById('hot').value.toLowerCase()); // Chuyển đổi thành Boolean
+        const an_hien = document.getElementById('an_hien').value;
+        const thuonghieu = document.getElementById('thuonghieu').value;
+        const thumbnailsInput = document.getElementById('thumbnails').value;
+        const thumbnails = thumbnailsInput.split(',').map(link => link.trim()); // Chuyển chuỗi thành mảng
+        const mota = document.getElementById('mota').value;
+        const status = document.getElementById('status').value;
+        const tinhchat = document.getElementById('tinhchat').value;
+
+        let currentId2 = localStorage.getItem('currentId2');
+        if (!currentId2 || isNaN(parseInt(currentId2, 10))) {
+            currentId2 = "16";
+        }
+        if (thumbnails.length !== 3) {
+            alert("Vui lòng nhập đúng 3 link ảnh thumbnails.");
+            return;
+        }
+        let newId = (parseInt(currentId2, 10) + 1).toString();
+
+        const userData = {
+            id: newId,
+            ten: ten,
+            gia: gia,
+            gia_km: gia_km,
+            hinh: hinh,
+            soluongtonkho: soluongtonkho,
+            hot: hot, // Boolean
+            an_hien: an_hien,
+            thuonghieu_id: thuonghieu,
+            thumbnails: thumbnails,
+            mota: mota,
+            trangthai: status,
+            tinhchat: tinhchat
+        };
+
+        localStorage.setItem('currentId2', newId);
+        them_san_pham(userData);
+    });
+    await lay_thuong_hieu();
+});
+
+
+
+</script>
+
+</html>

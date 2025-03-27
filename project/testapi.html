@@ -1,0 +1,68 @@
+<label for="province-select">Tỉnh/Thành phố:</label>
+<select id="province-select">
+  <option value="">Chọn Tỉnh/Thành phố</option>
+</select>
+
+<label for="district-select">Quận/Huyện:</label>
+<select id="district-select" disabled>
+  <option value="">Chọn Quận/Huyện</option>
+</select>
+
+<label for="ward-select">Phường/Xã:</label>
+<select id="ward-select" disabled>
+  <option value="">Chọn Phường/Xã</option>
+</select>
+
+<script>
+  const provinceSelect = document.getElementById('province-select');
+  const districtSelect = document.getElementById('district-select');
+  const wardSelect = document.getElementById('ward-select');
+
+  // Lấy danh sách tỉnh/thành phố
+  fetch('https://provinces.open-api.vn/api/p/')
+    .then(response => response.json())
+    .then(provinces => {
+      provinces.forEach(province => {
+        let option = document.createElement('option');
+        option.value = province.code;
+        option.textContent = province.name;
+        provinceSelect.appendChild(option);
+      });
+    });
+
+  // Khi chọn tỉnh/thành phố, tải quận/huyện
+  provinceSelect.addEventListener('change', function () {
+    districtSelect.innerHTML = '<option value="">Chọn Quận/Huyện</option>';
+    districtSelect.disabled = false;
+    const provinceCode = provinceSelect.value;
+
+    fetch(`https://provinces.open-api.vn/api/p/${provinceCode}?depth=2`)
+      .then(response => response.json())
+      .then(data => {
+        data.districts.forEach(district => {
+          let option = document.createElement('option');
+          option.value = district.code;
+          option.textContent = district.name;
+          districtSelect.appendChild(option);
+        });
+      });
+  });
+
+  // Khi chọn quận/huyện, tải phường/xã
+  districtSelect.addEventListener('change', function () {
+    wardSelect.innerHTML = '<option value="">Chọn Phường/Xã</option>';
+    wardSelect.disabled = false;
+    const districtCode = districtSelect.value;
+
+    fetch(`https://provinces.open-api.vn/api/d/${districtCode}?depth=2`)
+      .then(response => response.json())
+      .then(data => {
+        data.wards.forEach(ward => {
+          let option = document.createElement('option');
+          option.value = ward.code;
+          option.textContent = ward.name;
+          wardSelect.appendChild(option);
+        });
+      });
+  });
+</script>

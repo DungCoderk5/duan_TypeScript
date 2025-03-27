@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick Slider Example</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        .slick-prev, .slick-next {
+            font-size: 24px;
+            color: #000;
+            background-color: rgba(255, 255, 255, 0.7); /* Màu nền trong suốt */
+            border-radius: 50%;
+            padding: 10px;
+            z-index: 10;  /* Đảm bảo nút hiển thị trên ảnh */
+            transition: all 0.3s ease;
+        }
+        .slick-prev::before{
+            color: #841c1c;
+        }
+
+        .slick-prev:hover, .slick-next:hover {
+            color: #841c1c;
+            background-color: rgba(0, 0, 0, 0.7); /* Màu nền khi hover */
+        }
+
+        .slick-prev:active, .slick-next:active {
+            background-color: rgba(222, 82, 82, 0.9); /* Màu nền khi click */
+        }
+
+        .slick-prev {
+            left: 10px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<body>
+
+<div class="slider1">
+    <div><img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380" alt=""></div>
+    <div><img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380" alt=""></div>
+    <div><img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380" alt=""></div>
+    <div><img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380" alt=""></div>
+    <button type="button" class="slick-prev">Previous</button>
+    <button type="button" class="slick-next">Next</button>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slider1').slick({
+            slidesToShow: 2,  // Hiển thị 3 slide
+            slidesToScroll: 1,  // Mỗi lần cuộn chuyển 1 slide
+            autoplay: true,
+            autoplaySpeed: 1000,  // Tốc độ tự động chuyển (3 giây)
+            arrows: true,  // Hiển thị nút điều hướng
+            infinite: true,  // Chế độ vô hạn (loop)
+            pauseOnHover: true,  // Tạm dừng khi di chuột vào slider
+        });
+    });
+</script>
+
+</body>
+</html>

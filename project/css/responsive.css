@@ -1,0 +1,152 @@
+/* tablet and phone */
+@media  (max-width: 1023px) {
+
+}
+/* tablet */
+@media (min-width:740px) and (max-width: 1023px) {
+    header nav{
+        display:none;
+    }
+    .header-right>i{
+        position: absolute;left: auto;right: 220px;
+
+    }
+    /* Ẩn sidebar mặc định */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Ẩn hoàn toàn */
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Khi mở menu */
+.sidebar.open {
+    left: 0;
+}
+
+/* Header sidebar */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Nút đóng */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Danh sách menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* Footer hỗ trợ */
+.sidebar-footer {
+    padding: 15px;
+    background: #ffcc00;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+}
+
+}
+/* phone */
+@media (max-width:739px) {
+    header nav {
+        display: none;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px; /* Ẩn hoàn toàn */
+        width: 300px;
+        height: 100%;
+        background: white;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    /* Khi mở menu */
+    .sidebar.open {
+        left: 0;
+    }
+    
+    /* Header sidebar */
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    /* Nút đóng */
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    /* Danh sách menu */
+    .sidebar-menu {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .sidebar-menu li {
+        padding: 10px 20px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    
+    .sidebar-menu li a {
+        text-decoration: none;
+        color: black;
+        display: block;
+    }
+    
+    /* Footer hỗ trợ */
+    .sidebar-footer {
+        padding: 15px;
+        background: #ffcc00;
+        color: black;
+        text-align: center;
+        font-size: 14px;
+    }
+  
+  
+}
+@media (min-width:1023px){
+    header .fa-bars{
+        display:none;
+     }
+     .sidebar{
+        display:none;
+     }
+}

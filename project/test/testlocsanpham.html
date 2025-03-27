@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="./css/product.css">
+<div class="product-grid">
+    <div class="product-card" data-price="1900000" data-name="Converse Chuck Taylor All Star" data-date="2024-05-10">
+        <div class="product-image">
+            <img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/136823c-5-650x650-15ff91e141be424b95a2892abf3fe169-jpeg.jpg?v=1699864035783"
+                alt="Converse Chuck Taylor All Star">
+            <span class="discount">-11%</span>
+            <button class="wishlist-btn">❤️</button>
+        </div>
+        <h3>Converse Chuck Taylor All Star</h3>
+        <div class="price">
+            <span class="new-price">1.900.000đ</span>
+            <span class="old-price">2.139.000đ</span>
+        </div>
+        <div class="tags">
+            <span class="new">new</span>
+            <span class="freeship">freeship</span>
+        </div>
+    </div>
+    <div class="product-card" data-price="1600000" data-name="B Chuck Taylor All Star" data-date="2024-09-10">
+        <div class="product-image">
+            <img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/136823c-5-650x650-15ff91e141be424b95a2892abf3fe169-jpeg.jpg?v=1699864035783"
+                alt="Converse Chuck Taylor All Star">
+            <span class="discount">-11%</span>
+            <button class="wishlist-btn">❤️</button>
+        </div>
+        <h3>B Chuck Taylor All Star</h3>
+        <div class="price">
+            <span class="new-price">1.600.000đ</span>
+            <span class="old-price">2.139.000đ</span>
+        </div>
+        <div class="tags">
+            <span class="new">new</span>
+            <span class="freeship">freeship</span>
+        </div>
+    </div>
+    <div class="product-card" data-price="1200000" data-name="D Chuck Taylor All Star" data-date="2024-10-10">
+        <div class="product-image">
+            <img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/136823c-5-650x650-15ff91e141be424b95a2892abf3fe169-jpeg.jpg?v=1699864035783"
+                alt="Converse Chuck Taylor All Star">
+            <span class="discount">-11%</span>
+            <button class="wishlist-btn">❤️</button>
+        </div>
+        <h3>D Chuck Taylor All Star</h3>
+        <div class="price">
+            <span class="new-price">1.200.000đ</span>
+            <span class="old-price">2.139.000đ</span>
+        </div>
+        <div class="tags">
+            <span class="new">new</span>
+            <span class="freeship">freeship</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="shop-sort-by">
+    <label for="sort-select">Sắp xếp theo</label>
+    <select id="sort-select">
+        <option value="">Mặc định</option>
+        <option value="name:asc">A → Z</option>
+        <option value="name:desc">Z → A</option>
+        <option value="price_min:asc">Giá tăng dần</option>
+        <option value="price_min:desc">Giá giảm dần</option>
+        <option value="created_on:desc">Hàng mới nhất</option>
+        <option value="created_on:asc">Hàng cũ nhất</option>
+    </select>
+</div>
+<script>
+    document.getElementById("sort-select").addEventListener("change", function () {
+        const sortOption = this.value;
+        const productList = document.querySelector(".product-grid");
+        const products = Array.from(document.querySelectorAll(".product-card"));
+
+        // Sắp xếp sản phẩm dựa trên tùy chọn
+        const sortedProducts = products.sort((a, b) => {
+            const priceA = parseInt(a.getAttribute("data-price"));
+            const priceB = parseInt(b.getAttribute("data-price"));
+            const nameA = a.getAttribute("data-name").toLowerCase();
+            const nameB = b.getAttribute("data-name").toLowerCase();
+            const dateA = new Date(a.getAttribute("data-date"));
+            const dateB = new Date(b.getAttribute("data-date"));
+
+            switch (sortOption) {
+                case "price_min:asc":
+                    return priceA - priceB;
+                case "price_min:desc":
+                    return priceB - priceA;
+                case "name:asc":
+                    return nameA.localeCompare(nameB);
+                case "name:desc":
+                    return nameB.localeCompare(nameA);
+                case "created_on:asc":
+                    return dateA - dateB;
+                case "created_on:desc":
+                    return dateB - dateA;
+                default:
+                    return 0;
+            }
+        });
+
+        // Cập nhật lại danh sách sản phẩm trên giao diện
+        productList.innerHTML = "";
+        sortedProducts.forEach((product) => productList.appendChild(product));
+    });
+
+</script>

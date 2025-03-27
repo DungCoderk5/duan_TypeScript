@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Shoes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cart_popup.css">
+    <link rel="stylesheet" href="css/dangnhapmenu.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header>
+        <!-- Logo -->
+        <img src="//bizweb.dktcdn.net/thumb/medium/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+            alt="Shoes Logo">
+        <!-- Navigation -->
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Thương hiệu</a>
+                    <ul class="subnav" style="list-style: none;">
+
+                    </ul>
+                </li>
+                <li><a href="product.html">Sản phẩm</a></li>
+                <li><a href="#">Accessories - Phụ trang</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header right (search + icons) -->
+        <div class="header-right">
+            <input type="text" placeholder="Tìm kiếm sản phẩm ..." id="animated-placeholder">
+            <i class="fa-solid fa-magnifying-glass" onclick="searchProduct()"></i>
+            <div class="header-icons">
+                <a href="#" onclick="opennguuu()"><i class="fa fa-user"></i></a>
+                <a href="#"><i class="fa fa-heart"></i><span class="icon-badge">0</span></a>
+                <a href="#" onclick="openCart()"><i class="fa fa-shopping-cart"></i><span
+                        class="icon-badge icon-badge1">0</span></a>
+
+                <a href="#" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Danh mục</h3>
+            <button class="close-btn" onclick="toggleSidebar()">✖</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Converse All</a></li>
+            <li><a href="#">Classic</a></li>
+            <li><a href="#">Accessories - Phụ trang</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <strong>🔥 Hỗ Trợ 24/7</strong>
+            <p>Hotline: 1900.63.60.99</p>
+        </div>
+    </div>
+
+    <div class="overlay1" onclick="closeCart()"></div>
+    <div class="overlay2" onclick="closenguuuu()"></div>
+    <div id="overlay3" class="overlay3"></div>
+    <!-- button to top -->
+    <button id="toTopBtn" class="hidden"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Cart Sidebar -->
+    <div class="shop-cart-sidebar">
+        <div class="shop-cart-sidebar-head">
+            <label>Giỏ hàng</label>
+            <button type="button" onclick="closeCart()" data-type="shop-cart-sidebar-close" title="Đóng"
+                fdprocessedid="8wpz7">
+                <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14" width="15" height="15">
+                    <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div class="shop-cart-sidebar-top-freeship">
+                <div class="shop-freeship" data-freeship-price="50000000">
+                    <div class="shop-freeship-bar">
+                        <div class="shop-freeship-bar-main"><span style="width: 2.618%;"></span></div>
+                    </div>
+                    <div class="shop-freeship-note">Mua thêm <span>48.691.000₫</span> để được miễn phí giao hàng trên
+                        toàn
+                        quốc</div>
+                </div>
+                <div class="shop-cart-sidebar-top-freeship-label">
+                    <img class=" ls-is-cached lazyloaded" width="75" height="62" title="Free Ship"
+                        src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        data-src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif"
+                        alt=" - Free Ship">
+                </div>
+            </div>
+        </div>
+        <div class="shop-cart-sidebar-body">
+            <div class="showmenu"></div>
+            <div class="showanmenu"></div>
+
+        </div>
+        <div class="shop-cart-sidebar-foot">
+            <div class="cangiua">
+                <button type="button" data-type="shop-cart-sidebar-note-action" title="Thêm ghi chú"
+                    fdprocessedid="rn9kbq">Thêm
+                    ghi chú</button>
+                <a href="/cart.html" title="Xem chi tiết giỏ hàng" aria-label="Xem chi tiết giỏ hàng">Xem chi tiết giỏ
+                    hàng</a>
+            </div>
+            <p>Phí ship &amp; thuế được tính ở Trang Thanh Toán</p>
+            <a class="toCheckout" href="/checkout.html" title="Thanh toán" aria-label="Thanh toán">
+                <span>Thanh toán</span>
+                <span></span>
+                <span>1.309.000₫</span>
+            </a>
+            <div class="shop-cart-sidebar-note">
+                <label>Thêm ghi chú</label>
+                <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+                <button type="button" data-type="shop-cart-sidebar-note-save" title="Lưu">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <!-- Login sidebar -->
+    <div class="modal-content">
+        <div class="login-container">
+            <div class="side-menu">
+                <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+                    alt="">
+                <a href="#" class="side-link active" data-hien="1">Đăng nhập</a>
+                <a href="#" class="side-link" data-hien="2">Quên mật khẩu</a>
+                <a href="#" class="side-link" data-hien="3">Đăng ký</a>
+            </div>
+
+            <div class="login-form active" data-hien="1">
+                <h2>ĐĂNG NHẬP</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email1" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu*</label>
+                        <input type="password" id="password1" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="btn-dangnhap">ĐĂNG NHẬP</button>
+
+                    </div>
+                </form>
+                <div class="social-login">
+                    <div class="facebook-test">
+                        <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="facebook-btn">
+
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                    <div class="google-test">
+                        <i class="fab fa-google">+</i>
+                        <a href="#" class="google-btn">
+
+                            <span>Google</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-form" data-hien="2">
+                <h2>Quên mật khẩu</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">GỬI</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-form" data-hien="3">
+                <h2>ĐĂNG KÝ</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="ho">Họ của bạn*</label>
+                        <input type="text" id="ho" placeholder="Nhập họ của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="ten">Tên của bạn*</label>
+                        <input type="text" id="ten" placeholder="Nhập tên của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại*</label>
+                        <input type="number" id="phone" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu*</label>
+                        <input type="password" id="password" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">ĐĂNG KÝ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- banner -->
+    <div class="slider-container">
+        <div class="slider">
+            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/slider_lg_1.jpg?1713464283843"
+                style="width: 100%; " alt="Slide 1">
+            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/slider_lg_2.jpg?1713464283843"
+                style="width: 100%; " alt="Slide 2">
+            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/slider_lg_3.jpg?1713464283843"
+                style="width: 100%; " alt="Slide 3">
+        </div>
+        <div class="slider-content-container">
+            <div class="slider-content active">
+                <h1>CONVERSE</h1>
+                <p>Mùa hè năng động</p>
+                <button class="shop-now">Mua ngay</button>
+            </div>
+            <div class="slider-content1">
+                <h1>ADIDAS</h1>
+                <p>Mùa hè năng hài</p>
+                <button class="shop-now">Mua ngay</button>
+            </div>
+            <div class="slider-content2">
+                <h1>NIKE</h1>
+                <p>Mùa hè năng chủ</p>
+                <button class="shop-now">Mua ngay</button>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="banner-item">
+        <div class="item-container">
+            <span>
+                <img
+                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_policy_item_image_1.png?1713464283843">
+            </span>
+            <h3>Giao hàng nhanh, miễn phí</h3>
+            <p>Đơn hàng >900k hoặc đăng ký tài khoản được giao hàng miễn phí</p>
+        </div>
+        <div class="item-container">
+            <span>
+                <img
+                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_policy_item_image_2.png?1713464283843">
+            </span>
+            <h3>Trả hàng, Bảo hành</h3>
+            <p>Không thích? Trả lại hoặc đổi hàng của bạn miễn phí trong vòng 30 ngày.</p>
+        </div>
+        <div class="item-container">
+            <span>
+                <img
+                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_policy_item_image_3.png?1713464283843">
+            </span>
+            <h3>Thành viên</h3>
+            <p>Ưu đã theo từng cấp bậc hạng thành viên. Sinh nhật quà tặng thành viên</p>
+        </div>
+        <div class="item-container">
+            <span>
+                <img
+                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_policy_item_image_4.png?1713464283843">
+            </span>
+            <h3>Chính hãng</h3>
+            <p>Sản phẩm chính hãng. Được nhập khẩu 100% từ hãng.</p>
+        </div>
+    </div>
+    <div class="product-sale">
+        <div class="img-hot">
+            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_fsale_image.png?1713464283843">
+        </div>
+        <div class="countdown-container">
+            <h2>KẾT THÚC SAU</h2>
+            <div class="countdown">
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <p>Ngày</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <p>Giờ</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <p>Phút</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <p>Giây</p>
+                </div>
+            </div>
+        </div>
+        <div class="product-sale-item">
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+
+
+
+                </div>
+                <!-- Add navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Add pagination -->
+                <div class="swiper-pagination" style="margin-top: 200px !important;"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- coupon -->
+    <div class="home-coupon">
+        <div class="home-coupon-item">
+            <img src="https://file.hstatic.net/200000306687/file/background-coupon_d5a81f5bc7ea49_ec6d59fdd17c4a718809792590ed9455.png"
+                alt="">
+            <div class="home-coupon-content">
+                <div class="home-coupon-content-head">
+                    <h3>Mã : F1SHOES2</h3>
+                    <img decoding="async"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_coupon_item_image_2.png?1713464283843"
+                        title="Mã : F1SHOES2" alt="Mã : F1SHOES2">
+                    <p>Mã giảm 13% khi mua 2 sản phẩm</p>
+                </div>
+                <div class="home-coupon-content-foot">
+                    <button data-type="coupon-policy" data-coupon="F1SHOES" title="Điều kiện áp dụng"
+                        fdprocessedid="aaux8r">
+                        Điều kiện áp dụng
+                        <span class="home-coupon-content-info">- Mã giảm 10% khi mua 1 sản phẩm. - Mỗi khách hàng được
+                            sử dụng tối đa 1 lần. - Số lượng voucher có hạn</span>
+                    </button>
+                    <button data-type="coupon-copy" data-coupon="F1SHOES" fdprocessedid="p5qb9s" class="">
+                        <span>Sao chép mã</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="home-coupon-item">
+            <img src="https://file.hstatic.net/200000306687/file/background-coupon_d5a81f5bc7ea49_ec6d59fdd17c4a718809792590ed9455.png"
+                alt="">
+            <div class="home-coupon-content">
+                <div class="home-coupon-content-head">
+                    <h3>Mã : F1SHOES2</h3>
+                    <img decoding="async"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_coupon_item_image_2.png?1713464283843"
+                        title="Mã : F1SHOES2" alt="Mã : F1SHOES2">
+                    <p>Mã giảm 13% khi mua 2 sản phẩm</p>
+                </div>
+                <div class="home-coupon-content-foot">
+                    <button data-type="coupon-policy" data-coupon="F1SHOES" title="Điều kiện áp dụng"
+                        fdprocessedid="aaux8r">
+                        Điều kiện áp dụng
+                        <span class="home-coupon-content-info">- Mã giảm 10% khi mua 1 sản phẩm. - Mỗi khách hàng được
+                            sử dụng tối đa 1 lần. - Số lượng voucher có hạn</span>
+                    </button>
+                    <button data-type="coupon-copy" data-coupon="F1SHOES" fdprocessedid="p5qb9s" class="">
+                        <span>Sao chép mã</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="home-coupon-item">
+            <img src="https://file.hstatic.net/200000306687/file/background-coupon_d5a81f5bc7ea49_ec6d59fdd17c4a718809792590ed9455.png"
+                alt="">
+            <div class="home-coupon-content">
+                <div class="home-coupon-content-head">
+                    <h3>Mã : F1SHOES2</h3>
+                    <img decoding="async"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_coupon_item_image_2.png?1713464283843"
+                        title="Mã : F1SHOES2" alt="Mã : F1SHOES2">
+                    <p>Mã giảm 13% khi mua 2 sản phẩm</p>
+                </div>
+                <div class="home-coupon-content-foot">
+                    <button data-type="coupon-policy" data-coupon="F1SHOES" title="Điều kiện áp dụng"
+                        fdprocessedid="aaux8r">
+                        Điều kiện áp dụng
+                        <span class="home-coupon-content-info">- Mã giảm 10% khi mua 1 sản phẩm. - Mỗi khách hàng được
+                            sử dụng tối đa 1 lần. - Số lượng voucher có hạn</span>
+                    </button>
+                    <button data-type="coupon-copy" data-coupon="F1SHOES" fdprocessedid="p5qb9s" class="">
+                        <span>Sao chép mã</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="home-coupon-item">
+            <img src="https://file.hstatic.net/200000306687/file/background-coupon_d5a81f5bc7ea49_ec6d59fdd17c4a718809792590ed9455.png"
+                alt="">
+            <div class="home-coupon-content">
+                <div class="home-coupon-content-head">
+                    <h3>Mã : F1SHOES2</h3>
+                    <img decoding="async"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_coupon_item_image_2.png?1713464283843"
+                        title="Mã : F1SHOES2" alt="Mã : F1SHOES2">
+                    <p>Mã giảm 13% khi mua 2 sản phẩm</p>
+                </div>
+                <div class="home-coupon-content-foot">
+                    <button data-type="coupon-policy" data-coupon="F1SHOES" title="Điều kiện áp dụng"
+                        fdprocessedid="aaux8r">
+                        Điều kiện áp dụng
+                        <span class="home-coupon-content-info">- Mã giảm 10% khi mua 1 sản phẩm. - Mỗi khách hàng được
+                            sử dụng tối đa 1 lần. - Số lượng voucher có hạn</span>
+                    </button>
+                    <button data-type="coupon-copy" data-coupon="F1SHOES" fdprocessedid="p5qb9s" class="">
+                        <span>Sao chép mã</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Home about -->
+    <div class="home-about">
+        <div class="container-about">
+            <div class="home-about-top">
+                <span><img decoding="async" title="Phong cách của bạn"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_about_top.jpg?1713464283843"
+                        alt="Phong cách của bạn">
+                </span>
+                <div class="section-title-all">
+                    <div>
+                        <span>CHO CHÚNG TÔI THẤY</span>
+                        <h2>Phong cách của bạn</h2>
+                    </div>
+                    <p>Mở khóa phong cách và doanh số bán hàng độc quyền, giảm sản phẩm và những lần hợp tác mới nhất
+                        của chúng tôi với cộng đồng Converse - tất cả đều được gửi thẳng đến hộp thư đến của bạn.</p>
+                </div>
+            </div>
+            <div class="home-about-bottom">
+                <span>
+                    <img decoding="async" title="Phong cách của bạn"
+                        src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_about_bot.jpg?1713464283843"
+                        alt="Phong cách của bạn">
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Section home-product-slider -->
+    <div class="home-product-slider">
+        <div class="container-about">
+            <div class="home-product-slider-wrap">
+                <div class="home-product-slider-wrap-header">
+                    <div class="section-title-all">
+                        <div>
+                            <span>Converse</span>
+                            <h2 style="color: black;">Sản phẩm nổi bật</h2>
+                        </div>
+                        <a href="product.html" aria-label="Xem thêm" data-hover="Xem thêm">Xem thêm <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="home-product-slider-wrap-body">
+                    <div class="slider-container">
+
+                        <!-- Các slide khác -->
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="home-gallery">
+        <div class="container-about">
+            <div class="home-gallery-wrap">
+                <div class="home-gallery-wrap-header">
+                    <div class="section-title-all">
+                        <div>
+                            <span>Converse</span>
+                            <h2 style="color: #000;">Bộ sưu tập</h2>
+                        </div>
+                        <a href="product.html" title="Xem thêm">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="home-gallery-wrap-body">
+                    <div class="home-gallery-wrap-body-item">
+                        <a href="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_one_1.jpg?1713464283843"
+                            data-fancybox="gallery" aria-label="Bộ sưu tập mùa xuân">
+                            <img decoding="async"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_one_1.jpg?1713464283843"
+                                alt="F1GENZ Shoes - Bộ sưu tập mùa xuân" title="Bộ sưu tập mùa xuân">
+                            <span>Bộ sưu tập mùa xuân</span>
+                        </a>
+                        <a href="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_two_1.jpg?1713464283843"
+                            data-fancybox="gallery" aria-label="Bộ sưu tập mùa hè">
+                            <img decoding="async" title="Bộ sưu tập mùa hè"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_two_1.jpg?1713464283843"
+                                alt="F1GENZ Shoes - Bộ sưu tập mùa hè">
+                            <span>Bộ sưu tập mùa hè</span>
+                        </a>
+                    </div>
+                    <div class="home-gallery-wrap-body-item">
+                        <a href="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_one_2.jpg?1713464283843"
+                            data-fancybox="gallery" aria-label="Bộ sưu tập mùa thu">
+                            <img decoding="async"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_one_2.jpg?1713464283843"
+                                alt="F1GENZ Shoes - Bộ sưu tập mùa thu" title="Bộ sưu tập mùa thu">
+                            <span>Bộ sưu tập mùa thu</span>
+                        </a>
+                        <a href="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_two_2.jpg?1713464283843"
+                            data-fancybox="gallery" aria-label="Bộ sưu tập mùa đông">
+                            <img decoding="async" title="Bộ sưu tập mùa đông"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_two_2.jpg?1713464283843"
+                                alt="F1GENZ Shoes - Bộ sưu tập mùa đông">
+                            <span>Bộ sưu tập mùa đông</span>
+                        </a>
+                    </div>
+                    <div class="home-gallery-wrap-body-item">
+                        <a href="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_one_3.jpg?1713464283843"
+                            data-fancybox="gallery" aria-label="Bộ sưu tập TS">
+                            <img decoding="async"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_one_3.jpg?1713464283843"
+                                alt="F1GENZ Shoes - Bộ sưu tập TS" title="Bộ sưu tập TS">
+                            <span>Bộ sưu tập TS</span>
+                        </a>
+                        <a href="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_two_3.jpg?1713464283843"
+                            data-fancybox="gallery" aria-label="Bộ sưu tập LST">
+                            <img decoding="async" title="Bộ sưu tập LST"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_gallery_item_image_two_3.jpg?1713464283843"
+                                alt="F1GENZ Shoes - Bộ sưu tập LST">
+                            <span>Bộ sưu tập LST</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-product">
+        <div class="container-about">
+            <div class="home-product-wrap">
+                <div class="home-product-wrap-header">
+                    <div class="section-title-all">
+                        <div>
+                            <span>Converse</span>
+                            <h2 style="color: black;">Sản phẩm khuyến mãi</h2>
+                        </div>
+                        <a href="product.html" aria-label="Xem thêm">Xem thêm <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="home-product-wrap-body slider2">
+                    <div class="swiper-slider">
+                        <div class="icon-heart">
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380"
+                            alt="">
+                        <div class="content-hotsale">
+                            <img src="https://file.hstatic.net/200000306687/file/imager_8176_d244203aa9cf4dfbb410e1377abdac72_compact.jpg"
+                                alt="">
+                            <p>Còn lại 117 sản phẩm</p>
+                        </div>
+                        <span class="project-sale"></span>
+                        <p>Chuck Taylor All Star Classic - 121184</p>
+                        <span class="price-hot">4.399.000đ</span>
+                        <div class="info-hot">
+                            <span>Freeship</span>
+                            <span>new</span>
+                            <div class="rate-staring">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slider">
+                        <div class="icon-heart">
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380"
+                            alt="">
+                        <div class="content-hotsale">
+                            <img src="https://file.hstatic.net/200000306687/file/imager_8176_d244203aa9cf4dfbb410e1377abdac72_compact.jpg"
+                                alt="">
+                            <p>Còn lại 117 sản phẩm</p>
+                        </div>
+                        <span class="project-sale"></span>
+                        <p>Chuck Taylor All Star Classic - 121184</p>
+                        <span class="price-hot">4.399.000đ</span>
+                        <div class="info-hot">
+                            <span>Freeship</span>
+                            <span>new</span>
+                            <div class="rate-staring">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slider">
+                        <div class="icon-heart">
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380"
+                            alt="">
+                        <div class="content-hotsale">
+                            <img src="https://file.hstatic.net/200000306687/file/imager_8176_d244203aa9cf4dfbb410e1377abdac72_compact.jpg"
+                                alt="">
+                            <p>Còn lại 117 sản phẩm</p>
+                        </div>
+                        <span class="project-sale"></span>
+                        <p>Chuck Taylor All Star Classic - 121184</p>
+                        <span class="price-hot">4.399.000đ</span>
+                        <div class="info-hot">
+                            <span>Freeship</span>
+                            <span>new</span>
+                            <div class="rate-staring">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slider">
+                        <div class="icon-heart">
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="" class="hidden show"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/493/370/products/121184-drake-650x650-3be016cc519b40a09093df5718bdbaf9-jpeg.jpg?v=1699864031380"
+                            alt="">
+                        <div class="content-hotsale">
+                            <img src="https://file.hstatic.net/200000306687/file/imager_8176_d244203aa9cf4dfbb410e1377abdac72_compact.jpg"
+                                alt="">
+                            <p>Còn lại 117 sản phẩm</p>
+                        </div>
+                        <span class="project-sale"></span>
+                        <p>Chuck Taylor All Star Classic - 121184</p>
+                        <span class="price-hot">4.399.000đ</span>
+                        <div class="info-hot">
+                            <span>Freeship</span>
+                            <span>new</span>
+                            <div class="rate-staring">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-banner">
+        <div class="container-about">
+            <div class="home-banner-wrap">
+                <div class="home-banner-wrap-left">
+                    <h2>Nhìn đã ấn tượng</h2>
+                    <p>Converse Chuck 70 Archive Paint Splatter
+
+                    </p>
+                    <a title="Mua ngay" href="/collections/all">Mua ngay</a>
+                </div>
+                <div class="home-banner-wrap-right">
+                    <span>
+                        <img decoding="async" title="Nhìn đã ấn tượng"
+                            src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/banner_bottom_img.jpg?1713464283843"
+                            alt="Nhìn đã ấn tượng">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-blog">
+        <div class="container-about">
+            <div class="home-blog-header ">
+                <div class="section-title-all">
+                    <div>
+                        <span>Kiến thức</span>
+                        <h2 style="color: #000;">Kiến thức mua hàng</h2>
+                    </div>
+                    <a href="product.html" title="Xem thêm">Xem thêm <i class="fal fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="home-blog-body">
+                <div class="card-container slider3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/01-thumb-6a26040630f8411eafc114dfa2c1bfc2.jpg?v=1697785028303"
+                                alt="Shoe Image">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+                                <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+                                <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/fila-ray-white-pink-fs1sia3063x-401996e480134a9b82dd56e0012283e8.jpg?v=1697785029287"
+                                alt="Shoe Image">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+                                <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+                                <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/chuck-70-beat-the-world-ig-2-7df-abea22e0824c4c09a6fd5ed757bd85f7.jpg?v=1697785028300"
+                                alt="Shoe Image">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+                                <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+                                <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/nike-adapt-bb-2-0-nike-mag-bq539-59c1bcee8e5f4e9bada9d6143473f0ec.jpg?v=1697785028577"
+                                alt="Shoe Image">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+                                <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+                                <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/nike-adapt-bb-2-0-nike-mag-bq539-59c1bcee8e5f4e9bada9d6143473f0ec.jpg?v=1697785028577"
+                                alt="Shoe Image">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+                                <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+                                <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/01-thumb-6a26040630f8411eafc114dfa2c1bfc2.jpg?v=1697785028303"
+                                alt="Shoe Image">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+                                <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+                                <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="//bizweb.dktcdn.net/thumb/grande/100/493/370/articles/01-thumb-6a26040630f8411eafc114dfa2c1bfc2.jpg?v=1697785028303"
+                                alt="Shoe Image">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Bắt Tay Cùng Hai Nhãn Streetwear...</h3>
+                                <p>04.11.2021 | Công Ty TNHH KTCN F1GENZ</p>
+                                <p>Chuck Taylor Classic là dòng giày truyền thống...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thêm các card khác tương tự -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-insta">
+        <div class="home-insta-top">
+            <div class="container-about">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+                <h2>#ConnectUs</h2>
+            </div>
+        </div>
+        <div class="home-insta-mid-wrap ">
+            <div class="container-about">
+                <div class="img-instar slider4">
+                    <div class="insta-img">
+                        <span>
+                            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home-insta-mid-image-3.jpg?1713464283843"
+                                alt="">
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="insta-img">
+                        <span>
+                            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home-insta-mid-image-4.jpg?1713464283843"
+                                alt="">
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="insta-img">
+                        <span>
+                            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home-insta-mid-image-5.jpg?1713464283843"
+                                alt="">
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="insta-img">
+                        <span>
+                            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home-insta-mid-image-6.jpg?1713464283843"
+                                alt="">
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="insta-img">
+                        <span>
+                            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home-insta-mid-image-7.jpg?1713464283843"
+                                alt="">
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="insta-img">
+                        <span>
+                            <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home-insta-mid-image-1.jpg?1713464283843"
+                                alt="">
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footers2"
+        style="background-image: url(//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_background.jpg?1713464283843)">
+        <div class="container-about">
+            <div class="footers2-wrap">
+                <div class="footers2-top">
+                    <div class="footers2-top-item footers2-top-one">
+                        <a href="/" title="F1GENZ Shoes" aria-label="F1GENZ Shoes">
+                            <img title="F1GENZ Shoes"
+                                src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/footers2_one_logo.png?1713464283843"
+                                alt="F1GENZ Shoes">
+                        </a>
+                        <p>F1GENZ SHOES luôn cam kết, đảm bảo đưa sản phẩm trực tiếp từ nhà sản xuất đến tay người dùng
+                            và kiểm soát được chất lượng để đáp ứng được nhu cầu ngày càng cao của khách hàng. Tất cả
+                            các sản phẩm tại F1GENZ SHOES đều có nguồn gốc xuất xứ rõ ràng, chất lượng.</p>
+                    </div>
+                    <div class="footers2-top-item footers2-top-two">
+                        <h4>Liên hệ <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <p>Tư vấn dịch vụ: <a aria-label="Liên hệ" title="Liên hệ" href="tel:18006750">1800 6750</a>
+                                <br>
+                                Hỗ trợ sử dụng: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006750">1900
+                                    6750</a> <br>
+                                Hỗ trợ vận chuyển: <a aria-label="Liên hệ" title="Liên hệ" href="tel:19006719">1900
+                                    6719</a> <br>
+                                Email: <a aria-label="Liên hệ" title="Liên hệ"
+                                    href="mailto:support@sapo.vn">support@sapo.vn</a> <br>
+                                Từ 7h00 – 22h00 các ngày từ thứ 2 đến Chủ nhật
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footers2-top-item footers2-top-three">
+                        <h4>Về chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <ul>
+                                <li><a href="/gioi-thieu" aria-label="Giới thiệu" title="Giới thiệu">Giới thiệu</a></li>
+                                <li><a href="/chinh-sach-doi-tra" aria-label="Chính sách đổi trả"
+                                        title="Chính sách đổi trả">Chính sách đổi trả</a></li>
+                                <li><a href="/chinh-sach-bao-mat" aria-label="Chính sách bảo mật"
+                                        title="Chính sách bảo mật">Chính sách bảo mật</a></li>
+                                <li><a href="/dieu-khoan-dich-vu" aria-label="Điều khoản dịch vụ"
+                                        title="Điều khoản dịch vụ">Điều khoản dịch vụ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footers2-top-item footers2-top-four">
+                        <h4>Danh mục nổi bật <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <ul>
+                                <li><a href="/chuck-2" aria-label="Chuck 2" title="Chuck 2">Chuck 2</a></li>
+                                <li><a href="/converse-all" aria-label="Converse All" title="Converse All">Converse
+                                        All</a></li>
+                                <li><a href="/socks" aria-label="Socks" title="Socks">Socks</a></li>
+                                <li><a href="/jack-purcell" aria-label="Jack Purcell" title="Jack Purcell">Jack
+                                        Purcell</a></li>
+                                <li><a href="/converse-seasonal" aria-label="Converse Seasonal"
+                                        title="Converse Seasonal">Converse Seasonal</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footers2-top-item footers2-top-five">
+                        <h4>Liên hệ với chúng tôi <i class="fa fa-chevron-down"></i></h4>
+                        <div class="footers2-top-item-content">
+                            <p>Luôn cập nhật tất cả các hành động mà chúng tôi đã lưu cho tất cả khách hàng của mình.
+                            </p>
+                            <ul class="shop-social">
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Facebook"
+                                        title="F1GENZ Shoes - Facebook">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Facebook"
+                                            src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png"
+                                            alt="F1GENZ Shoes - Facebook">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Youtube"
+                                        title="F1GENZ Shoes - Youtube">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Youtube"
+                                            src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png"
+                                            alt="F1GENZ Shoes - Youtube">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Pinterest"
+                                        title="F1GENZ Shoes - Pinterest">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Pinterest"
+                                            src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png"
+                                            alt="F1GENZ Shoes - Youtube">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - TikTok"
+                                        title="F1GENZ Shoes - TikTok">
+                                        <img width="30" height="30" title="F1GENZ Shoes - TikTok"
+                                            src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png"
+                                            alt="F1GENZ Shoes - TikTok">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/collections/all" target="_blank" aria-label="F1GENZ Shoes - Instagram"
+                                        title="F1GENZ Shoes - Instagram">
+                                        <img width="30" height="30" title="F1GENZ Shoes - Instagram"
+                                            src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png"
+                                            alt="F1GENZ Shoes - Instagram">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footers2-bot">
+                    <p class="text-copyright">© 2025 - Bản quyền thuộc về
+                        <a target="_blank" title="F1GENZ TECHNOLOGY CO., LTD." aria-label="F1GENZ TECHNOLOGY CO., LTD."
+                            href="https://f1genz.com/">PS4184 Dũng đẹp trai</a>
+                        <a target="_blank"
+                            href="https://www.sapo.vn/?utm_campaign=cpn:f1genz-babie-plm:footer&amp;utm_source=f1genz-babie&amp;utm_medium=referral&amp;utm_content=fm:text_link-km:-sz:&amp;utm_term=&amp;campaign=f1genz-babie"
+                            rel="nofollow">Cung cấp bởi Dungld</a>
+                    </p>
+                    <ul class="shop-payment">
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_1.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_2.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_3.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_4.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                        <li class="shop-payment-item">
+                            <a href="/" aria-label="/ - Payment" title="/ - Payment">
+                                <img width="76" height="48"
+                                    src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/shop_payment_item_image_5.png?1713464283843"
+                                    alt="/ - Payment">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <style>
+        .hieung {
+            opacity: 0.5;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+    <!-- Social icons -->
+    <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+    <!-- Add font awesome -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.slider2').slick({
+            slidesToShow: 4,  // Hiển thị 3 slide
+            slidesToScroll: 1,  // Mỗi lần cuộn chuyển 1 slide
+            autoplay: true,
+            autoplaySpeed: 3000,  // Tốc độ tự động chuyển (3 giây)
+
+            infinite: true,  // Chế độ vô hạn (loop)
+            pauseOnHover: true,
+
+        });
+        $('.slider3 ').slick({
+            slidesToShow: 3,  // Hiển thị 3 slide
+            slidesToScroll: 1,  // Mỗi lần cuộn chuyển 1 slide
+            autoplay: true,
+            autoplaySpeed: 2000,  // Tốc độ tự động chuyển (3 giây)
+            arrows: false,
+            infinite: true,  // Chế độ vô hạn (loop)
+            pauseOnHover: true,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 1024, // Với màn hình nhỏ hơn hoặc bằng 1024px
+                    settings: {
+                        slidesToShow: 3, // Hiển thị 3 slide
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 768, // Với màn hình nhỏ hơn hoặc bằng 768px
+                    settings: {
+                        slidesToShow: 2, // Hiển thị 2 slide
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480, // Với màn hình nhỏ hơn hoặc bằng 480px
+                    settings: {
+                        slidesToShow: 1, // Hiển thị 1 slide
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+
+        $('.slider4').slick({
+            slidesToShow: 5,  // Hiển thị 3 slide
+            slidesToScroll: 1,  // Mỗi lần cuộn chuyển 1 slide
+            autoplay: true,
+            autoplaySpeed: 2000,  // Tốc độ tự động chuyển (3 giây)
+            arrows: false,
+            infinite: true,
+            dots: true, // Chế độ vô hạn (loop)
+            pauseOnHover: true,
+
+        });
+    });
+</script>
+<script src="/js/js.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 4, // Hiển thị 3 slide cùng lúc
+        spaceBetween: 20, // Khoảng cách giữa các slide
+
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+    });
+
+</script>
+<script>
+    let ngu = document.querySelectorAll('[data-type="coupon-copy"]');
+    ngu.forEach(function (item) {
+        item.addEventListener('click', function handler() {
+            let text = item.getAttribute('data-coupon');
+            navigator.clipboard.writeText(text);
+            // alert('Đã sao chép mã giảm giá');
+            item.textContent = 'Đã sao chép';
+            setTimeout(() => {
+                item.textContent = 'Sao chép mã';
+                item.classList.add('hieung');
+                // item.style.cursor = "none";
+            }, 2000);
+            item.removeEventListener('click', handler);
+        });
+    });
+
+
+</script>
+<script type="module">
+    import { lay_thuong_hieu, lay_san_pham, lay_sp_sale, them_gio_hang_home, lay_gio_hang_menu, lay1sp, xoa_gio_hang_menu, dang_nhap } from '/js/app.js';
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get('id') || '0');
+    lay1sp(productId);
+    const loadProductsAndInitPagination = async () => {
+        try {
+
+            document.querySelector('.menu .subnav').innerHTML = await lay_thuong_hieu();
+            document.querySelector('.home-product-slider-wrap-body .slider-container').innerHTML = await lay_san_pham(7);
+            document.querySelector('.swiper-wrapper').innerHTML = await lay_sp_sale();
+            document.querySelector('.showmenu').innerHTML = await lay_gio_hang_menu();
+            document.querySelectorAll('.them123').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const productId = button.dataset.id;
+                    them_gio_hang_home(productId);
+                });
+            });
+            document.getElementById('btn-dangnhap').addEventListener(('click'), (event) => {
+                event.preventDefault();
+                const email = document.getElementById('email1').value.trim();
+                const password = document.getElementById('password1').value.trim();
+                // if (!email || !password) {
+                //     alert('Vui lòng nhập đầy đủ email và mật khẩu.');
+                //     return;
+                // }
+                const oldUser = {
+                    email,
+                    password,
+
+                };
+                dang_nhap(oldUser);
+            });
+            document.querySelectorAll('[data-type="shop-cart-item-remove"]').forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+                    // Xác định ID sản phẩm từ thuộc tính data-id
+                    const productId = this.getAttribute('data-id');
+
+                    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
+                        // Thực hiện xử lý xóa sản phẩm trong giỏ hàng
+                        xoa_gio_hang_menu(productId);
+                    }
+                });
+            });
+            document.querySelectorAll('[data-type="shop-quantity-plus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    input.value = quantity + 1;
+                    updateCartTotal(); // Hàm cập nhật tổng giá
+                });
+            });
+            function updateCartTotal() {
+                const cartItems = document.querySelectorAll('.shop-cart-item');
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    const price = parseFloat(item.querySelector('p').textContent.replace(/[^\d]/g, '')) || 0;
+                    const quantity = parseInt(item.querySelector('input').value) || 1;
+                    total += price * quantity;
+                });
+
+                document.querySelector('.toCheckout span:last-child').textContent = total.toLocaleString('vi-VN') + '₫';
+            }
+
+            document.querySelectorAll('[data-type="shop-quantity-minus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    if (quantity > 1) {
+                        input.value = quantity - 1;
+                        updateCartTotal(); // Hàm cập nhật tổng giá
+                    }
+                });
+            });
+            updateCartTotal();
+        } catch (error) {
+            console.error('Lỗi khi tải sản phẩm:', error);
+            // productGrid.innerHTML = '<p class="error">Không thể tải sản phẩm</p>';
+        }
+    };
+    window.onload = loadProductsAndInitPagination;
+
+
+
+</script>
+<style>
+    #toTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fcc419;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        /* Ẩn ban đầu */
+        transition: all .4s ease-in-out;
+        z-index: 110;
+    }
+
+    #toTopBtn:hover {
+        background-color: #2980b9;
+        transition: all .4s ease-in-out;
+    }
+
+    .hidden {
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
+    }
+
+    .overlay3 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+
+    .overlay3.open {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+<script>
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("overlay3").classList.toggle("open");
+    }
+
+</script>
+
+</html>

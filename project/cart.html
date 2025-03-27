@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart_popup.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+    <header>
+        <!-- Logo -->
+        <img src="//bizweb.dktcdn.net/thumb/medium/100/493/370/themes/940719/assets/shop_logo_image.png?1713464283843"
+            alt="Shoes Logo">
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Thương hiệu</a>
+                    <ul class="subnav" style="list-style: none;">
+                        <li>Converse 1</li>
+                        <li>Converse 2</li>
+                    </ul>
+                </li>
+                <li><a href="#">Classic</a></li>
+                <li><a href="#">Accessories - Phụ trang</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header right (search + icons) -->
+        <div class="header-right">
+            <input type="text" placeholder="Tìm kiếm sản phẩm ..." id="animated-placeholder">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute;left: auto;right: 180px;"></i>
+            <div class="header-icons">
+                <a href="#"><i class="fa fa-user"></i></a>
+                <a href="#"><i class="fa fa-heart"></i><span class="icon-badge">0</span></a>
+                <a href="#" onclick="openCart()"><i class="fa fa-shopping-cart"></i><span
+                        class="icon-badge icon-badge1">0</span></a>
+            </div>
+        </div>
+    </header>
+ <!-- Sidebar Menu -->
+ <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h3>Danh mục</h3>
+        <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+    <ul class="sidebar-menu">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Converse All</a></li>
+        <li><a href="#">Classic</a></li>
+        <li><a href="#">Accessories - Phụ trang</a></li>
+        <li><a href="#">Tin tức</a></li>
+        <li><a href="#">Liên hệ</a></li>
+    </ul>
+    <div class="sidebar-footer">
+        <strong>🔥 Hỗ Trợ 24/7</strong>
+        <p>Hotline: 1900.63.60.99</p>
+    </div>
+</div>
+    <div class="main-cart">
+        <div class="main-cart-breadcrumb" title="Giỏ hàng">
+            <div class="container-about">
+                <div class="section-title-all">
+                    <h1>Giỏ hàng</h1>
+                </div>
+                <div class="breadcrumb-wrap">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/" aria-label="Trang chủ" title="Trang chủ">Trang chủ</a>
+                        </li>
+
+                        <li class="breadcrumb-item active"><span>Giỏ hàng</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="main-cart-wrap">
+            <div class="container-about">
+                <div class="main-cart-data">
+
+                    <div class="main-cart-data-head section-title-all">
+                        <span>Giỏ hàng của bạn</span>
+                        <p>Bạn đang có <strong>0</strong> sản phẩm trong giỏ hàng</p>
+                    </div>
+                    <div class="showan"></div>
+                    <div class="main-cart-data-full">
+                        <div class="main-cart-data-full-list">
+                            <div class="show"></div>
+
+
+
+                            <div class="main-cart-data-full-note">
+                                <label>Ghi chú đơn hàng</label>
+                                <textarea id="main-cart-data-full-note" name="note" rows="4"
+                                    placeholder="Nhập thông tin ghi chú của bạn ...">cv</textarea>
+                            </div>
+                        </div>
+                        <div class="main-cart-data-full-total">
+                            <h2>Thông tin đơn hàng</h2>
+                            <div class="main-cart-data-full-total-sub">
+                                <div class="main-cart-data-full-total-sub-price">
+
+                                    <label>Tổng tiền:</label>
+                                    <span id="totalPrice"></span>
+
+                                </div>
+                                <div class="main-cart-data-full-total-text">Phí vận chuyển sẽ được tính ở trang thanh
+                                    toán.
+                                    <br>
+                                    Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
+                                </div>
+                            </div>
+                            <div class="main-cart-data-full-invoice">
+                                <div class="main-cart-data-full-invoice-head">
+                                    <input type="checkbox" id="main-cart-data-full-invoice"
+                                        name="main-cart-data-full-invoice" autocomplete="off">
+                                    <label for="main-cart-data-full-invoice">Xuất hóa đơn</label>
+                                </div>
+                                <div class="main-cart-data-full-invoice-data">
+                                    <input type="text" name="Công ty" id="main-cart-data-full-invoice-data-company"
+                                        value="" placeholder="Tên công ty">
+                                    <input type="text" name="Mã số thuế" id="main-cart-data-full-invoice-data-tax"
+                                        value="" placeholder="Mã số thuế">
+                                    <input type="text" name="Người đại diện"
+                                        id="main-cart-data-full-invoice-data-address" value=""
+                                        placeholder="Địa chỉ công ty">
+                                    <input type="text" name="Địa chỉ" id="main-cart-data-full-invoice-data-name"
+                                        value="" placeholder="Người nhận hóa đơn">
+                                </div>
+                            </div>
+                            <div class="main-cart-data-full-total-action">
+                                <a href="/product.html" title="Tiếp tục mua hàng">Tiếp tục mua hàng</a>
+
+                                <a href="/checkout" title="Thanh toán">Thanh toán</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+    .main-cart .main-cart-wrap .main-cart-data .main-cart-data-full .main-cart-data-full-total .main-cart-data-full-total-action {
+        padding: 15px;
+    }
+
+    .main-cart .main-cart-wrap .main-cart-data .main-cart-data-full .main-cart-data-full-total .main-cart-data-full-total-action a:first-child {
+        background: #FFF;
+        border-color: #333;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .main-cart .main-cart-wrap .main-cart-data .main-cart-data-full .main-cart-data-full-total .main-cart-data-full-total-action a {
+        background: #fcc419;
+        border: 1px solid #fcc419;
+        color: #fff;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 5px 10px;
+        transition: all .4s linear;
+    }
+</style>
+
+</html>
+<script src="js/js.js"></script>
+
+<script type="module">
+    import { lay_gio_hang, xoa_gio_hang,lay1sp } from '/js/app.js';
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get('id') || '0');
+    console.log(productId);
+    lay1sp(productId);
+    const loadProductsAndInitPagination = async () => {
+        try {
+
+            document.querySelector('.show').innerHTML = await lay_gio_hang();
+            document.querySelectorAll('[data-type="shop-quantity-plus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    input.value = quantity + 1;
+                    updateCartTotal(); // Hàm cập nhật tổng giá
+                });
+            });
+            function updateCartTotal() {
+                const cartItems = document.querySelectorAll('.main-cart-data-full-item-info');
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    const price = parseFloat(item.querySelector('#priceT').textContent.replace(/[^\d]/g, '')) || 0;
+                    const quantity = parseInt(item.querySelector('input').value) || 1;
+                    total += price * quantity;
+                });
+
+                document.querySelector('#totalPrice').textContent = total.toLocaleString('vi-VN') + ' VNĐ';
+            }
+
+            document.querySelectorAll('[data-type="shop-quantity-minus"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.shop-quantity').querySelector('input');
+                    let quantity = parseInt(input.value) || 1;
+                    if (quantity > 1) {
+                        input.value = quantity - 1;
+                        updateCartTotal(); // Hàm cập nhật tổng giá
+                    }
+                });
+            });
+            updateCartTotal();
+            
+            document.querySelectorAll('.xoa').forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+                    // Xác định ID sản phẩm từ thuộc tính data-id
+                    const productId = this.getAttribute('data-id');
+
+                    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
+                        // Thực hiện xử lý xóa sản phẩm trong giỏ hàng
+                        xoa_gio_hang(productId);
+                    }
+                });
+            });
+ 
+        } catch (error) {
+            console.error('Lỗi khi tải sản phẩm:', error);
+            // productGrid.innerHTML = '<p class="error">Không thể tải sản phẩm</p>';
+        }
+    };
+
+    window.onload = loadProductsAndInitPagination;
+
+
+</script>

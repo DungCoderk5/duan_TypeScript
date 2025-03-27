@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror Shine Effect</title>
+    <style>
+        /* Container for the image */
+        .image-container {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 10px; /* Smooth corners */
+            width: 300px; /* Adjust image width */
+            height: auto;
+        }
+
+        /* Main image */
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease; /* Smooth zoom-in effect */
+        }
+
+        .image-container:hover img {
+            transform: scale(1.08); /* Slight zoom on hover */
+        }
+
+        /* Shine effect */
+        .image-container::before {
+            content: "";
+            position: absolute;
+            top: -150%; /* Start above the container */
+            left: -150%; /* Start to the left */
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.6) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0) 100%
+            ); /* Gradient with a shine effect */
+            transform: rotate(45deg); /* Angle of the shine */
+            z-index: 1;
+            transition: all 0.8s ease-in-out; /* Smooth transition */
+            pointer-events: none; /* Ignore mouse events */
+        }
+
+        .image-container:hover::before {
+            top: 150%; /* Move to below the container */
+            left: 150%; /* Move to the right */
+        }
+
+        /* Optional: Add a subtle glow */
+        .image-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="//bizweb.dktcdn.net/100/493/370/themes/940719/assets/home_about_top.jpg?1713464283843" alt="Your Image">
+    </div>
+</body>
+</html>
